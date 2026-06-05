@@ -24,10 +24,6 @@ try {
             $tableName = "tblreturnedlist";
             $deleteKey = "ReturnID";
             break;
-        case 5:
-            $tableName = "tbltoreturn";
-            $deleteKey = "BorrowID";
-            break;
     }
     $stmt = $conn->prepare($sql);
     $stmt->execute([$deleteID]);

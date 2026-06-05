@@ -15,6 +15,7 @@
     <?php
     require_once "../Config/connDB.php";
     require_once "../Controller/showTables.php";
+    require_once "../Controller/dashboardStats.php";
 
     if (isset($_GET['msg'])) {
         if ($_GET['msg'] == 'added') {
@@ -108,7 +109,7 @@
                     <div class="col-md-6">
                         <div class="btn stat-card">
                             <div>
-                                <div class="stat-num">23</div>
+                                <?php countMembers($conn); ?>
                                 <div class="stat-label">Registered Members</div>
                             </div>
                             <i class="bi bi-people stat-icon"></i>
@@ -118,7 +119,7 @@
                     <div class="col-md-6">
                         <div class="btn stat-card">
                             <div>
-                                <div class="stat-num">50</div>
+                                <?php countBooks($conn); ?>
                                 <div class="stat-label">Book Collection</div>
                             </div>
                             <i class="bi bi-book stat-icon"></i>
@@ -130,7 +131,7 @@
                     <div class="col-md-4">
                         <div class="btn stat-card">
                             <div>
-                                <div class="stat-num">15</div>
+                                <?php countBorrowedBooks($conn); ?>
                                 <div class="stat-label">Total Borrowed Books</div>
                             </div>
                             <i class="bi bi-bag-check stat-icon"></i>
@@ -139,7 +140,7 @@
                     <div class="col-md-4">
                         <div class="btn stat-card">
                             <div>
-                                <div class="stat-num">13</div>
+                                <?php countBorrowedBooks($conn); ?>
                                 <div class="stat-label">To Return Books</div>
                             </div>
                             <i class="bi bi-back stat-icon"></i>
@@ -148,7 +149,7 @@
                     <div class="col-md-4">
                         <div class="btn stat-card">
                             <div>
-                                <div class="stat-num">10</div>
+                                <?php countReturnedBooks($conn); ?>
                                 <div class="stat-label">Returned Books</div>
                             </div>
                             <i class="bi bi-arrow-return-left stat-icon"></i>
