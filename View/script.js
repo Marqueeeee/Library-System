@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("deleteID").value = rowData['ID'];
         document.getElementById("tableID").value = 3;
         document.getElementById('deleteConfirmation').innerHTML = "Are you sure you want to delete entry Borrow ID: " + rowData['ID'] + "?";
-        alert("Currently Selecting Book ID: " + rowData['ID']);
+        alert("Currently Selecting Entry ID: " + rowData['ID']);
     }
 });
 
@@ -216,9 +216,44 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('toMarkReturned').disabled = false;
 
         document.getElementById("deleteID").value = rowData['ID'];
-        document.getElementById("tableID").value = 4;
+        document.getElementById("tableID").value = 3;
         document.getElementById('deleteConfirmation').innerHTML = "Are you sure you want to delete the entry: " + rowData['ID'] + " " +rowData['Name'] + "?";
-        alert("Currently Selecting Book ID: " + rowData['ID']);
+        alert("Currently Selecting Entry ID: " + rowData['ID']);
+    }
+});
+
+//event listener for returned list
+document.addEventListener('DOMContentLoaded', function () {
+    const table = document.getElementById('returnedTable');
+    const tbody = table.querySelector('tbody');
+    const rows = tbody.rows;
+    const rowArray = Array.from(rows);
+
+    rowArray.forEach(row => {
+        row.addEventListener('click', handleRowClick);
+    });
+
+    function handleRowClick(event) {
+        const clickedRow = event.target.closest('tr');
+        const cells = clickedRow.cells;
+        const cellValues = [];
+
+        for (let i = 0; i < cells.length; i++) {
+            cellValues.push(cells[i].textContent.trim());
+        }
+
+        const columnNames = ['ID'];
+        const rowData = {};
+        columnNames.forEach((name, index) => {
+            rowData[name] = cellValues[index];
+        });
+
+        document.getElementById('returnedDelete').disabled = false;
+
+        document.getElementById("deleteID").value = rowData['ID'];
+        document.getElementById("tableID").value = 4;
+        document.getElementById('deleteConfirmation').innerHTML = "Are you sure you want to delete the entry: " + rowData['ID'] + "?";
+        alert("Currently Selecting Return ID: " + rowData['ID']);
     }
 });
 

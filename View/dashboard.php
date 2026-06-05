@@ -784,11 +784,11 @@
                         <h5>Returned List</h5>
                     </div>
                 </div>
-                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal"><i
+                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="returnedDelete"><i
                         class="bi bi-trash3-fill"></i></button>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered lms-table table-striped table-hover">
+                    <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
                         <?php showReturned($conn) ?>
                     </table>
                 </div>
