@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main-color--: green;
+    --submain-color--: #217a38;
+    --add-color--: #2a9648;
+
+    --text-color--: #fff;
+    --text-icon-color--: #ebe1e1;
+    --bg-color: #f4f6f4;
+    --alt-text-color: rgba(0, 0, 0, 0.822);
+
+    --sidebar-w: 260px;
+
+    --green-dark: #1a5c2a;
+    /* sidebar background        */
+    --green-mid: #217a38;
+    /* header, stat cards        */
+    --green-light: #2a9648;
+    /* hover states, accents     */
+    --green-active: #145220;
+    /* active nav item           */
+    --white: #ffffff;
+    --gray-bg: #f4f6f4;
+    /* page background           */
+    --gray-row: #e8ede9;
+    /* table alt row             */
+    --sidebar-w: 260px;
+    /* sidebar width (one place) */
+
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    margin-top: 10%;
+    max-width: 30vw;
+    height: 40vh;
+    background-color: green;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(24, 24, 24, 0.7);
+    padding-top: 2rem;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 2.5rem;
+}
+.icon-box{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--white);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.icon-box h3{
+    font-weight: 700;
+    font-size: 2rem;
+    
+}
+
+
+.form-floating{
+    margin-bottom: 0.5rem;
+
+}
+
+.container .form-floating input{
+    align-content: center;
+    padding: 12px 1.5rem;
+    font-size: 14px;    
+    width: 130%;
+    margin-left: 0;
+}
+
+.container .form-floating label {
+    font-size: 14px;
+    
+
+}
+
+.btn{
+    margin-top: 1rem;
+    padding: 8px 30px;
+    margin-bottom: 1.5rem;
+    width: 130%;
+}

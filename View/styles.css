@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main-color--: green;
+    --submain-color--: #217a38;
+    --add-color--: #2a9648;
+    --text-color--: #fff;
+    --text-icon-color--: #ebe1e1;
+    --bg-color: #f4f6f4;
+    --sidebar-w: 260px;
+    --green-dark: #1a5c2a;
+    --green-mid: #217a38;
+    --green-light: #2a9648;
+    --green-active: #145220;
+    --white: #ffffff;
+    --gray-bg: #f4f6f4;
+    --gray-row: #e8ede9;
+    --sidebar-w: 260px;
+
+
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/*----------------- Sidebar -------------------------*/
+
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 93vh;
+    width: 260px;
+    background-color: var(--green-dark);
+    border-radius: 12px 12px 0 0;
+
+}
+
+.sidebar #brand {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5vh;
+    width: 260px;
+    background-color: var(--green-dark);
+    border-radius: 0 0 12px 12px;
+
+}
+
+.sidebar #brand h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: auto;
+    color: var(--text-color--);
+    font-weight: 600;
+}
+
+.sidebar .sidebar-user {
+    background-color: var(--text-icon-color--);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.sidebar-user .avatar {
+    width: 44px;
+    height: 44px;
+    margin-left: 2rem;
+    margin-right: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    color: black;
+
+}
+
+.sidebar-user .status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #28a745;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.sidebar-user .label-active {
+    font-size: 11px;
+    color: #28a745;
+}
+
+.sidebar-user .label-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--green-dark);
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 20px;
+    color: var(--text-icon-color--);
+
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(4, 65, 4, 0.808);
+}
+
+.sidebar .description {
+    font-size: 1rem;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+
+}
+
+.btn-danger {
+    background-color: rgba(255, 0, 0, 0.733);
+}
+
+/*----------------- Main Content -------------------------*/
+
+.main-content {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.top-header {
+    background-color: var(--green-dark);
+    color: var(--text-color--);
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 0 0 0 12px;
+    margin-left: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.nav-item-lms.active {
+    background-color: var(--green-active);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.row {
+    margin-top: 1.5rem;
+}
+
+.row:nth-child(1) {
+    margin-top: 1rem;
+}
+
+.page-body {
+    padding: 28px 30px;
+    flex: 1;
+}
+
+.stat-card {
+    background-color: var(--green-mid);
+    color: var(--text-color--);
+    border-radius: 12px;
+    padding: 2rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 20vh;
+    text-align: left;
+    cursor: default;
+
+}
+
+.stat-card .stat-num {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.stat-card .stat-label {
+    font-size: 16px;
+    margin-top: 12px;
+    opacity: 9;
+}
+
+.stat-card .stat-icon {
+    font-size: 52px;
+    opacity: 35;
+}
+
+
+/*----------------- Control Panel -------------------------*/
+
+.panel {
+    background-color: var(--text-color--);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+
+}
+
+.section-heading .icon-box {
+    font-size: 3.5rem;
+    color: var(--green-dark);
+    margin-top: 1.5rem;
+    border-left: 2px solid var(--green-dark);
+    padding-left: 2.5rem;
+}
+
+.section-heading .icon-box h5 {
+    font-weight: 700;
+    margin: 0;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-right: 1.5rem;
+
+}
+
+.toolbar input.form-control {
+    max-width: 250px;
+    font-size: 14px;
+    border-color: green;
+}
+
+
+/*----------------- Member Table -------------------------*/
+
+.table {
+    margin-top: 2rem;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color:#6fcf8b !important;
+    cursor: pointer;
+}
+
+.lms-table thead th {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 12px;
+    padding: 1rem;
+    white-space: nowrap;
+    background-color: var(--green-active);
+    color: var(--text-icon-color--);
+}
+
+.lms-table thead tbody tr {
+    font-size: 12px;
+}
+
+.lms-table tbody tr td {
+    padding-left: 12px;
+    font-size: 14px;
+}
+
+
+.badge-status {
+    font-size: 11px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.badge-borrowed {
+    background-color: rgba(255, 166, 0, 0.199);
+    color: orange;
+}
+
+
+.badge-available {
+    background-color: rgba(0, 128, 0, 0.205);
+    color: var(--green-dark);
+}
+
+.badge-returned {
+    background-color: var(--text-icon-color--);
+    color: var(--green-dark);
+    border-radius: 20px;
+
+}
+
+.badge-overdue {
+    background-color: rgba(255, 0, 0, 0.192);
+    color: rgba(255, 0, 0, 0.747);
+    border-radius: 20px;
+
+}
+
+.btn-success {
+    background-color: var(--green-active);
+}
+
+.btn-mark {
+    background-color: var(--green-active);
+    color: var(--text-icon-color--);
+}
+
+.form-section {
+    background-color: rgba(15, 134, 15, 0.418);
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid #d4e8d8;
+    display: none;
+}
+
+.form-section.show {
+    display: block;
+}
+
+.form-section h6 {
+    font-size: 1.2rem;
+    color: var(--green-dark);
+    font-weight: 700;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-section input,
+.form-select {
+    border-color: var(--green-active);
+}
+
+.form-section .input-group-text {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-section-receipt {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.form-section-receipt.show {
+    display: flex;
+}
+
+.form-section-receipt .box {
+    border: 1px solid black;
+    padding: 2rem;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.form-section-receipt p:last-of-type {
+    text-align: left;
+    margin-left: 2.5rem;
+
+}
+
+
+.form-section-receipt ul li {
+    list-style-type: none;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+
+/*----------------- Modal -------------------------*/
+.modal-content {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.modal {
+
+    z-index: 1055 !important;
+}
+
+.modal-backdrop {
+    z-index: 1050 !important;
+}
+
+.modal-dialog {
+
+    z-index: 1056 !important;
+}
+
+.right {
+    text-align: right;
+    padding-top: 0;
+    margin: 0;
+
+}
+
+.dotted-top {
+    border-top: 2px dotted black;
+    margin-top: 2rem;
+}
+
+.receipt-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.value {
+    text-align: right;
+}
+
+.return-date {
+    margin-left: 10rem;
+
+}

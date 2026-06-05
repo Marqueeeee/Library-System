@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+:root {
+    --main-color--: green;
+    --submain-color--: #217a38;
+    --add-color--: #2a9648;
+
+    --text-color--: #fff;
+    --text-icon-color--: #ebe1e1;
+    --bg-color: #f4f6f4;
+    --alt-text-color: rgba(0, 0, 0, 0.822);
+
+    --sidebar-w: 260px;
+
+    --green-dark: #1a5c2a;
+    /* sidebar background        */
+    --green-mid: #217a38;
+    /* header, stat cards        */
+    --green-light: #2a9648;
+    /* hover states, accents     */
+    --green-active: #145220;
+    /* active nav item           */
+    --white: #ffffff;
+    --gray-bg: #f4f6f4;
+    /* page background           */
+    --gray-row: #e8ede9;
+    /* table alt row             */
+    --sidebar-w: 260px;
+    /* sidebar width (one place) */
+
+
+}
+
+
+.container {
+    display: grid;
+    place-items: center;
+    margin-top: 10%;
+    max-width: 30vw;
+    height: 40vh;
+    background-color: green;
+    border-radius: 15px;
+}
+
+.container .card {
+    margin-top: 2rem;
+    height: 20vh;
+    width: 20vh;
+
+}
+
+.container .card-body {
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+    border-radius: 15px;
+}
+
+.container .card-body i {
+    font-size: 6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.container .card-body p{
+    font-weight: 700;
+}
+
+.container button {
+    border: 1px solid white;
+    color: white;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-left: 23rem;
+    padding: 5px 20px 5px 20px;
+    
+}
+
+.container .card-title{
+    color: white;
+    font-weight: 700;
+    margin-top: 2rem;
+}
