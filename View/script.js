@@ -179,8 +179,48 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-//to return list 
+//event listener for to return list 
+document.addEventListener('DOMContentLoaded', function () {
+    const table = document.getElementById('toReturnTable');
+    const tbody = table.querySelector('tbody');
+    const rows = tbody.rows;
+    const rowArray = Array.from(rows);
 
+    rowArray.forEach(row => {
+        row.addEventListener('click', handleRowClick);
+    });
+
+    function handleRowClick(event) {
+        const clickedRow = event.target.closest('tr');
+        const cells = clickedRow.cells;
+        const cellValues = [];
+
+        for (let i = 0; i < cells.length; i++) {
+            cellValues.push(cells[i].textContent.trim());
+        }
+
+        const columnNames = ['ID', 'Name', 'MemID', 'Title', 'BookID', 'DateBorrowed','DueDate', 'OverDue'];
+        const rowData = {};
+        columnNames.forEach((name, index) => {
+            rowData[name] = cellValues[index];
+        });
+
+        document.getElementById("toReturnID").value = rowData['ID'];
+        document.getElementById("memberName").value = rowData['Name'];
+        document.getElementById("returnedBookName").value = rowData['Title'];
+        document.getElementById("dateBorrowed").value = rowData['DateBorrowed'];
+        document.getElementById("returnDueDate").value = rowData['DueDate'];
+        document.getElementById("overDue").value = rowData['OverDue'];
+
+        document.getElementById('toReturnDelete').disabled = false;
+        document.getElementById('toMarkReturned').disabled = false;
+
+        document.getElementById("deleteID").value = rowData['ID'];
+        document.getElementById("tableID").value = 4;
+        document.getElementById('deleteConfirmation').innerHTML = "Are you sure you want to delete the entry: " + rowData['ID'] + " " +rowData['Name'] + "?";
+        alert("Currently Selecting Book ID: " + rowData['ID']);
+    }
+});
 
 document.getElementById("importBtn").addEventListener("click", () => {
     document.getElementById("fileInput").click();
