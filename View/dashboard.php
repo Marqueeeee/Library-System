@@ -667,7 +667,8 @@
                         class="bi bi-printer me-2"></i>Print</button>
 
                 <form action="../Controller/insertReturned.php" method="POST">
-                    <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit"><i class="bi bi-check-circle me-2"></i>Mark
+                    <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit"><i
+                            class="bi bi-check-circle me-2"></i>Mark
                         returned</button>
                     <input type="hidden" id="toReturnID" name="returnID">
                     <input type="hidden" id="memberName" name="name">
@@ -676,8 +677,8 @@
                     <input type="hidden" id="returnDueDate" name="dueDate">
                     <input type="hidden" id="overDue" name="overDue">
                 </form>
-                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="toReturnDelete"><i
-                        class="bi bi-trash3-fill"></i></button>
+                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                    id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button>
 
                 <div class="table-responsive">
                     <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
@@ -788,34 +789,7 @@
 
                 <div class="table-responsive">
                     <table class="table table-bordered lms-table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Borrow ID</th>
-                                <th>Member</th>
-                                <th>Book Title</th>
-                                <th>Date Borrowed</th>
-                                <th>Return Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>BR004</td>
-                                <td>Daenerys Targaryen</td>
-                                <td>Pride and Prejudice</td>
-                                <td>2025-04-20</td>
-                                <td>2025-05-03</td>
-                                <td><span class="badge-status badge-returned">Returned</span></td>
-                            </tr>
-                            <tr>
-                                <td>BR005</td>
-                                <td>Gendry Baratheon</td>
-                                <td>The Great Gatsby</td>
-                                <td>2025-04-25</td>
-                                <td>2025-05-08</td>
-                                <td><span class="badge-status badge-returned">Returned</span></td>
-                            </tr>
-                        </tbody>
+                        <?php showReturned($conn) ?>
                     </table>
                 </div>
             </div>

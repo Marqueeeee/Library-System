@@ -150,4 +150,37 @@ function showToReturn($conn)
         echo "Error: " . $e->getMessage();
     }
 }
+
+function showReturned($conn)
+{
+    try {
+        $sql = "SELECT ReturnID, Member, BookTitle, BorrowedDate, ReturnedDate, Fine FROM tblreturnedlist";
+        // Execute the SQL query
+        $result = $conn->query($sql);
+        // Process the result set
+        if ($result->rowCount() > 0) {
+            echo '<thead><tr><th>ReturnID ID</th><th>Member</th><th>Book Title</th><th>Date Borrowed</th><th>Return Date</th><th>Fine</th></tr></thead><tbody>';
+            // Output data of each row
+            while ($row = $result->fetch()) {
+                echo "<tr>";
+                echo "<td>" . $row['ReturnID'] . "</td>";
+                echo "<td>" . $row['Member'] . "</td>";
+                echo "<td>" . $row['BookTitle'] . "</td>";
+                echo "<td>" . $row['BorrowedDate'] . "</td>";
+                echo "<td>" . $row['ReturnedDate'] . "</td>";
+                echo "<td> ₱ " . $row['Fine'] . "</td>";
+                echo "</tr>";
+            }
+            echo "</tbody>";
+            unset($result);
+        } else {
+            echo "No records found.";
+        }
+
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+
 ?>
