@@ -20,6 +20,7 @@ try {
             $sql = "DELETE FROM tblborrowedlist WHERE BorrowID=?";
             break;
         case 4:
+            $sql = "DELETE FROM tblreturnedlist WHERE ReturnID=?";
             $tableName = "tblreturnedlist";
             $deleteKey = "ReturnID";
             break;
