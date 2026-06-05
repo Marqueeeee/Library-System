@@ -668,11 +668,11 @@
                 class="bi bi-printer me-2"></i>Print</button>
                 <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                 id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button>
-                <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit"><i
+                <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn"><i
                 class="bi bi-check-circle me-2"></i>Mark
                 returned</button>
                 
-                <form action="../Controller/insertReturned.php" method="POST">
+                <form action="../Controller/insertReturned.php" method="POST" id="toReturn">
                     <input type="hidden" id="toReturnID" name="returnID">
                     <input type="hidden" id="memberName" name="name">
                     <input type="hidden" id="returnedBookName" name="title">
