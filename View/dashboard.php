@@ -662,23 +662,24 @@
                         <h5>To return List</h5>
                     </div>
                 </div>
-
+                
                 <button class="btn btn-dark btn-md" onclick="toggleForm('printReturnForm')"><i
-                        class="bi bi-printer me-2"></i>Print</button>
-
+                class="bi bi-printer me-2"></i>Print</button>
+                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button>
+                <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit"><i
+                class="bi bi-check-circle me-2"></i>Mark
+                returned</button>
+                
                 <form action="../Controller/insertReturned.php" method="POST">
-                    <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit"><i
-                            class="bi bi-check-circle me-2"></i>Mark
-                        returned</button>
                     <input type="hidden" id="toReturnID" name="returnID">
                     <input type="hidden" id="memberName" name="name">
                     <input type="hidden" id="returnedBookName" name="title">
                     <input type="hidden" id="dateBorrowed" name="borrowDate">
                     <input type="hidden" id="returnDueDate" name="dueDate">
                     <input type="hidden" id="overDue" name="overDue">
+                    
                 </form>
-                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                    id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button>
 
                 <div class="table-responsive">
                     <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
