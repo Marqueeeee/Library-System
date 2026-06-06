@@ -21,8 +21,6 @@ try {
             break;
         case 4:
             $sql = "DELETE FROM tblreturnedlist WHERE ReturnID=?";
-            $tableName = "tblreturnedlist";
-            $deleteKey = "ReturnID";
             break;
     }
     $stmt = $conn->prepare($sql);

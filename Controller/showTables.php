@@ -159,7 +159,7 @@ function showReturned($conn)
         $result = $conn->query($sql);
         // Process the result set
         if ($result->rowCount() > 0) {
-            echo '<thead><tr><th>ReturnID ID</th><th>Member</th><th>Book Title</th><th>Date Borrowed</th><th>Return Date</th><th>Fine</th></tr></thead><tbody>';
+            echo '<thead><tr><th>ReturnID</th><th>Member</th><th>Book Title</th><th>Date Borrowed</th><th>Return Date</th><th>Fine</th></tr></thead><tbody>';
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
