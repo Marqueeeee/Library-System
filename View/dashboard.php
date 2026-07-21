@@ -36,6 +36,11 @@
 
 <body>
 
+    
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/07/20/14/20260720142656-SUXDOZ17.js" defer></script>
+    
+    
     <!-- ============== SIDEBAR ============== -->
     <div class="sidebar">
         <nav class="nav flex-column">
@@ -81,11 +86,11 @@
                 <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
                 <span class="description">Returned List</span>>
             </button>
-
-            <button class="nav-link nav-item-lms" data-section="database" onclick="showSection(this);">
+            
+            <!-- <button class="nav-link nav-item-lms" data-section="database" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-database"></i></span>
                 <span class="description">Database Record</span>>
-            </button>
+            </button> -->
 
 
 
