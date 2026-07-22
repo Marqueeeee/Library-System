@@ -578,7 +578,7 @@
                             <div class="col-md-2">
                                 <label class="form-label">Member Name:</label>
                                 <input type="text" class="form-control form-control-md" name="memberName" required
-                                    id="borrowerName">
+                                    id="borrowerName"> 
                             </div>
                             <div class="col-md-2">
                                 <label class="form-label">Membership ID:</label>
