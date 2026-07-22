@@ -489,8 +489,8 @@
                         <h5>Borrowed List</h5>
                     </div>
                 </div>
-                <button class="btn btn-dark btn-md" onclick="toggleForm('printBorrowForm')"><i
-                        class="bi bi-printer me-2"></i>Print</button>
+                <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printBorrowForm')"><i
+                        class="bi bi-printer me-2"></i>Print</button> -->
                 <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal"
                     id="borrowedDelete" disabled><i class="bi bi-trash3-fill"></i></button>
                 <button class="btn btn-primary btn-md" onclick="toggleForm('updateBorrowedForm')" disabled
@@ -671,8 +671,8 @@
                     </div>
                 </div>
                 
-                <button class="btn btn-dark btn-md" onclick="toggleForm('printReturnForm')"><i
-                class="bi bi-printer me-2"></i>Print</button>
+                <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printReturnForm')"><i
+                class="bi bi-printer me-2"></i>Print</button> -->
                 <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                 id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button>
                 <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn"><i
