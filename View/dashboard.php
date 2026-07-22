@@ -59,32 +59,32 @@
 
             <button class="nav-link nav-item-lms active" data-section="dashboard" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-house"></i></span>
-                <span class="description">Dashboard</span>>
+                <span class="description">Dashboard</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="members" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-people"></i></span>
-                <span class="description">Members Section</span>>
+                <span class="description">Members Section</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="books" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-book"></i></i></span>
-                <span class="description">Books Section</span>>
+                <span class="description">Books Section</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="borrowed" onclick="showSection(this);">
                 <span class="icon"> <i class="bi bi-bag"></i></span>
-                <span class="description">Borrowed List</span>>
+                <span class="description">Borrowed List</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-back"></i></span>
-                <span class="description">To Return List</span>>
+                <span class="description">To Return List</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="returned" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
-                <span class="description">Returned List</span>>
+                <span class="description">Returned List</span> <span class="right-align"> > </span>
             </button>
             
             <!-- <button class="nav-link nav-item-lms" data-section="database" onclick="showSection(this);">

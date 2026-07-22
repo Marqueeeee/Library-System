@@ -126,9 +126,19 @@ body {
     bottom: 0;
     left: 0;
     margin-bottom: 2rem;
-    margin-left: 1rem;
-    padding: 0 2rem 0;
+    margin-left: 1.2rem;
+    
 
+}
+.sidebar-footer button{
+    padding-left: 3rem ;
+    padding-right: 3rem ;
+}
+
+.sidebar .right-align{
+    position: absolute;
+    left: 220px;
+    
 }
 
 .btn-danger {
@@ -172,7 +182,7 @@ body {
 .nav-item-lms.active {
     background-color: var(--green-active);
     color: var(--white);
-    font-weight: 600;
+    
 }
 
 .row {
