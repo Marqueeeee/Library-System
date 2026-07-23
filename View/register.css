@@ -36,13 +36,14 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #f8e7c9;
+    box-sizing: border-box;
 }
 
 .container {
     display: grid;
     place-items: center;
     margin-top: 10%;
-    max-width: 30vw;
+    width: 30vw;
     height: 55dvh;
     background-color: green;
     border-radius: 32px;
@@ -52,30 +53,20 @@ body {
 h4 {
     margin-bottom: 2rem;
     font-size: 2rem;
-    padding-bottom: rem;
+    padding-bottom: 2rem;
     font-weight: 700;
+    color: #f8e7c9;
+    
 }
+
 
 form {
     display: block;
     place-content: center;
     margin-right: 3rem;
+    
 }
 
-.icon-box {
-    display: flex;
-    align-items: center;
-    font-size: 3rem;
-    color: var(--white);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.icon-box h3 {
-    font-weight: 700;
-    font-size: 2rem;
-}
 
 
 .form-floating {
@@ -113,7 +104,7 @@ form {
     border-bottom: 1px solid #c2bf14;
 }
 
-.footer {
+footer {
     color: #f8e7c9;
     text-align: center;
     position: absolute;
@@ -123,11 +114,11 @@ form {
 
 }
 
-.footer a {
+footer a {
     color: rgba(0, 0, 0, 0.658);
 
 }
 
-.footer a:hover {
+footer a:hover {
     color: #c2bf14;
 }
