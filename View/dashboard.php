@@ -104,10 +104,11 @@
         </div>
     </div>
 
-    <!-- ============== CONTAINER ============== -->
+    <!-- ============== MAIN CONTENT ============== -->
     <div class="main-content">
         <div class="top-header">Library Management System</div>
         <div class="page-body">
+            
             <!-- ============== DASHBOARD SECTION ============== -->
             <div id="section-dashboard" class="section active">
                 <div class="row">
