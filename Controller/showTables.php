@@ -1,16 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<?php 
+    require '../View/header.php';
+?>
+
+<body>
+    
 <?php
-
-
 
 function showMembers($conn)
 {
+    $actionButtons = '<button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square" id="btnEdit"></i></button>
+                      <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>';
     try {
-        $sql = "SELECT MembershipID, FirstName, LastName, ContactNo, CreditPoints FROM tblmembers";
+        $sql = "SELECT MembershipID, FirstName, LastName, ContactNo, Actions FROM tblmembers";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
         if ($result->rowCount() > 0) {
-            echo '<thead><tr><th>Membership ID</th><th>First Name</th><th>Last Name</th><th>Contact Number</th><th>Credit Points</th></tr></thead><tbody>';
+            echo '<thead>
+                        <tr>
+                            <th>Membership ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Contact Number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>';
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
@@ -18,10 +36,10 @@ function showMembers($conn)
                 echo "<td>" . $row['FirstName'] . "</td>";
                 echo "<td>" . $row['LastName'] . "</td>";
                 echo "<td>" . $row['ContactNo'] . "</td>";
-                echo "<td>" . $row['CreditPoints'] . "</td>";
+                echo "<td>" . $row['Actions'] . "</td>";
                 echo "</tr>";
             }
-            echo "</tbody>";
+            echo "</tbody>"; 
             unset($result);
         } else {
             echo "No records found.";
@@ -49,7 +67,7 @@ function showBooks($conn)
                 echo "<td>" . $row['Author'] . "</td>";
                 echo "<td>" . $row['Genre'] . "</td>";
                 echo "<td>" . $row['Category'] . "</td>";
-                echo "<td>" . $row['CreditsRequired'] . "</td>";
+                echo "<td>" . $row['Actions'] . "</td>";
 
                 switch ($row['Status']) {
                     case "Available":
@@ -184,3 +202,5 @@ function showReturned($conn)
 
 
 ?>
+</body>
+</html>

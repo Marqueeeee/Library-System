@@ -18,12 +18,16 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f8e7c9;
     min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background: hsla(123, 74%, 51%, 1);
+    background: linear-gradient(180deg, hsla(123, 74%, 51%, 1) 0%, hsla(101, 49%, 82%, 1) 100%, hsla(0, 0%, 98%, 1) 100%);
+    background: -moz-linear-gradient(180deg, hsla(123, 74%, 51%, 1) 0%, hsla(101, 49%, 82%, 1) 100%, hsla(0, 0%, 98%, 1) 100%);
+    background: -webkit-linear-gradient(180deg, hsla(123, 74%, 51%, 1) 0%, hsla(101, 49%, 82%, 1) 100%, hsla(0, 0%, 98%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#26DE30", endColorstr="#C9E8BB", GradientType=1);
 }
 
 .container {
