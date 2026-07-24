@@ -112,7 +112,7 @@
             <div id="section-dashboard" class="section active">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="btn stat-card">
+                        <div class="btn stat-card" data-section="members" onclick="showSection(this);">
                             <div>
                                 <?php countMembers($conn); ?>
                                 <div class="stat-label">Registered Members</div>
@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <div class="btn stat-card">
+                        <div class="btn stat-card" data-section="books" onclick="showSection(this);">
                             <div>
                                 <?php countBooks($conn); ?>
                                 <div class="stat-label">Book Collection</div>
@@ -134,7 +134,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="btn stat-card">
+                        <div class="btn stat-card" data-section="borrowed" onclick="showSection(this);">
                             <div>
                                 <?php countBorrowedBooks($conn); ?>
                                 <div class="stat-label">Total Borrowed Books</div>
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="btn stat-card">
+                        <div class="btn stat-card" data-section="toreturn" onclick="showSection(this);">
                             <div>
                                 <?php countBorrowedBooks($conn); ?>
                                 <div class="stat-label">To Return Books</div>
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="btn stat-card">
+                        <div class="btn stat-card" data-section="returned" onclick="showSection(this);">
                             <div>
                                 <?php countReturnedBooks($conn); ?>
                                 <div class="stat-label">Returned Books</div>
