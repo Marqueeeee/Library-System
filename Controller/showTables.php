@@ -4,7 +4,7 @@
 <?php 
     require '../View/header.php';
 ?>
-
+</html>
 <style>
     
     tbody td form:nth-last-of-type(1) {
@@ -58,7 +58,7 @@ function showMembers($conn)
     // $actionButtons = '<button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square" id="btnEdit"></i></button>
     //                   <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>';
     try {
-        $sql = "SELECT MembershipID, FirstName, LastName, ContactNo, Actions FROM tblmembers";
+        $sql = "SELECT accountID, firstName, lastName, email FROM accounts where accountType='User'";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
@@ -69,7 +69,7 @@ function showMembers($conn)
                     <th>Membership ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Contact Number</th>
+                    <th>Email</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -77,10 +77,10 @@ function showMembers($conn)
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
-                echo "<td>" . $row['MembershipID'] . "</td>";
-                echo "<td>" . $row['FirstName'] . "</td>";
-                echo "<td>" . $row['LastName'] . "</td>";
-                echo "<td>" . $row['ContactNo'] . "</td>";
+                echo "<td>" . $row['accountID'] . "</td>";
+                echo "<td>" . $row['firstName'] . "</td>";
+                echo "<td>" . $row['lastName'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . "<form action='' > 
                                     <button>Update</button>
                                     <button>Delete</button> 
