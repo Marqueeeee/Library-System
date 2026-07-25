@@ -93,7 +93,7 @@ function showMembers($conn)
 function showBooks($conn)
 {
     try {
-        $sql = "SELECT BookID, Title, Author, Genre, Genre, Category, Status, Actions FROM tblbooks";
+        $sql = "SELECT BookID, Title, Author, Genre, Genre, Status, Actions FROM tblbooks";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
@@ -105,7 +105,6 @@ function showBooks($conn)
                     <th>Title</th>
                     <th>Author</th>
                     <th>Genre</th>
-                    <th>Category</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -118,7 +117,6 @@ function showBooks($conn)
                 echo "<td>" . $row['Title'] . "</td>";
                 echo "<td>" . $row['Author'] . "</td>";
                 echo "<td>" . $row['Genre'] . "</td>";
-                echo "<td>" . $row['Category'] . "</td>";
                 
 
                 switch ($row['Status']) {

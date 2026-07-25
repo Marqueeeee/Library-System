@@ -4,44 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Register Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="View/register.css">
 
-    <!-- <?php
-
-    if (isset($_GET['msg'])) {
-        if ($_GET['msg'] == 'failed') {
-            echo '<script> alert("Incorrect username or password"); </script>';
-        }
-    } 
-    ?> -->
 </head>
 
 <body>
 
     <div class="container">
 
-        <form action="index.php" method="POST">
+        <form action="Controller/registrationController.php" method="POST">
             <div class="icon-box">
                 <h4>Create an Account</h4>
             </div>
             <div class="form-floating">
-                <input type="email" name="user" id="user" class="form-control" placeholder="Email" required>
-                <label for="user" class="form-label">Email:</label>
-
+                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name"
+                    required>
+                <label for="firstName" class="form-label">First Name:</label>
             </div>
             <div class="form-floating">
-                <input type="password" name="pass" id="pass" class="form-control" placeholder="Pass" required minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
-                <label for="psw" class="form-label">Password:</label>
-                <div class="form-text">
-                    * Your password must be 8-20 characters and contain letters and numbers only.
-                </div>
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required>
+                <label for="lastName" class="form-label">Last Name:</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                <label for="email" class="form-label">Email:</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required
+                    minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
+                <label for="pass" class="form-label">Password:</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="Pass"
+                    required minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
+                <label for="confirmPass" class="form-label">Confirm Password:</label>
 
-                <button class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#registered">Register</button>
+                <div class="form-text">
+                    * Your password must be 8-20 characters and must contain letters and numbers.
+                </div>
+                <button class="btn btn-primary btn-md" type="submit">Register</button>
             </div>
 
 
@@ -50,25 +56,49 @@
 
             </footer>
 
-            <!-- Notify successful account creation -->
-            <div class="modal fade" id="registered" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: green;">
-                        <h3 style="color: #f8e7c9; font-weight: 700;">Account creation</h3>
-                        <button class="btn-close btn-light" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;">Account successfully created!</div>
-                    <form>
-                        <div class="modal-footer" style="background-color: green;">
-                            <button type="submit" class="btn btn-primary" formaction="index.php">OK</button>
+            <div class="modal fade" id="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: green;">
                         </div>
-                    </form>
+                        <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;" id="message">
+
+                             </div>
+                        <form>
+                            <div class="modal-footer" style="background-color: green;">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            </div>
 
-            
+            <?php if ($_GET['msg'] && $_GET['msg'] == "taken"): ?>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        document.getElementById("message").innerHTML = "The email is already taken, please try again!";
+                        const el = document.getElementById('modal');
+                        
+                        if (!el) return;
+                        const modal = new bootstrap.Modal(el);
+                        modal.show();
+                    });
+                </script>
+            <?php endif; ?>
+
+            <?php if ($_GET['msg'] && $_GET['msg'] == "mismatch"): ?>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        document.getElementById("message").innerHTML = "Password and Confirm Password do not match, please try again!";
+                        const el = document.getElementById('modal');
+                        
+                        if (!el) return;
+                        const modal = new bootstrap.Modal(el);
+                        modal.show();
+                    });
+                </script>
+            <?php endif; ?>
+
 
         </form>
     </div>
