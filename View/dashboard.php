@@ -42,21 +42,28 @@
     
     
     <!-- ============== SIDEBAR ============== -->
-    <div class="sidebar">
+    <div class="sidebar d-none d-md-block">
         <nav class="nav flex-column">
 
+            <!-- System Abbreviation: LMS (Library Management System) -->
             <div class="card" id="brand">
                 <h3 class="card-title">LMS</h3>
             </div>
 
+            <!-- User Information Section -->
             <div class="sidebar-user">
                 <div class="avatar"><i class="bi bi-person-circle"></i></div>
-                <div>
-                    <div><span class="status-dot"></span><span class="label-active">active</span></div>
-                    <div class="label-name">Admin</div>
+                <div class="user-info">
+                    <div>
+                        <span class="status-dot"></span>
+                        <span class="label-active">active</span>
+                    </div>
+                    <div class="label-name">Faculty</div>
+                    <div class="stud-email">faculty1@gmail.com </div>
                 </div>
             </div>
 
+            <!-- Sidebar navigation buttons -->
             <button class="nav-link nav-item-lms active" data-section="dashboard" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-house"></i></span>
                 <span class="description">Dashboard</span> <span class="right-align"> > </span>
@@ -104,8 +111,7 @@
         </div>
     </div>
 
-    <!-- MOBILE VIEW -->
-
+    <!-- MOBILE  SIDEBAR VIEW -->
     <div class="offcanvas offcanvas-start" id="mobileSidebar" tabindex="-1" aria-labelledby="mobileSidebarLabel" 
         style="width: 260px; background-color: #1a5c2a ">
         
@@ -124,7 +130,7 @@
                         <span class="status-dot"></span>
                         <span class="label-active">active</span>
                     </div>
-                    <span class="label-name">Admin</span>
+                    <span class="label-name">Faculty</span>
                     <div class="stud-email">admin123@gmail.com</div>
                 </div>
             </div>
