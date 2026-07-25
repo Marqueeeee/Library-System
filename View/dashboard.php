@@ -820,7 +820,7 @@
                     </div>
                     <p class="dotted-top">Return date: <span class="return-date">2026-06-03</span></p>
                     <button class="btn btn-primary" onclick="toggleForm('printBorrowForm')">Done</button>
-                </div>
+                </div>fi
             </div>
 
         </div>
