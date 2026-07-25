@@ -25,7 +25,7 @@
 
     <div class="container">
 
-        <form action="" method="POST">
+        <form action="index.php" method="POST">
             <div class="icon-box">
                 <h4>Create an Account</h4>
             </div>
@@ -41,12 +41,12 @@
                     * Your password must be 8-20 characters and contain letters and numbers only.
                 </div>
 
-                <button class="btn btn-primary btn-md" type="submit" data-bs-toggle="modal" data-bs-target="#registered">Register</button>
+                <button class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#registered">Register</button>
             </div>
 
 
             <footer>
-                <p class="register">Already have an account? <a href="index.html">Login.</a></p>
+                <p class="register">Already have an account? <a href="index.php">Login.</a></p>
 
             </footer>
 
@@ -61,7 +61,7 @@
                     <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;">Account successfully created!</div>
                     <form>
                         <div class="modal-footer" style="background-color: green;">
-                            <button type="submit" class="btn btn-primary" formaction="index.html">OK</button>
+                            <button type="submit" class="btn btn-primary" formaction="index.php">OK</button>
                         </div>
                     </form>
                 </div>

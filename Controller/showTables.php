@@ -2,8 +2,9 @@
 <html lang="en">
 
 <?php 
-    require '../View/header.php';
+    require './View/header.php';
 ?>
+
 
 <style>
     
@@ -189,6 +190,7 @@ function showBorrowed($conn)
                 echo "<td>" . $row['BookID'] . "</td>";
                 echo "<td>" . $row['DateBorrowed'] . "</td>";
                 echo "<td>" . $row['DueDate'] . "</td>";
+                echo "<td>" .  . "</td>";
                 
                 switch ($row['Status']) {
                     case "Overdue":
@@ -214,6 +216,8 @@ function showBorrowed($conn)
         echo "Error: " . $e->getMessage();
     }
 }
+
+
 
 function showToReturn($conn)
 {
