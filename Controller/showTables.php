@@ -2,33 +2,71 @@
 <html lang="en">
 
 <?php 
-    require '../View/header.php';
+    require './View/header.php';
 ?>
 
+
+<style>
+    
+    tbody td form:nth-last-of-type(1) {
+        margin: auto;
+    }
+    tbody td button:nth-child(1), tbody td button:nth-child(2) {
+        background-color: #0B5ED7;
+        color: white;
+        border: 0.5px solid #fff;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        padding: 4px 12px;
+        font-weight: 500;
+        margin: 0 0 0 1.2rem;
+
+    }
+    tbody td button:nth-child(2) {
+        background-color: #FF4444;
+        color: white;
+        border: 0.5px solid #fff;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        padding: 4px 14px;
+        font-weight: 500;
+        margin: 0 0 0 1.2rem;
+
+    }
+    #borrowedTable tbody td button:nth-child(1), 
+    #toReturnTable tbody td button:nth-child(1), 
+    #returnedTable tbody td button:nth-child(1) {
+        opacity: 0;
+        font-size: 2px;
+        
+    }
+</style>
+</head>
 <body>
     
 <?php
 
 function showMembers($conn)
 {
-    $actionButtons = '<button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square" id="btnEdit"></i></button>
-                      <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>';
+    // $actionButtons = '<button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square" id="btnEdit"></i></button>
+    //                   <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>';
     try {
         $sql = "SELECT MembershipID, FirstName, LastName, ContactNo, Actions FROM tblmembers";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
         if ($result->rowCount() > 0) {
-            echo '<thead>
-                        <tr>
-                            <th>Membership ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Contact Number</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>';
+            echo 
+            '<thead>
+                <tr>
+                    <th>Membership ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Contact Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>';
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
@@ -36,7 +74,10 @@ function showMembers($conn)
                 echo "<td>" . $row['FirstName'] . "</td>";
                 echo "<td>" . $row['LastName'] . "</td>";
                 echo "<td>" . $row['ContactNo'] . "</td>";
-                echo "<td>" . $row['Actions'] . "</td>";
+                echo "<td>" . "<form action=' '> 
+                                    <button> Update </button>
+                                    <button> Delete </button> 
+                                </form>" . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>"; 
@@ -53,12 +94,31 @@ function showMembers($conn)
 function showBooks($conn)
 {
     try {
-        $sql = "SELECT BookID, Title, Author, Genre, Genre, Category, CreditsRequired, Status FROM tblbooks";
+<<<<<<< HEAD
+        $sql = "SELECT BookID, Title, Author, Genre, Genre, Category, Status, Actions FROM tblbooks";
+=======
+        $sql = "SELECT BookID, Title, Author, Genre, Genre, Status, Actions FROM tblbooks";
+>>>>>>> feature/incorporateActionButtons
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
         if ($result->rowCount() > 0) {
-            echo '<thead><tr><th>Book ID</th><th>Title</th><th>Author</th><th>Genre</th><th>Category</th><th>Credits Req.</th><th>Status</th></thead><tbody>';
+            echo 
+            '<thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+<<<<<<< HEAD
+                    <th>Category</th>
+=======
+>>>>>>> feature/incorporateActionButtons
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>';
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
@@ -66,8 +126,11 @@ function showBooks($conn)
                 echo "<td>" . $row['Title'] . "</td>";
                 echo "<td>" . $row['Author'] . "</td>";
                 echo "<td>" . $row['Genre'] . "</td>";
+<<<<<<< HEAD
                 echo "<td>" . $row['Category'] . "</td>";
-                echo "<td>" . $row['Actions'] . "</td>";
+=======
+>>>>>>> feature/incorporateActionButtons
+                
 
                 switch ($row['Status']) {
                     case "Available":
@@ -77,6 +140,10 @@ function showBooks($conn)
                         echo '<td><span class="badge-status badge-borrowed">Borrowed</span></td>';
                         break;
                 }
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
+                                </form>" . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";
@@ -93,12 +160,26 @@ function showBooks($conn)
 function showBorrowed($conn)
 {
     try {
-        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, Status FROM tblborrowedlist";
+        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, Status, Actions FROM tblborrowedlist";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
         if ($result->rowCount() > 0) {
-            echo '<thead><th>Borrow ID</th><th>Member Name</th><th>Membership ID</th><th>Book Title</th><th>Book ID</th><th>Date Borrowed</th><th>Due Date</th><th>Status</th></thead><tbody>';
+            echo 
+            '<thead>
+                <tr>
+                    <th>Borrow ID</th>
+                    <th>Member Name</th>
+                    <th>Membership ID</th>
+                    <th>Book Title</th>
+                    <th>Book ID</th>
+                    <th>Date Borrowed</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>';
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
@@ -109,7 +190,8 @@ function showBorrowed($conn)
                 echo "<td>" . $row['BookID'] . "</td>";
                 echo "<td>" . $row['DateBorrowed'] . "</td>";
                 echo "<td>" . $row['DueDate'] . "</td>";
-
+                echo "<td>" .  . "</td>";
+                
                 switch ($row['Status']) {
                     case "Overdue":
                         echo '<td><span class="badge-status badge-overdue">Overdue</span></td>';
@@ -118,6 +200,10 @@ function showBorrowed($conn)
                         echo '<td><span class="badge-status badge-borrowed">Borrowed</span></td>';
                         break;
                 }
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
+                                </form>" . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";
@@ -131,15 +217,31 @@ function showBorrowed($conn)
     }
 }
 
+
+
 function showToReturn($conn)
 {
     try {
-        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, DATEDIFF(DateBorrowed, DueDate) FROM tblborrowedlist";
+        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, DATEDIFF(DateBorrowed, DueDate), Actions FROM tblborrowedlist";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
         if ($result->rowCount() > 0) {
-            echo '<thead><th>Borrow ID</th><th>Member Name</th><th>Membership ID</th><th>Book Title</th><th>Book ID</th><th>Date Borrowed</th><th>Due Date</th><th>Days Overdue</th></thead><tbody>';
+            echo 
+            '<thead>
+                <tr>
+                    <th>Borrow ID</th>
+                    <th>Member Name</th>
+                    <th>Membership ID</th>
+                    <th>Book Title</th>
+                    <th>Book ID</th>
+                    <th>Date Borrowed</th>
+                    <th>Due Date</th>
+                    <th>Days Overdue</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>';
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
@@ -156,6 +258,10 @@ function showToReturn($conn)
                 } else {
                     echo '<td><span class="badge-status badge-overdue">' . $row['DATEDIFF(DateBorrowed, DueDate)'] . ' day/s</span></td>';
                 }
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
+                                </form>" . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";
@@ -172,12 +278,24 @@ function showToReturn($conn)
 function showReturned($conn)
 {
     try {
-        $sql = "SELECT ReturnID, Member, BookTitle, BorrowedDate, ReturnedDate, Fine FROM tblreturnedlist";
+        $sql = "SELECT ReturnID, Member, BookTitle, BorrowedDate, ReturnedDate, Fine, Actions FROM tblreturnedlist";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
         if ($result->rowCount() > 0) {
-            echo '<thead><tr><th>ReturnID</th><th>Member</th><th>Book Title</th><th>Date Borrowed</th><th>Return Date</th><th>Fine</th></tr></thead><tbody>';
+            echo 
+            '<thead>
+                <tr>
+                    <th>ReturnID</th>
+                    <th>Member</th>
+                    <th>Book Title</th>
+                    <th>Date Borrowed</th>
+                    <th>Return Date</th>
+                    <th>Fine</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>';
             // Output data of each row
             while ($row = $result->fetch()) {
                 echo "<tr>";
@@ -187,6 +305,10 @@ function showReturned($conn)
                 echo "<td>" . $row['BorrowedDate'] . "</td>";
                 echo "<td>" . $row['ReturnedDate'] . "</td>";
                 echo "<td> ₱ " . $row['Fine'] . "</td>";
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
+                                </form>" . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";
