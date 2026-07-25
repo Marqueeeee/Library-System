@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <?php if ($_GET['msg'] && $_GET['msg'] == "failed"): ?>
+            <?php if (isset($_GET['msg'])): if ($_GET['msg'] && $_GET['msg'] == "failed"): ?>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById("message").innerHTML = "Incorrect email or password, please try again!";
@@ -69,9 +69,9 @@
                         modal.show();
                     });
                 </script>
-            <?php endif; ?>
+            <?php endif; endif; ?>
 
-            <?php if ($_GET['msg'] && $_GET['msg'] == "success"): ?>
+            <?php if (isset($_GET['msg'])): if ($_GET['msg'] && $_GET['msg'] == "success"): ?>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById("message").innerHTML = "Account successfully created!";
@@ -82,7 +82,7 @@
                         modal.show();
                     });
                 </script>
-            <?php endif; ?> 
+            <?php endif; endif;?> 
         </form>
     </div>
 

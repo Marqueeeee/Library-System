@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <?php if ($_GET['msg'] && $_GET['msg'] == "taken"): ?>
+            <?php if (isset($_GET['msg'])): if ($_GET['msg'] && $_GET['msg'] == "taken"): ?>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById("message").innerHTML = "The email is already taken, please try again!";
@@ -84,9 +84,9 @@
                         modal.show();
                     });
                 </script>
-            <?php endif; ?>
+            <?php endif; endif; ?>
 
-            <?php if ($_GET['msg'] && $_GET['msg'] == "mismatch"): ?>
+            <?php if (isset($_GET['msg'])): if ($_GET['msg'] && $_GET['msg'] == "mismatch"): ?>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById("message").innerHTML = "Password and Confirm Password do not match, please try again!";
@@ -97,7 +97,7 @@
                         modal.show();
                     });
                 </script>
-            <?php endif; ?>
+            <?php endif; endif; ?>
 
 
         </form>
