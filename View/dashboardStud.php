@@ -48,7 +48,7 @@
 
             <!-- User Information Section -->
             <div class="sidebar-user">
-                <div class="avatar"><i class="bi bi-person-circle"></i></div>
+                <div class="avatar"><i class="bi bi-person-fill"></i></div>
                 <div class="user-info">
                     <div>
                         <span class="status-dot"></span>
@@ -112,7 +112,7 @@
 
         <div class="offcanvas-body p-0 d-flex flex-column">
             <div class="sidebar-user" style="background-color:#EBE1E1;">
-                <div class="avatar"><i class="bi bi-person-circle"></i></div>
+                <div class="avatar"><i class="bi bi-person-fill"></i></div>
                 <div class="user-info">
                     <div>
                         <span class="status-dot"></span>
