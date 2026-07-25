@@ -329,11 +329,13 @@ body {
 
 .lms-table thead tbody tr {
     font-size: 12px;
+    
 }
 
 .lms-table tbody tr td {
     padding-left: 12px;
     font-size: 14px;
+    
 }
 
 

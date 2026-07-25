@@ -28,5 +28,3 @@
 
     $conn = $connDB->getConn();
     ?>
-
-</head>
