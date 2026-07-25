@@ -45,7 +45,7 @@
                 <!-- <p class="reset"><a href="reset.php">Forgot your password?</a></span></p> -->
 
             <footer>
-                <p class="register">Don't have an account yet? <a href="register.html">Register.</a></p>
+                <p class="register">Don't have an account yet? <a href="register.php">Register.</a></p>
 
             </footer>
                 
