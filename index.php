@@ -11,14 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="View/login.css">
 
-    <!-- <?php
-
-    if (isset($_GET['msg'])) {
-        if ($_GET['msg'] == 'failed') {
-            echo '<script> alert("Incorrect username or password"); </script>';
-        }
-    } 
-    ?> -->
 </head>
 
 <body>
@@ -32,13 +24,12 @@
                 <h4>Management System </h4>
             </div>
             <div class="form-floating">
-                <input type="email" name="user" id="user" class="form-control" placeholder="Email" required autocomplete="email">
-                <label for="user" class="form-label">Email:</label>
-
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                <label for="email" class="form-label">Email:</label>
             </div>
             <div class="form-floating">
-                <input type="password" name="pass" id="pass" class="form-control" placeholder="Pass" required autocomplete="current-password">
-                <label for="psw" class="form-label">Password:</label>
+                <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required>
+                <label for="pass" class="form-label">Password:</label>
 
                 <button class="btn btn-primary btn-md" type="submit">Login</button>
             </div>
@@ -49,6 +40,49 @@
 
             </footer>
                 
+
+            <div class="modal fade" id="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: green;">
+                        </div>
+                        <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;" id="message">
+
+                             </div>
+                        <form>
+                            <div class="modal-footer" style="background-color: green;">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <?php if ($_GET['msg'] && $_GET['msg'] == "failed"): ?>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        document.getElementById("message").innerHTML = "Incorrect email or password, please try again!";
+                        const el = document.getElementById('modal');
+                        
+                        if (!el) return;
+                        const modal = new bootstrap.Modal(el);
+                        modal.show();
+                    });
+                </script>
+            <?php endif; ?>
+
+            <?php if ($_GET['msg'] && $_GET['msg'] == "success"): ?>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        document.getElementById("message").innerHTML = "Account successfully created!";
+                        const el = document.getElementById('modal');
+                        
+                        if (!el) return;
+                        const modal = new bootstrap.Modal(el);
+                        modal.show();
+                    });
+                </script>
+            <?php endif; ?> 
         </form>
     </div>
 
