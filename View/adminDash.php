@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 
@@ -59,7 +60,13 @@
                         <span class="label-active">active</span>
                     </div>
                     <div class="label-name">Admin</div>
-                    <div class="btn btn-success btn-xs">Switch</div>
+
+                        <select class="form-select form-select-sm" aria-label="select account" style="background-color: #1a5c2a; color: #fff; text-align:center">
+                            <option selected>Switch</option>
+                            <option value="1">Faculty</option>
+                            <option value="2">Student</option>
+                        </select>
+                    
                 </div>
             </div>
 
@@ -127,7 +134,14 @@
                         <span class="label-active">active</span>
                     </div>
                     <span class="label-name">Admin</span>
-                    <div class="btn btn-success btn-xs">Switch</div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Switch
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">Faculty</a></li>
+                            <li><a href="#" class="dropdown-item">Student</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -163,6 +177,7 @@
                 </button>
             </nav>
 
+            
             <div class="sidebar-footer pb-4">
                 <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal" data-bs-dismiss="offcanvas">Logout
                     <i class="bi bi-box-arrow-left ms-1"></i>
