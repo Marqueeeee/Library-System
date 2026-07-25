@@ -58,8 +58,8 @@
                         <span class="status-dot"></span>
                         <span class="label-active">active</span>
                     </div>
-                    <div class="label-name">Student</div>
-                    <div class="stud-email">basibasfernando@gmail.com </div>
+                    <div class="label-name">Faculty</div>
+                    <div class="stud-email">faculty1@gmail.com</div>
                 </div>
             </div>
 
@@ -183,7 +183,7 @@
             <span>Library Management System</span>
         </div>
         <div class="page-body">
-            
+
             <!-- ============== DASHBOARD SECTION ============== -->
             <div id="section-dashboard" class="section active">
                 <div class="row">
