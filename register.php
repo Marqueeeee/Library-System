@@ -38,7 +38,6 @@
                 <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required
                     minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
                 <label for="pass" class="form-label">Password:</label>
-
             </div>
             <div class="form-floating">
                 <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="Pass"
@@ -49,8 +48,6 @@
                     * Your password must be 8-20 characters and must contain letters and numbers.
                 </div>
                 <button class="btn btn-primary btn-md" type="submit">Register</button>
-                <!-- <button class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#registered"
-                    type="submit">Register</button> -->
             </div>
 
 
@@ -58,25 +55,6 @@
                 <p class="register">Already have an account? <a href="index.php">Login.</a></p>
 
             </footer>
-
-            <!-- Notify successful account creation -->
-            <!-- <div class="modal fade" id="registered" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header" style="background-color: green;">
-                            <h3 style="color: #f8e7c9; font-weight: 700;">Account creation</h3>
-                            <button class="btn-close btn-light" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;">
-                            Account successfully created!</div>
-                        <form>
-                            <div class="modal-footer" style="background-color: green;">
-                                <button type="submit" class="btn btn-primary" formaction="index.php">OK</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
 
             <div class="modal fade" id="modal" tabindex="-1">
                 <div class="modal-dialog">
