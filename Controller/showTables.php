@@ -10,7 +10,7 @@
     tbody td form:nth-last-of-type(1) {
         margin: auto;
     }
-    tbody td button:nth-child(1), tbody td button:nth-child(2) {
+    tbody td button:nth-child(1) {
         background-color: #0B5ED7;
         color: white;
         border: 0.5px solid #fff;
@@ -31,6 +31,14 @@
         font-weight: 500;
         margin: 0 0 0 1.2rem;
 
+    }
+    tbody td button:nth-child(1):hover {
+        background-color: #fff;
+        color: #0B5ED7;   
+    }
+    tbody td button:nth-child(2):hover {
+        background-color: #fff;
+        color: #FF4444;   
     }
     #borrowedTable tbody td button:nth-child(1), 
     #toReturnTable tbody td button:nth-child(1), 
@@ -73,9 +81,9 @@ function showMembers($conn)
                 echo "<td>" . $row['FirstName'] . "</td>";
                 echo "<td>" . $row['LastName'] . "</td>";
                 echo "<td>" . $row['ContactNo'] . "</td>";
-                echo "<td>" . "<form action=' '> 
-                                    <button> Update </button>
-                                    <button> Delete </button> 
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
                                 </form>" . "</td>";
                 echo "</tr>";
             }
@@ -163,7 +171,6 @@ function showBorrowed($conn)
                     <th>Date Borrowed</th>
                     <th>Due Date</th>
                     <th>Status</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>';
@@ -186,10 +193,7 @@ function showBorrowed($conn)
                         echo '<td><span class="badge-status badge-borrowed">Borrowed</span></td>';
                         break;
                 }
-                echo "<td>" . "<form action='' > 
-                                    <button>Update</button>
-                                    <button>Delete</button> 
-                                </form>" . "</td>";
+                
                 echo "</tr>";
             }
             echo "</tbody>";
@@ -224,7 +228,6 @@ function showToReturn($conn)
                     <th>Date Borrowed</th>
                     <th>Due Date</th>
                     <th>Days Overdue</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>';
@@ -244,10 +247,7 @@ function showToReturn($conn)
                 } else {
                     echo '<td><span class="badge-status badge-overdue">' . $row['DATEDIFF(DateBorrowed, DueDate)'] . ' day/s</span></td>';
                 }
-                echo "<td>" . "<form action='' > 
-                                    <button>Update</button>
-                                    <button>Delete</button> 
-                                </form>" . "</td>";
+                
                 echo "</tr>";
             }
             echo "</tbody>";
