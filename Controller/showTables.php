@@ -2,9 +2,8 @@
 <html lang="en">
 
 <?php 
-    require './View/header.php';
+    require '../View/header.php';
 ?>
-
 
 <style>
     
@@ -94,11 +93,7 @@ function showMembers($conn)
 function showBooks($conn)
 {
     try {
-<<<<<<< HEAD
-        $sql = "SELECT BookID, Title, Author, Genre, Genre, Category, Status, Actions FROM tblbooks";
-=======
         $sql = "SELECT BookID, Title, Author, Genre, Genre, Status, Actions FROM tblbooks";
->>>>>>> feature/incorporateActionButtons
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
@@ -110,10 +105,6 @@ function showBooks($conn)
                     <th>Title</th>
                     <th>Author</th>
                     <th>Genre</th>
-<<<<<<< HEAD
-                    <th>Category</th>
-=======
->>>>>>> feature/incorporateActionButtons
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -126,10 +117,6 @@ function showBooks($conn)
                 echo "<td>" . $row['Title'] . "</td>";
                 echo "<td>" . $row['Author'] . "</td>";
                 echo "<td>" . $row['Genre'] . "</td>";
-<<<<<<< HEAD
-                echo "<td>" . $row['Category'] . "</td>";
-=======
->>>>>>> feature/incorporateActionButtons
                 
 
                 switch ($row['Status']) {
@@ -190,7 +177,6 @@ function showBorrowed($conn)
                 echo "<td>" . $row['BookID'] . "</td>";
                 echo "<td>" . $row['DateBorrowed'] . "</td>";
                 echo "<td>" . $row['DueDate'] . "</td>";
-                echo "<td>" .  . "</td>";
                 
                 switch ($row['Status']) {
                     case "Overdue":

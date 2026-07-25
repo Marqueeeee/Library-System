@@ -261,10 +261,9 @@
                             class="bi bi-plus-lg"></i> Add new</button>
 
                     <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                    <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                         id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
                     <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
-                        id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
                         id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
 
 
@@ -367,7 +366,6 @@
                 </div>
             </div>
         
-
             <!-- ============== BOOKS SECTION ============== -->
             <div id="section-books" class="section">
                 <div class="panel">
@@ -394,14 +392,7 @@
                         id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>
                     <button class="btn btn-primary btn-md " onclick="toggleForm('updateBookForm')" disabled
                         id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i></button> -->
-                <button class="btn btn-success btn-md" onclick="toggleForm('bookForm')"><i
-                        class="bi bi-plus-lg me-1"></i>Add Book</button>
-                <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
-                        class="bi bi-bag-check me-1"></i>Borrow</button>
-                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                    id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>
-                <button class="btn btn-primary btn-md " onclick="toggleForm('updateBookForm')" disabled
-                    id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i></button> -->
+                
 
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
@@ -547,14 +538,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Category:</label>
-                                <select class="form-select form-select-xs" name="category" required id="bookCategory">
-                                    <option value="Exclusive">Exclusive</option>
-                                    <option value="Special">Special</option>
-                                    <option value="Textbook">Textbook</option>
-                                    <option value="Reference">Reference</option>
+                                    <select class="form-select form-select-xs" name="category" required id="bookCategory">
+                                        <option value="Exclusive">Exclusive</option>
+                                        <option value="Special">Special</option>
+                                        <option value="Textbook">Textbook</option>
+                                        <option value="Reference">Reference</option>
                                 </select>
+                                </div>
                             </div>
-                        </div>
                             
                             <div class="col-12 d-flex gap-3" style="margin-top: 1.2rem;">
                                 <button class="btn btn-success btn-sm" type="submit"><i
@@ -563,31 +554,14 @@
                                 <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateBookForm')"><i
                                         class="bi bi-backspace me-2"></i>Cancel</button>
                             </div>
+                        </form>
+                    </div>
 
                 </div>
                 </form>
             </div>
-        </div>
-        <!-- ============== BORROWED SECTION ============== -->
-        <div id="section-borrowed" class="section">
-            <div class="panel">
-                <div class="section-heading">
-                    <div class="icon-box">
-                        <i class="bi bi-bag-plus-fill"></i>
-                        <h5>Borrowed List</h5>
-                    </div>
-                </div>
-                
-                <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printBorrowForm')"><i
-                        class="bi bi-printer me-2"></i>Print</button> -->
-                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal"
-                    id="borrowedDelete" disabled><i class="bi bi-trash3-fill"></i></button>
-                <button class="btn btn-primary btn-md" onclick="toggleForm('updateBorrowedForm')" disabled
-                    id="borrowedUpdate"><i class="bi bi-pencil-square"></i></button> -->
-                    </div>
-                    </form>
-                </div>
-            </div>
+            
+            
             <!-- ============== BORROWED SECTION ============== -->
             <div id="section-borrowed" class="section">
                 <div class="panel">
@@ -733,14 +707,10 @@
                             </div>
                         </form>
                     </div>
-
-
-
-
                 </div>
 
                 <!-- Borrow Receipt -->
-                <div class="form-section-receipt" id="printBorrowForm">
+                <!-- <div class="form-section-receipt" id="printBorrowForm">
                     <div class="box">
                         <h3>Library Management System</h3>
                         <h5>Borrow Receipt</h5>
@@ -763,37 +733,10 @@
                         <p class="dotted-top">Return date: <span class="return-date">2026-06-03</span></p>
                         <button class="btn btn-primary" onclick="toggleForm('printBorrowForm')">Done</button>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
-        <!-- ============== TO RETURN SECTION ============== -->
-        <div id="section-toreturn" class="section">
-            <div class="panel">
-                <div class="section-heading">
-                    <div class="icon-box">
-                        <i class="bi bi-back"></i>
-                        <h5>To return List</h5>
-                    </div>
-                </div>
-                
-                <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printReturnForm')"><i
-                class="bi bi-printer me-2"></i>Print</button> -->
-                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button> -->
-                <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn">
-                    <i class="bi bi-check-circle me-2"></i>Mark returned
-                </button>
-                
-                <form action="../Controller/insertReturned.php" method="POST" id="toReturn">
-                    <input type="hidden" id="toReturnID" name="returnID">
-                    <input type="hidden" id="memberName" name="name">
-                    <input type="hidden" id="returnedBookName" name="title">
-                    <input type="hidden" id="dateBorrowed" name="borrowDate">
-                    <input type="hidden" id="returnDueDate" name="dueDate">
-                    <input type="hidden" id="overDue" name="overDue">
-                    
-                </form>
             <!-- ============== TO RETURN SECTION ============== -->
             <div id="section-toreturn" class="section">
                 <div class="panel">
@@ -863,7 +806,7 @@
                     </div>
 
                     <!-- Return Receipt -->
-                    <div class="form-section-receipt" id="printReturnForm">
+                    <!-- <div class="form-section-receipt" id="printReturnForm">
                         <div class="box">
                             <h3>Library Management System</h3>
                             <h5>Return Receipt</h5>
@@ -890,32 +833,28 @@
                             <button class="btn btn-primary">Done</button>
                         </div>
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <!-- ============== DATABASE SECTION ============== -->
-
             <!-- <div id="section-database" class="section">
-            <div class="panel">
-                <div class="section-heading">
-                    <div class="icon-box">
-                        <i class="bi bi-database"></i>
-                        <h5>Database Section</h5>
+                <div class="panel">
+                    <div class="section-heading">
+                        <div class="icon-box">
+                            <i class="bi bi-database"></i>
+                            <h5>Database Section</h5>
+                        </div>
                     </div>
+
+                    <h6>File Selection:</h6>
+
+                    <input type="file" name="" id="fileInput" hidden>
+                    <button type="button" class="btn btn-dark" id="importBtn">Import file</button>
+                    <button type="button" class="btn btn-primary" id="exportBtn">Export file</button>
+
                 </div>
-
-                <h6>File Selection:</h6>
-
-                <input type="file" name="" id="fileInput" hidden>
-                <button type="button" class="btn btn-dark" id="importBtn">Import file</button>
-                <button type="button" class="btn btn-primary" id="exportBtn">Export file</button>
-
-
-
-
-            </div>
-        </div> -->
+            </div>  -->
 
             <!-- ============== RETURNED SECTION ============== -->
             <div id="section-returned" class="section">
@@ -936,53 +875,56 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- ============== EXIT SYSTEM ============== -->
-        <div class="modal fade" id="exitModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
-                        <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
-                        <h3 style="color: white;">Exit System</h3>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">Do you really want to exit the system?</div>
-                    <form>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                            <button type="submit" class="btn btn-primary" formaction="../index.php">Yes</button>
+
+
+            <!-- ============== EXIT SYSTEM ============== -->
+            <div class="modal fade" id="exitModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
+                            <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
+                            <h3 style="color: white;">Exit System</h3>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============== DELETE CONFIRMATION ============== -->
-        <div class="modal fade" id="delModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
-                        <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
-                        <h3 style="color: white;">Delete</h3>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body" id="deleteConfirmation">Are you sure you want to delete it?</div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                        <form action="../Controller/deleteEntry.php" method="post">
-                            <button type="submit" class="btn btn-primary">Yes</button>
-                            <input type="hidden" name="deleteID" id="deleteID">
-                            <input type="hidden" name="tableID" id="tableID">
+                        <div class="modal-body">Do you really want to exit the system?</div>
+                        <form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                <button type="submit" class="btn btn-primary" formaction="../index.php">Yes</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
+
+            <!-- ============== DELETE CONFIRMATION ============== -->
+            <div class="modal fade" id="delModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
+                            <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
+                            <h3 style="color: white;">Delete</h3>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body" id="deleteConfirmation">Are you sure you want to delete it?</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                            <form action="../Controller/deleteEntry.php" method="post">
+                                <button type="submit" class="btn btn-primary">Yes</button>
+                                <input type="hidden" name="deleteID" id="deleteID">
+                                <input type="hidden" name="tableID" id="tableID">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="script.js"></script>
+
+            
         </div>
-
-        <script src="script.js"></script>
-
     </div>
 
 
