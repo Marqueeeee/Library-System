@@ -260,10 +260,10 @@
                     <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
                             class="bi bi-plus-lg"></i> Add new</button>
 
-                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                    <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                         id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
                     <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
-                        id="memberUpdate"><i class="bi bi-pencil-square"></i></button>
+                        id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
 
 
                     <div class="table-responsive">
@@ -388,10 +388,10 @@
                         class="bi bi-plus-lg me-1"></i>Add Book</button>
                 <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
                         class="bi bi-bag-check me-1"></i>Borrow</button>
-                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                     id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>
                 <button class="btn btn-primary btn-md " onclick="toggleForm('updateBookForm')" disabled
-                    id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i></button>
+                    id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i></button> -->
 
                 <div class="table-responsive">
                     <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
@@ -567,12 +567,13 @@
                         <h5>Borrowed List</h5>
                     </div>
                 </div>
+                
                 <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printBorrowForm')"><i
                         class="bi bi-printer me-2"></i>Print</button> -->
-                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal"
+                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal"
                     id="borrowedDelete" disabled><i class="bi bi-trash3-fill"></i></button>
                 <button class="btn btn-primary btn-md" onclick="toggleForm('updateBorrowedForm')" disabled
-                    id="borrowedUpdate"><i class="bi bi-pencil-square"></i></button>
+                    id="borrowedUpdate"><i class="bi bi-pencil-square"></i></button> -->
 
                 <div class="table-responsive">
                     <table class="table table-bordered lms-table table-striped table-hover" id="borrowedTable">
@@ -751,11 +752,11 @@
                 
                 <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printReturnForm')"><i
                 class="bi bi-printer me-2"></i>Print</button> -->
-                <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button>
-                <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn"><i
-                class="bi bi-check-circle me-2"></i>Mark
-                returned</button>
+                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button> -->
+                <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn">
+                    <i class="bi bi-check-circle me-2"></i>Mark returned
+                </button>
                 
                 <form action="../Controller/insertReturned.php" method="POST" id="toReturn">
                     <input type="hidden" id="toReturnID" name="returnID">

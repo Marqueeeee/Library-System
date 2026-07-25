@@ -73,9 +73,9 @@ function showMembers($conn)
                 echo "<td>" . $row['FirstName'] . "</td>";
                 echo "<td>" . $row['LastName'] . "</td>";
                 echo "<td>" . $row['ContactNo'] . "</td>";
-                echo "<td>" . "<form action=' '> 
-                                    <button> Update </button>
-                                    <button> Delete </button> 
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
                                 </form>" . "</td>";
                 echo "</tr>";
             }
@@ -204,6 +204,8 @@ function showBorrowed($conn)
         echo "Error: " . $e->getMessage();
     }
 }
+
+
 
 function showToReturn($conn)
 {
