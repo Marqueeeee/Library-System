@@ -13,8 +13,12 @@
 
 
 function showSection(btn) {
-    const target = btn.dataset.section;
-    document.querySelectorAll('.nav-item-lms').forEach(b => b.classList.remove('active'));
+  const target = btn.dataset.section;
+
+    // remove highlight from nav buttons
+  document.querySelectorAll('.nav-item-lms').forEach(b => b.classList.remove('active'));
+  
+  // add active all matched data-section
     document.querySelectorAll('[data-section="' + target + ' "]').forEach(b => b.classList.add('active'));
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
 

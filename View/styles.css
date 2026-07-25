@@ -667,7 +667,7 @@ body {
     background-color: rgba(4, 65, 4, 0.808);
 }
 
-
+/* TABLET RESPONSIVE */
 
 @media (min-width: 768px) and (max-width: 991.88px) {
     :root {
@@ -714,7 +714,7 @@ body {
         font-size: 14px;
     }
     .page-body{
-        padding: 20px;
+        padding: 20px 18px;
     }
     .section-heading .icon-box {
         font-size: 2.5rem;
@@ -728,7 +728,7 @@ body {
     }
 }
 
- 
+ /* MOBILE RESPONSIVENESS */
 
 @media (max-width: 767.98px) {
     :root {
@@ -742,12 +742,15 @@ body {
         border-radius: 0;
         font-size: 1.1rem;
         padding: 12px 8px;
+        font-size: 1.1rem;
     }
     .page-body {
         padding: 14px;
     }
 
+
     /* Dashboard */
+    
 
     .stat-card {
         padding: 1rem 1.2rem;
@@ -823,26 +826,69 @@ body {
     small{
         font-size: 0.8rem;
     }
+
+    /* TABLES RESPONSIVENESS */
+    .toolbar {
+        justify-content: flex-start;
+        margin-right: 0;
+        gap: 6px;
+    }
+
+    .toolbar input.form-control {
+        max-width: 100%;
+        flex: 1;
+        min-width: 0;
+    }
+    .btn {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
     .table-responsive{
         font-size: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .lms-table thead th {
         font-size: 12px;
-        padding: 0.6rem;
+        padding: 0.5rem 0.6rem;
     }
     .lms-table tbody tr td {
         font-size: 12px;
-        padding: 0.6rem;
+        padding: 0.5rem 0.6rem;
     }
+    .badge-status {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    /* SECTIONS */
     .form-section {
         padding: 1rem;
     }
+    .form-section h6 {
+        font-size: 1rem;
+    }
+    .form-label {
+        font-size: 12px;
+    }
+
+    
     
 }
 
 @media (min-width: 480px) and (max-width: 576px) {
     .stat-card .stat-num {
-        font-size: 30px;
+        font-size: 22px;
+    }
+    .stat-icon{
+        font-size: 26px;
+    }
+    .top-header {
+        font-size: 0.85rem;
+    }
+    .panel{
+        padding: 10px;
     }
     .book-front {
         height: 14dvh;

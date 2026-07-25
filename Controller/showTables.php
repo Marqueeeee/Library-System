@@ -10,7 +10,7 @@
     tbody td form:nth-last-of-type(1) {
         margin: auto;
     }
-    tbody td button:nth-child(1), tbody td button:nth-child(2) {
+    tbody td button:nth-child(1) {
         background-color: #0B5ED7;
         color: white;
         border: 0.5px solid #fff;
@@ -31,6 +31,14 @@
         font-weight: 500;
         margin: 0 0 0 1.2rem;
 
+    }
+    tbody td button:nth-child(1):hover {
+        background-color: #fff;
+        color: #0B5ED7;   
+    }
+    tbody td button:nth-child(2):hover {
+        background-color: #fff;
+        color: #FF4444;   
     }
     #borrowedTable tbody td button:nth-child(1), 
     #toReturnTable tbody td button:nth-child(1), 
