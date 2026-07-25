@@ -35,7 +35,6 @@
 </head>
 
 <body>
-
     
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/07/20/14/20260720142656-SUXDOZ17.js" defer></script>
@@ -140,28 +139,28 @@
                     <span class="description">Dashboard</span> <span class="right-align"> > </span>
                 </button>
                 
-                <button class="nav-link nav-item-lms" data-section="explore" onclick="showSection(this); closeOffcanvas();">
-                    <span class="icon"><i class="bi bi-search"></i></span>
+                <button class="nav-link nav-item-lms" data-section="members" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-people"></i></span>
                     <span class="description">Members Section</span> <span class="right-align"> > </span>
                 </button>
                 
-                <button class="nav-link nav-item-lms" data-section="borrowing" onclick="showSection(this); closeOffcanvas();">
-                    <span class="icon"><i class="bi bi-bag-plus"></i></span>
+                <button class="nav-link nav-item-lms" data-section="books" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-book"></i></span>
                     <span class="description">Books Section</span> <span class="right-align"> > </span>
                 </button>
 
-                <button class="nav-link nav-item-lms" data-section="readBooks" onclick="showSection(this); closeOffcanvas();">
-                    <span class="icon"><i class="bi bi-book-half"></i></span>
+                <button class="nav-link nav-item-lms" data-section="borrowed" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-bag"></i></span>
                     <span class="description">Borrowed List</span> <span class="right-align"> > </span>
                 </button>
                 
-                <button class="nav-link nav-item-lms" data-section="penalty" onclick="showSection(this); closeOffcanvas();">
-                    <span class="icon"><i class="bi bi-pen"></i></span>
+                <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-back"></i></span>
                     <span class="description">To Return List</span> <span class="right-align"> > </span>
                 </button>
 
-                <button class="nav-link nav-item-lms" data-section="penalty" onclick="showSection(this); closeOffcanvas();">
-                    <span class="icon"><i class="bi bi-pen"></i></span>
+                <button class="nav-link nav-item-lms" data-section="returned" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
                     <span class="description"> Returned List</span> <span class="right-align"> > </span>
                 </button>
             </nav>
@@ -174,7 +173,7 @@
         </div>
     </div>
 
-    <!-- ============== CONTAINER ============== -->
+    <!-- ============== MAIN CONTENT ============== -->
     <div class="main-content">
         <div class="top-header d-flex justify-content-center align-items-center">
             <button class="btn-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-label="Toggle navigation">
