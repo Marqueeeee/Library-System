@@ -695,7 +695,6 @@
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
 
-                            <?php showMembers($conn) ?>
                             <!--
                             <thead>
                                 <tr>
@@ -804,7 +803,6 @@
                         <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
 
 
-                            <?php showBooks($conn) ?>
                             <!--
                                 <thead>
                                     <tr>
@@ -935,7 +933,6 @@
 
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
-                            <?php showReturned($conn) ?>
                         </table>
                     </div>
                 </div>
@@ -955,7 +952,6 @@
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
 
-                            <?php showToReturn($conn); ?>
                             <thead>
                                     <tr>
                                         <th>Book ID</th>
