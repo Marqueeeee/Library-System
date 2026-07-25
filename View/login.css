@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main-color--: green;
+    --submain-color--: #217a38;
+    --add-color--: #2a9648;
+
+    --text-color--: #fff;
+    --bg-color: #f4f6f4;
+    --alt-text-color: rgba(0, 0, 0, 0.822);
+
+}
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: hsla(123, 74%, 51%, 1);
+    background: linear-gradient(180deg, hsla(123, 74%, 51%, 1) 0%, hsla(101, 49%, 82%, 1) 100%, hsla(0, 0%, 98%, 1) 100%);
+    background: -moz-linear-gradient(180deg, hsla(123, 74%, 51%, 1) 0%, hsla(101, 49%, 82%, 1) 100%, hsla(0, 0%, 98%, 1) 100%);
+    background: -webkit-linear-gradient(180deg, hsla(123, 74%, 51%, 1) 0%, hsla(101, 49%, 82%, 1) 100%, hsla(0, 0%, 98%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#26DE30", endColorstr="#C9E8BB", GradientType=1);
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    background-color: green;
+    border-radius: 32px;
+    box-shadow: 0 4px 12px rgba(24, 24, 24, 0.7);
+    padding: 3rem 2rem;
+}
+
+h4{
+    padding-bottom: 2.5rem;
+    font-size: clamp(1.1rem, 2vw, 2rem);
+    font-weight: 700;
+    color: #f8e7c9;
+    line-height: 0.1;
+    text-align: center;
+}
+
+h4:nth-child(1){
+    margin-top: 1rem;
+}
+h4:nth-child(2){
+    margin-bottom: 2rem;
+}
+.icon-box{
+    margin-bottom: 0.5rem;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-floating{
+    margin-bottom: 1rem;
+    width: 100%;
+
+}
+
+.container .form-floating input{
+    width: 100%;
+    font-size: 12px;    
+    padding: 1rem;
+}
+
+.container .form-floating label {
+    font-size: 14px;
+    
+
+}
+
+.btn{
+    margin-top: 1.2rem;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 14px;
+}
+.reset a{
+    color: #f8e7c9;
+    text-decoration: none;
+}
+
+.reset a:hover{
+    color: #c2bf14;
+}
+
+footer{
+    color: #f8e7c9;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 16px;
+
+    
+}
+footer a{
+    color: #c2bf14;
+    font-weight: 600;
+    
+}
+footer a:hover{
+    color: #f8e7c9;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 1.4rem;
+        margin: auto;
+    }
+    h4:nth-child(1){
+        padding-top: 1rem;
+        margin-top:1.5rem;
+    }
+        h4:nth-child(2){
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 1.4rem;
+        margin: auto;
+    }
+    h4:nth-child(1){
+        padding-top: 1rem;
+        margin-top:1.5rem;
+    }
+    h4:nth-child(2){
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    footer {
+        font-size: 14px;
+    }
+
+}
