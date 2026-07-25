@@ -163,7 +163,6 @@ function showBorrowed($conn)
                     <th>Date Borrowed</th>
                     <th>Due Date</th>
                     <th>Status</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>';
@@ -186,10 +185,7 @@ function showBorrowed($conn)
                         echo '<td><span class="badge-status badge-borrowed">Borrowed</span></td>';
                         break;
                 }
-                echo "<td>" . "<form action='' > 
-                                    <button>Update</button>
-                                    <button>Delete</button> 
-                                </form>" . "</td>";
+                
                 echo "</tr>";
             }
             echo "</tbody>";
@@ -224,7 +220,6 @@ function showToReturn($conn)
                     <th>Date Borrowed</th>
                     <th>Due Date</th>
                     <th>Days Overdue</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>';
@@ -244,10 +239,7 @@ function showToReturn($conn)
                 } else {
                     echo '<td><span class="badge-status badge-overdue">' . $row['DATEDIFF(DateBorrowed, DueDate)'] . ' day/s</span></td>';
                 }
-                echo "<td>" . "<form action='' > 
-                                    <button>Update</button>
-                                    <button>Delete</button> 
-                                </form>" . "</td>";
+                
                 echo "</tr>";
             }
             echo "</tbody>";
