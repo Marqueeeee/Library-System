@@ -183,18 +183,11 @@
                     <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
                             class="bi bi-plus-lg"></i> Add new</button>
 
-<<<<<<< HEAD
                     <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                     <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                         id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
                     <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
                         id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
-=======
-                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                        id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
-                    <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
-                        id="memberUpdate"><i class="bi bi-pencil-square"></i></button>
->>>>>>> 4fde244774277bc283e05b5399141524bec251bc
 
 
                     <div class="table-responsive">
