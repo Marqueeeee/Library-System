@@ -29,7 +29,7 @@
         }
     }
 
-    $conn = $connDB->getConn();
+        $conn = $connDB->getConn();
     ?>
 
 </head>
@@ -45,18 +45,25 @@
     <div class="sidebar">
         <nav class="nav flex-column">
 
+            <!-- System Abbreviation: LMS (Library Management System) -->
             <div class="card" id="brand">
                 <h3 class="card-title">LMS</h3>
             </div>
 
+            <!-- User Information Section -->
             <div class="sidebar-user">
                 <div class="avatar"><i class="bi bi-person-circle"></i></div>
-                <div>
-                    <div><span class="status-dot"></span><span class="label-active">active</span></div>
-                    <div class="label-name">Admin</div>
+                <div class="user-info">
+                    <div>
+                        <span class="status-dot"></span>
+                        <span class="label-active">active</span>
+                    </div>
+                    <div class="label-name">Student</div>
+                    <div class="stud-email">basibasfernando@gmail.com </div>
                 </div>
             </div>
 
+            <!-- Sidebar navigation buttons -->
             <button class="nav-link nav-item-lms active" data-section="dashboard" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-house"></i></span>
                 <span class="description">Dashboard</span> <span class="right-align"> > </span>
@@ -100,14 +107,83 @@
             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal">Exit System
                 <i class="bi bi-box-arrow-left me-1"></i>
             </button>
+        </div>
+    </div>
 
+    <!-- MOBILE  SIDEBAR VIEW -->
+    <div class="offcanvas offcanvas-start" id="mobileSidebar" tabindex="-1" aria-labelledby="mobileSidebarLabel" 
+        style="width: 260px; background-color: #1a5c2a ">
+        
+        
+        <div class="offcanvas-header" style="background-color: #1a5c2a; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 14px 16px;">
+                <span id="mobileSidebarLabel" style="color: #fff; font-size: 1.1rem; font-weight: 700; letter-spacing: 2px;">LMS</span>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body p-0 d-flex flex-column">
+            <div class="sidebar-user" style="background-color:#EBE1E1;">
+                <div class="avatar"><i class="bi bi-person-circle"></i></div>
+                <div class="user-info">
+                    <div>
+                        <span class="status-dot"></span>
+                        <span class="label-active">active</span>
+                    </div>
+                    <span class="label-name">Faculty</span>
+                    <div class="stud-email">faculty1@gmail.com</div>
+                </div>
+            </div>
+
+            <nav class="nav flex-column flex-grow-1">
+                <button class="nav-link nav-item-lms active" data-section="dashboard" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="description">Dashboard</span> <span class="right-align"> > </span>
+                </button>
+                
+                <button class="nav-link nav-item-lms" data-section="explore" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-search"></i></span>
+                    <span class="description">Members Section</span> <span class="right-align"> > </span>
+                </button>
+                
+                <button class="nav-link nav-item-lms" data-section="borrowing" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-bag-plus"></i></span>
+                    <span class="description">Books Section</span> <span class="right-align"> > </span>
+                </button>
+
+                <button class="nav-link nav-item-lms" data-section="readBooks" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-book-half"></i></span>
+                    <span class="description">Borrowed List</span> <span class="right-align"> > </span>
+                </button>
+                
+                <button class="nav-link nav-item-lms" data-section="penalty" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-pen"></i></span>
+                    <span class="description">To Return List</span> <span class="right-align"> > </span>
+                </button>
+
+                <button class="nav-link nav-item-lms" data-section="penalty" onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-pen"></i></span>
+                    <span class="description"> Returned List</span> <span class="right-align"> > </span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer pb-4">
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal" data-bs-dismiss="offcanvas">Logout
+                    <i class="bi bi-box-arrow-left ms-1"></i>
+                </button>
+            </div>
         </div>
     </div>
 
     <!-- ============== CONTAINER ============== -->
     <div class="main-content">
-        <div class="top-header">Library Management System</div>
+        <div class="top-header d-flex justify-content-center align-items-center">
+            <button class="btn-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <span>Library Management System</span>
+        </div>
         <div class="page-body">
+            
             <!-- ============== DASHBOARD SECTION ============== -->
             <div id="section-dashboard" class="section active">
                 <div class="row">
