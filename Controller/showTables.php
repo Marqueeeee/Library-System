@@ -2,8 +2,9 @@
 <html lang="en">
 
 <?php 
-    require '../View/header.php';
+    require './View/header.php';
 ?>
+
 
 <body>
     
@@ -37,7 +38,10 @@ function showMembers($conn)
                 echo "<td>" . $row['FirstName'] . "</td>";
                 echo "<td>" . $row['LastName'] . "</td>";
                 echo "<td>" . $row['ContactNo'] . "</td>";
-                echo "<td>" . $row['Actions'] . "</td>";
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
+                                </form>" . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>"; 
@@ -137,6 +141,7 @@ function showBorrowed($conn)
                 echo "<td>" . $row['BookID'] . "</td>";
                 echo "<td>" . $row['DateBorrowed'] . "</td>";
                 echo "<td>" . $row['DueDate'] . "</td>";
+                echo "<td>" .  . "</td>";
                 
                 switch ($row['Status']) {
                     case "Overdue":
@@ -159,6 +164,8 @@ function showBorrowed($conn)
         echo "Error: " . $e->getMessage();
     }
 }
+
+
 
 function showToReturn($conn)
 {
