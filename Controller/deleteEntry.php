@@ -9,7 +9,7 @@ $entryID = $_GET['entryID'];
 try {
     switch ($tableID) {
         case 1:
-            $sql = "DELETE FROM tblmembers WHERE MembershipID=?";
+            $sql = "DELETE FROM accounts WHERE accountID=?";
             // Prepare the SQL query template
             break;
         case 2:

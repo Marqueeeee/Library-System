@@ -96,10 +96,18 @@ require '../View/header.php';
                     echo "<td>" . $row['firstName'] . "</td>";
                     echo "<td>" . $row['lastName'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . "
-                                    <a href='updateBook.php?id" . $row['accountID'] . "'> <button>Update</button> </a>
-                                    <button>Delete</button> 
-                                " . "</td>";
+                    echo "<td>";
+
+                    echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
+                    echo "<input type='hidden' name='accountID' value='" . htmlspecialchars($row['accountID']) . "'>";
+                    echo "<input type='hidden' name='firstName' value='" . htmlspecialchars($row['firstName']) . "'>";
+                    echo "<input type='hidden' name='lastName' value='" . htmlspecialchars($row['lastName']) . "'>";
+                    echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
+                    echo "<button type='submit'>Update</button>";
+                    echo "</form>";
+                    
+                    echo "<button onclick='confirmDelete(".$row['accountID'].",1 )'>Delete</button>";
+                    echo "</td>";
                     echo "</tr>";
                 }
                 echo "</tbody>";
@@ -141,10 +149,18 @@ require '../View/header.php';
                     echo "<td>" . $row['firstName'] . "</td>";
                     echo "<td>" . $row['lastName'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . "<form action='' > 
-                                    <button>Update</button>
-                                    <button>Delete</button> 
-                                </form>" . "</td>";
+                    echo "<td>";
+
+                    echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
+                    echo "<input type='hidden' name='accountID' value='" . htmlspecialchars($row['accountID']) . "'>";
+                    echo "<input type='hidden' name='firstName' value='" . htmlspecialchars($row['firstName']) . "'>";
+                    echo "<input type='hidden' name='lastName' value='" . htmlspecialchars($row['lastName']) . "'>";
+                    echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
+                    echo "<button type='submit'>Update</button>";
+                    echo "</form>";
+                    
+                    echo "<button onclick='confirmDelete(".$row['accountID'].",1 )'>Delete</button>";
+                    echo "</td>";
                     echo "</tr>";
                 }
                 echo "</tbody>";

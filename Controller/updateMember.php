@@ -3,27 +3,27 @@
 require_once "../Config/connDB.php";
 $conn = $connDB->getConn();
 
-$membershipID = $_POST['membershipID'];
+$accountID = $_POST['accountID'];
 $fName = $_POST['firstName'];
 $lName = $_POST['lastName'];
-$contact = $_POST['contact'];
+$email = $_POST['email'];
 //$creditPoints;
 
 
 try {
-    $sql = "UPDATE tblmembers SET FirstName=?, LastName=?, ContactNo=? WHERE MembershipID=?";
+    $sql = "UPDATE accounts SET firstName=?, lastName=?, email=? WHERE accountID=?";
     // Prepare the SQL query template
     $stmt = $conn->prepare($sql);
     // Execute with values
-    $stmt->execute([$fName, $lName, $contact, $membershipID]);
+    $stmt->execute([$fName, $lName, $email, $accountID]);
 
-    header("Location: ../View/dashboard.php?msg=updated");
+    header("Location: ../View/adminDash.php?msg=updated");
     exit();
     
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    header("Location: ../View/dashboard.php?msg=error");
+    header("Location: ../View/adminDash.php?msg=error");
     exit();
 }
 
