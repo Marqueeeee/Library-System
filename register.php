@@ -21,40 +21,42 @@
             <div class="icon-box">
                 <h4>Create an Account</h4>
             </div>
-            <div class="form-floating">
+
+            <div class="input-group mb-3">
+                <div class="input-group-text p-3 opacity-75">FN</div>
                 <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name"
-                    required>
-                <label for="firstName" class="form-label">First Name:</label>
+                required>
             </div>
-            <div class="form-floating">
-                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required>
-                <label for="lastName" class="form-label">Last Name:</label>
+            <div class="input-group mb-3">
+                <div class="input-group-text p-3 opacity-75">LN</div>
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name"
+                required>
             </div>
-            <div class="form-floating">
-                <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
-                <label for="email" class="form-label">Email:</label>
+            <div class="input-group mb-3">
+                <div class="input-group-text p-3 opacity-75">@</div>
+                <input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" required>
             </div>
-            <div class="form-floating">
+            <div class="input-group mb-3">
                 <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required
                     minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
-                <label for="pass" class="form-label">Password:</label>
+                    <span class="input-group-text p-3 opacity-75"><i class="bi bi-lock"></i></span>
+                <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="Confirm Password" required
+                    minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
             </div>
             <div class="form-floating">
-                <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="Pass"
-                    required minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
-                <label for="confirmPass" class="form-label">Confirm Password:</label>
-
                 <div class="form-text">
                     * Your password must be 8-20 characters and must contain letters and numbers.
                 </div>
-                <button class="btn btn-primary btn-md" type="submit">Register</button>
             </div>
-
-
+            <button class="btn btn-primary btn-md" type="submit">Register</button>
             <footer>
-                <p class="register">Already have an account? <a href="index.php">Login.</a></p>
+                <p class="register">Already have an account? <a href="index.php">Login</a></p>
 
             </footer>
+            
+        </form>
+    </div>
+
 
             <div class="modal fade" id="modal" tabindex="-1">
                 <div class="modal-dialog">
@@ -63,7 +65,7 @@
                         </div>
                         <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;" id="message">
 
-                             </div>
+                            </div>
                         <form>
                             <div class="modal-footer" style="background-color: green;">
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
@@ -100,7 +102,7 @@
             <?php endif; endif; ?>
 
 
-        </form>
+        
     </div>
 
 
