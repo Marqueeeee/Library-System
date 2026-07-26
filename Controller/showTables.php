@@ -378,11 +378,12 @@ require '../View/header.php';
                     echo "<td>" . $row['BorrowedDate'] . "</td>";
                     echo "<td>" . $row['ReturnedDate'] . "</td>";
                     echo "<td> ₱ " . $row['Fine'] . "</td>";
-                    echo "<td>" . "<form action='' > 
-                                    <button>Update</button>
-                                    <button>Delete</button> 
-                                </form>" . "</td>";
+                    echo "<td>";
+                    // echo "<button onclick='confirmDelete(".$row['ReturnID'].",4 )'>Delete</button>";
+                    echo "<button onclick='confirmDelete(".$row['ReturnID'].", 4)' style=' opacity: 1; font-size: 14px'>Delete</button>";
+                    echo "</td>";
                     echo "</tr>";
+
                 }
                 echo "</tbody>";
                 unset($result);
