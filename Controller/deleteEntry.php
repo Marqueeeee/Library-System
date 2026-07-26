@@ -26,13 +26,13 @@ try {
     $stmt = $conn->prepare($sql);
     $stmt->execute([$entryID]);
 
-    header("Location: ../View/dashboard.php?msg=deleted");
+    header("Location: ../View/adminDash.php?msg=deleted");
     exit();
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    header("Location: ../View/dashboard.php?msg=error");
+    header("Location: ../View/adminDash.php?msg=error");
     exit();
 }
 
