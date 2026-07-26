@@ -81,7 +81,7 @@
             </button>
 
             <button class="nav-link nav-item-lms" data-section="faculty" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-people"></i></span>
+                <span class="icon"><i class="bi bi-person-badge"></i></span>
                 <span class="description">Faculty</span> <span class="right-align"> > </span>
             </button>
 
@@ -168,7 +168,7 @@
 
                 <button class="nav-link nav-item-lms" data-section="faculty"
                     onclick="showSection(this); closeOffcanvas();">
-                    <span class="icon"><i class="bi bi-people"></i></span>
+                    <span class="icon"><i class="bi bi-person-badge"></i></span>
                     <span class="description">Faculty</span> <span class="right-align"> > </span>
                 </button>
 
@@ -221,7 +221,7 @@
             <!-- ============== DASHBOARD SECTION ============== -->
             <div id="section-dashboard" class="section active">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="btn stat-card" data-section="members" onclick="showSection(this);">
                             <div>
                                 <?php countMembers($conn); ?>
@@ -230,8 +230,17 @@
                             <i class="bi bi-people stat-icon"></i>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="btn stat-card" data-section="faculty" onclick="showSection(this);">
+                            <div>
+                                <?php showFaculty($conn); ?>
+                                <div class="stat-label">Faculty Staff</div>
+                            </div>
+                            <i class="bi bi-person-badge stat-icon"></i>
+                        </div>
+                    </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="btn stat-card" data-section="books" onclick="showSection(this);">
                             <div>
                                 <?php countBooks($conn); ?>
@@ -398,131 +407,132 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- ============== MEMBERS SECTION ============== -->
-        <div id="section-faculty" class="section">
-            <div class="panel">
-                <div class="section-heading">
-                    <div class="icon-box">
-                        <i class="bi bi-people-fill"></i>
-                        <h5>Faculty Section</h5>
+            </div>
+            <!-- ============== FACULTY SECTION ============== -->
+            <div id="section-faculty" class="section">
+                <div class="panel">
+                    <div class="section-heading">
+                        <div class="icon-box">
+                            <i class="bi bi-people-fill"></i>
+                            <h5>Faculty Section</h5>
+                        </div>
                     </div>
-                </div>
-                <div class="toolbar">
-                    <input type="text" class="form-control" name="member-search" id="member-search" class="form-control"
-                        placeholder="Quick Search" oninput="filterTable('membersTable', this.value)">
-                    <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
+                    <div class="toolbar">
+                        <input type="text" class="form-control" name="member-search" id="member-search" class="form-control"
+                            placeholder="Quick Search" oninput="filterTable('membersTable', this.value)">
+                        <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
 
-                </div>
+                    </div>
 
-                <!-- <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
-                            class="bi bi-plus-lg"></i> Add new</button> -->
+                    <!-- <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus-lg"></i> Add new</button> -->
 
-                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                        id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
-                    <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
-                        id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
-
-
-                <div class="table-responsive">
-                    <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
-
-                        <?php showFaculty($conn) ?>
-                        <!--
-                            <thead>
-                                <tr>
-                                    <th>Membership ID</th>
-                                    <th>Name (FN, LN)</th>
-                                    <th>Contact Number</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>1002</td>
-                                    <td>Daenerys Targaryen</td>
-                                    <td>09935150614</td>
-                                    <td>10.00</td>
-                                </tr>
-                            </tbody>-->
+                    <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                        <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                            id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
+                        <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
+                            id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
 
 
-                    </table>
-                </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
 
-                <div class="form-section" id="memberForm">
-                    <h6><i class="bi bi-person-plus me-2"></i>Add New Member</h6>
+                            <?php showFaculty($conn) ?>
+                            <!--
+                                <thead>
+                                    <tr>
+                                        <th>Membership ID</th>
+                                        <th>Name (FN, LN)</th>
+                                        <th>Contact Number</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                    <form action="../Controller/insertMember.php" method="post">
-                        <div class="row g-3">
+                                    <tr>
+                                        <td>1002</td>
+                                        <td>Daenerys Targaryen</td>
+                                        <td>09935150614</td>
+                                        <td>10.00</td>
+                                    </tr>
+                                </tbody>-->
 
 
-                            <div class="col-md-4">
-                                <label class="form-label">First Name:</label>
-                                <input type="text" class="form-control form-control-md" name="firstName" required
-                                    placeholder=>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Last Name:</label>
-                                <input type="text" class="form-control form-control-md" name="lastName" required
-                                    placeholder=>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Contact:</label>
-                                <div class="input-group">
-                                    <input type="number" class="form-control form-control-sm" required name="contact">
+                        </table>
+                    </div>
+
+                    <div class="form-section" id="memberForm">
+                        <h6><i class="bi bi-person-plus me-2"></i>Add New Member</h6>
+
+                        <form action="../Controller/insertMember.php" method="post">
+                            <div class="row g-3">
+
+
+                                <div class="col-md-4">
+                                    <label class="form-label">First Name:</label>
+                                    <input type="text" class="form-control form-control-md" name="firstName" required
+                                        placeholder=>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="col-12 d-flex gap-3">
-                                <button class="btn btn-success btn-sm" type="submit"><i
-                                        class="bi bi-person-plus me-1"></i>Add
-                                    member</button>
-                                <button class="btn btn-secondary btn-sm" onclick="toggleForm('memberForm')"><i
-                                        class="bi bi-backspace me-1"></i>Cancel</button>
-                            </div>
-                    </form>
-                </div>
-
-                <div class="form-section" id="updateMember">
-                    <h6><i class="bi bi-person-plus me-2"></i>Update Member</h6>
-
-                    <div class="row g-3">
-                        <form action="../Controller/updateMember.php" method="post">
-                            <input type="hidden" name="membershipID" id="membershipID">
-                            <div class="col-md-4">
-                                <label class="form-label">First Name:</label>
-                                <input type="text" class="form-control form-control-md" id='firstName' name="firstName"
-                                    required placeholder=>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Last Name:</label>
-                                <input type="text" class="form-control form-control-md" id='lastName' name="lastName"
-                                    required placeholder=>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Contact:</label>
-                                <div class="input-group">
-                                    <div class="input-group-text">09</div>
-                                    <input type="number" class="form-control form-control-sm" id='contact' required
-                                        name="contact">
+                                <div class="col-md-4">
+                                    <label class="form-label">Last Name:</label>
+                                    <input type="text" class="form-control form-control-md" name="lastName" required
+                                        placeholder=>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="col-12 d-flex gap-3">
-                                <button class="btn btn-success btn-sm" type="submit"><i
-                                        class="bi bi-person-plus me-1"></i>Update Member</button>
-                                <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateMember')"><i
-                                        class="bi bi-backspace me-1"></i>Cancel</button>
-                            </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Contact:</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control form-control-sm" required name="contact">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-12 d-flex gap-3">
+                                    <button class="btn btn-success btn-sm" type="submit"><i
+                                            class="bi bi-person-plus me-1"></i>Add
+                                        member</button>
+                                    <button class="btn btn-secondary btn-sm" onclick="toggleForm('memberForm')"><i
+                                            class="bi bi-backspace me-1"></i>Cancel</button>
+                                </div>
                         </form>
+                    </div>
+
+                    <div class="form-section" id="updateMember">
+                        <h6><i class="bi bi-person-plus me-2"></i>Update Member</h6>
+
+                        <div class="row g-3">
+                            <form action="../Controller/updateMember.php" method="post">
+                                <input type="hidden" name="membershipID" id="membershipID">
+                                <div class="col-md-4">
+                                    <label class="form-label">First Name:</label>
+                                    <input type="text" class="form-control form-control-md" id='firstName' name="firstName"
+                                        required placeholder=>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Last Name:</label>
+                                    <input type="text" class="form-control form-control-md" id='lastName' name="lastName"
+                                        required placeholder=>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Contact:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-text">09</div>
+                                        <input type="number" class="form-control form-control-sm" id='contact' required
+                                            name="contact">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-12 d-flex gap-3">
+                                    <button class="btn btn-success btn-sm" type="submit"><i
+                                            class="bi bi-person-plus me-1"></i>Update Member</button>
+                                    <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateMember')"><i
+                                            class="bi bi-backspace me-1"></i>Cancel</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        
+
     </div>
     <!-- ============== BOOKS SECTION ============== -->
     <div id="section-books" class="section">
