@@ -224,33 +224,33 @@
                             <i class="bi bi-search stat-icon"></i>
                         </div>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="btn stat-card" data-section="readBooks" onclick="showSection(this);">
-                            <div>
-                                <?php countBooks($conn); ?>
-                                <div class="stat-label">Read Books</div>
-                            </div>
-                            <i class="bi bi-book-half stat-icon"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
                     <div class="col-md-6">
                         <div class="btn stat-card" data-section="borrowing" onclick="showSection(this);">
                             <div>
-                                <?php countBorrowedBooks($conn); ?>
+                                <?php countBorrowedBooksStud($conn); ?>
                                 <div class="stat-label">Borrowing Books</div>
                             </div>
                             <i class="bi bi-bag-plus stat-icon"></i>
                         </div>
                     </div>
+                    <!-- <div class="col-md-6">
+                        <div class="btn stat-card" data-section="readBooks" onclick="showSection(this);">
+                            <div>
+
+                                <div class="stat-label">Read Books</div>
+                            </div>
+                            <i class="bi bi-book-half stat-icon"></i>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="row">
+                    
                     <div class="col-md-6">
                         <div class="btn stat-card" data-section="penalty" onclick="showSection(this);">
                             <div>
-                                <?php countReturnedBooks($conn); ?>
-                                <div class="stat-label">Penalty History</div>
+                                <?php countReturnedBooksStud($conn); ?>
+                                <div class="stat-label">Return History</div>
                             </div>
                             <i class="bi bi-pen stat-icon"></i>
                         </div>
