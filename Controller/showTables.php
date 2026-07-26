@@ -101,7 +101,7 @@ function showMembers($conn)
 function showBooks($conn)
 {
     try {
-        $sql = "SELECT BookID, Title, Author, Genre, Genre, Status, Actions FROM tblbooks";
+        $sql = "SELECT BookID, Title, Author, Genre, Genre, Status FROM tblbooks";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
@@ -155,7 +155,7 @@ function showBooks($conn)
 function showBorrowed($conn)
 {
     try {
-        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, Status, Actions FROM tblborrowedlist";
+        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, Status FROM tblborrowedlist";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
@@ -212,7 +212,7 @@ function showBorrowed($conn)
 function showToReturn($conn)
 {
     try {
-        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, DATEDIFF(DateBorrowed, DueDate), Actions FROM tblborrowedlist";
+        $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, DATEDIFF(DateBorrowed, DueDate) FROM tblborrowedlist";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
@@ -264,7 +264,7 @@ function showToReturn($conn)
 function showReturned($conn)
 {
     try {
-        $sql = "SELECT ReturnID, Member, BookTitle, BorrowedDate, ReturnedDate, Fine, Actions FROM tblreturnedlist";
+        $sql = "SELECT ReturnID, Member, BookTitle, BorrowedDate, ReturnedDate, Fine FROM tblreturnedlist";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set

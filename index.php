@@ -48,7 +48,7 @@
                         </div>
                         <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;" id="message">
 
-                             </div>
+                            </div>
                         <form>
                             <div class="modal-footer" style="background-color: green;">
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
