@@ -1003,11 +1003,11 @@
                         </div>
                     </div>
 
-
+                    
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
-
-                            <thead>
+                            <?php showReturnedBooks($conn);?>
+                            <!-- <thead>
                                 <tr>
                                     <th>Book ID</th>
                                     <th>Book Title</th>
@@ -1043,7 +1043,7 @@
                                     <td>60.00</td>
                                 </tr>
 
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
 
