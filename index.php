@@ -39,18 +39,21 @@
                 <p class="register">Don't have an account yet? <a href="register.php">Register</a></p>
             </footer>
                 
+            
 
             <div class="modal fade" id="modal" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color: green;">
+                        <div class="modal-header">
+                        <i class="bi bi-exclamation-diamond me-2"></i>
+                        <h5 style="color: red;">Login Error</h5>
                         </div>
-                        <div class="modal-body" style="text-align: center; background-color: green; color: #f8e7c9;" id="message">
+                        <div class="modal-body" style="text-align: center; background-color:  white; color: rgba(226, 11, 11, 0.952);" id="message">
 
                             </div>
                         <form>
-                            <div class="modal-footer" style="background-color: green;">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                            <div class="modal-footer"">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">OK</button>
                             </div>
                         </form>
                     </div>
