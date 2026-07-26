@@ -37,7 +37,6 @@
 
             <footer>
                 <p class="register">Don't have an account yet? <a href="register.php">Register</a></p>
-
             </footer>
                 
 

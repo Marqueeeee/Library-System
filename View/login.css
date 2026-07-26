@@ -73,8 +73,8 @@ form{
 
 .container .form-floating input{
     width: 100%;
-    font-size: 12px;    
-    padding: 1rem;
+    font-size: 14px;    
+    padding: 1rem 1rem 1rem 1.5rem;
 }
 
 .container .form-floating label {
@@ -108,7 +108,7 @@ footer{
     
 }
 footer a{
-    color: #c2bf14;
+    color: #e6e209;
     font-weight: 700;
     text-decoration: none;
     
