@@ -242,7 +242,7 @@ require '../View/header.php';
     function showBorrowed($conn)
     {
         try {
-            $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate FROM tblborrowedlist";
+            $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, DATEDIFF(CURRENT_DATE, DueDate) FROM tblborrowedlist";
             // Execute the SQL query
             $result = $conn->query($sql);
             // Process the result set
@@ -257,6 +257,7 @@ require '../View/header.php';
                     <th>Book ID</th>
                     <th>Date Borrowed</th>
                     <th>Due Date</th>
+                    <th>Overdue Days </th>
                 </tr>
             </thead>
             <tbody>';
@@ -270,6 +271,7 @@ require '../View/header.php';
                     echo "<td>" . $row['BookID'] . "</td>";
                     echo "<td>" . $row['DateBorrowed'] . "</td>";
                     echo "<td>" . $row['DueDate'] . "</td>";
+                    echo "<td>" . $row['DATEDIFF(CURRENT_DATE, DueDate)'] . " days</td>";
 
                     // switch ($row['Status']) {
                     //     case "Overdue":
@@ -298,7 +300,7 @@ require '../View/header.php';
     function showToReturn($conn)
     {
         try {
-            $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, DATEDIFF(DateBorrowed, DueDate) FROM tblborrowedlist";
+            $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, DATEDIFF(DueDate, CURRENT_DATE) FROM tblborrowedlist";
             // Execute the SQL query
             $result = $conn->query($sql);
             // Process the result set
@@ -328,10 +330,10 @@ require '../View/header.php';
                     echo "<td>" . $row['DateBorrowed'] . "</td>";
                     echo "<td>" . $row['DueDate'] . "</td>";
 
-                    if ($row['DATEDIFF(DateBorrowed, DueDate)'] <= 0) {
+                    if ($row['DATEDIFF(DueDate, CURRENT_DATE)'] <= 0) {
                         echo '<td>0 days</td>';
                     } else {
-                        echo '<td><span class="badge-status badge-overdue">' . $row['DATEDIFF(DateBorrowed, DueDate)'] . ' day/s</span></td>';
+                        echo '<td><span class="badge-status badge-overdue">' . $row['DATEDIFF(DueDate, CURRENT_DATE)'] . ' day/s</span></td>';
                     }
 
                     echo "</tr>";

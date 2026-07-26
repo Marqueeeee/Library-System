@@ -62,7 +62,7 @@ function exploreBooks($conn)
 function borrowingBooks($conn)
 {
     try {
-        $sql = "SELECT BorrowID, Name, BookID, BookTitle, DateBorrowed, DueDate, DATEDIFF(DateBorrowed, DueDate) FROM tblborrowedlist where MembershipID=" . $_SESSION['user_id'];
+        $sql = "SELECT BorrowID, Name, BookID, BookTitle, DateBorrowed, DueDate, DATEDIFF(CURRENT_DATE, DueDate) FROM tblborrowedlist where MembershipID=" . $_SESSION['user_id'];
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
@@ -77,7 +77,7 @@ function borrowingBooks($conn)
                 $title = $row['BookTitle'];
                 $dateBorrowed = $row['DateBorrowed'];
                 $dueDate = $row['DueDate'];
-                $overDue = $row['DATEDIFF(DateBorrowed, DueDate)'];
+                $overDue = $row['DATEDIFF(CURRENT_DATE, DueDate)'];
 
 
                 $abbr = '';
@@ -97,7 +97,7 @@ function borrowingBooks($conn)
                 echo '<div class="book-front" style="background-color: #1a5c2a;">';
                 echo '<h3 class="bookTitle">' . $abbr . '</h3>';
                 echo '</div>';
-                echo '<span class="badge text-bg-primary" class="non-fiction" id="non-fiction">Due Date: ' . $dueDate . '</span>';
+                echo '<span class="badge text-bg-primary" class="non-fiction" id="non-fiction">Days Due: ' . $overDue . ' days</span>';
                 echo '<h5 class="card-title">' . $title . '</h5>';
                 echo '<p class="card-text">Date Borrowed: ' . $dateBorrowed . '</p>';
 
