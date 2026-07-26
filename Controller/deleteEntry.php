@@ -3,8 +3,8 @@
 require_once "../Config/connDB.php";
 $conn = $connDB->getConn();
 
-$tableID = $_POST['tableID'];
-$deleteID = $_POST['deleteID'];
+$tableID = $_GET['tableID'];
+$entryID = $_GET['entryID'];
 
 try {
     switch ($tableID) {
@@ -24,7 +24,7 @@ try {
             break;
     }
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$deleteID]);
+    $stmt->execute([$entryID]);
 
     header("Location: ../View/dashboard.php?msg=deleted");
     exit();

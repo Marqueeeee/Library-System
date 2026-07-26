@@ -57,6 +57,15 @@ require '../View/header.php';
 
 <body>
 
+<script>
+  function confirmDelete(entryID, tableID) {
+    const ok = confirm("Do you want to delete entry ID:" + entryID + "?");
+    if (ok) {
+      window.location.href = `../Controller/deleteEntry.php?entryID=${encodeURIComponent(entryID)}&tableID=${encodeURIComponent(tableID)}`;
+    }
+  }
+</script>
+
     <?php
 
     function showMembers($conn)
@@ -198,8 +207,8 @@ require '../View/header.php';
                     echo "<input type='hidden' name='quantity' value='" . htmlspecialchars($row['Quantity']) . "'>";
                     echo "<button type='submit'>Update</button>";
                     echo "</form>";
-
-                    echo "<button>Delete</button>";
+                    
+                    echo "<button onclick='confirmDelete(".$row['BookID'].",2 )'>Delete</button>";
                     echo "</td>";
                     echo "</tr>";
                 }
