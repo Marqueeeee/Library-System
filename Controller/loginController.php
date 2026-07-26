@@ -20,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         header("Location: ../View/dashboardStud.php");
                         break;
                     case "Faculty":
-
+                        header("Location: ../View/facultyDash.php");
                         break;
                     case "Admin":
-                        header("Location: ../View/dashboard.php");
+                        header("Location: ../View/adminDash.php");
                         break;
                 }
 
