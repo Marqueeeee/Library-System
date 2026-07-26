@@ -30,6 +30,14 @@
         }
     }
 
+    session_start();
+    $currentUserId = $_SESSION['user_id'] ?? null;
+
+    if ($currentUserId === null) {
+        header("Location: ../index.php");
+        exit();
+    }
+
     $conn = $connDB->getConn();
     ?>
 
@@ -198,7 +206,7 @@
                     <div class="col-md-6">
                         <div class="btn stat-card" data-section="explore" onclick="showSection(this);">
                             <div>
-                                <?php countMembers($conn); ?>
+                                <?php countBooks($conn); ?>
                                 <div class="stat-label">Explore Books</div>
                             </div>
                             <i class="bi bi-search stat-icon"></i>
@@ -754,7 +762,7 @@
                         </table>
                     </div> -->
 
-                    <?php exploreBooks($conn);?>
+                    <?php exploreBooks($conn); ?>
                 </div>
 
 

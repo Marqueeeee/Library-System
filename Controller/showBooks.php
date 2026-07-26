@@ -38,7 +38,16 @@ function exploreBooks($conn)
                 echo '<span class="badge text-bg-primary" class="non-fiction" id="non-fiction">' . $genre . '</span>';
                 echo '<h5 class="card-title">' . $title . '</h5>';
                 echo '<p class="card-text">' . $author . '</p>';
-                echo '<button class="btn btn-success btn-sm borrow-btn">Borrow</button>';
+
+                
+                echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
+                echo "<input type='hidden' name='accountID' value='" . htmlspecialchars($row['accountID']) . "'>";
+                echo "<input type='hidden' name='firstName' value='" . htmlspecialchars($row['firstName']) . "'>";
+                echo "<input type='hidden' name='lastName' value='" . htmlspecialchars($row['lastName']) . "'>";
+                echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
+                echo '<button class="btn btn-success btn-sm borrow-btn" type="submit">Borrow</button>';
+                echo "</form>";
+
                 echo '</div> </div> </div>';
                 // echo "<tr>";
                 // echo "<td>" . $row['accountID'] . "</td>";

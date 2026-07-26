@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //check if password matches
             if (password_verify($password, $row['password'])) {
                 //check the account type (user, admin, or faculty)
+                session_start();
+                $_SESSION['user_id'] = $row['accountID'];
                 switch ($row['accountType']) {
                     case "User":
                         header("Location: ../View/dashboardStud.php");
