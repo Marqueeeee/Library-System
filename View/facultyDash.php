@@ -252,7 +252,6 @@
                             class="form-control" placeholder="Quick Search"
                             oninput="filterTable('membersTable', this.value)">
                         <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
-
                     </div>
 
                     <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
