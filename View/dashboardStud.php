@@ -1016,8 +1016,8 @@
                     </div>
 
                     <div class="row row-cols-1 row-cols-md-2 g-3 flex-wrap">
-
-                        <div class="accordion" id="accordionExample">
+                        <div class="accordion mb-4" id="accordionExample">
+                        <h5 class="accordion-title ms-3 mb-3 opacity-75">About Library System</h5>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -1055,14 +1055,54 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion" id="accordionExample2">
+                        <div class="accordion mb-4" id="accordionExample3">
+                            <h5 class="accordion-title ms-3 mb-3 opacity-75">Book Management</h5>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"aria-expanded="true" aria-controls="collapseSeven">
+                                    What will happen after the book was returned?
+                                </button>
+                                </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse show" data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <strong>System update.</strong> After the book was returned, the system will update the book's availability status and notify the member that the book is now available for borrowing.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    How many books can I borrow at a time?
+                                </button>
+                                </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <strong>Max of 3, 4 for necessary cases.</strong> You can borrow up to 4 books at a time. If you want to borrow more than 4 books, you have to return the borrowed books first before borrowing more books.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    How does the penalty fee work?
+                                </button>
+                                </h2>
+                                <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <strong>Penalty fee structure.</strong> The penalty fee is charged for each day the book is overdue. The fee is 10.00 per day.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion mb-4" id="accordionExample2">
+                            <h5 class="accordion-title ms-3 mb-3 opacity-75">Borrowing Details</h5>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                     How long can I borrow a book?
                                 </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+                                <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample2">
                                     <div class="accordion-body">
                                         <strong>Can borrow for 3 days max.</strong> To borrow a book, you have to show what you want to borrow and the librarian will check if the book is available. If it is available, you can borrow it for 3 days - 
                                         starting the day you borrowed the book.
@@ -1083,11 +1123,11 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                     How do I return a book?
                                 </button>
                                 </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse show" data-bs-parent="#accordionExample2">
+                                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
                                     <div class="accordion-body">
                                         <strong>In-person transaction.</strong> To return a book, you have to show the book you want to return and the librarian will check if the book is borrowed by you. 
                                         If it is borrowed by you, you can return it and the librarian will check if there are any penalty fees that you need to pay.
@@ -1095,45 +1135,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion" id="accordionExample3">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"aria-expanded="fa" aria-controls="collapseSeven">
-                                    What will happen after the book was returned?
-                                </button>
-                                </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
-                                    <div class="accordion-body">
-                                        <strong>System update.</strong> After the book was returned, the system will update the book's availability status and notify the member that the book is now available for borrowing.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                    How many books can I borrow at a time?
-                                </button>
-                                </h2>
-                                <div id="collapseEight" class="accordion-collapse collapse show" data-bs-parent="#accordionExample3">
-                                    <div class="accordion-body">
-                                        <strong>Max of 3, 4 for necessary cases.</strong> You can borrow up to 4 books at a time. If you want to borrow more than 4 books, you have to return the borrowed books first before borrowing more books.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                                    How does the penalty fee work?
-                                </button>
-                                </h2>
-                                <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
-                                    <div class="accordion-body">
-                                        <strong>Penalty fee structure.</strong> The penalty fee is charged for each day the book is overdue. The fee is 10.00 per day.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion" id="accordionExample4">
+                        <div class="accordion mb-4" id="accordionExample4">
+                            <h5 class="accordion-title ms-3 mb-3 opacity-75">Technical Support</h5>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
@@ -1168,7 +1171,8 @@
                                 <div id="collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionExample4">
                                     <div class="accordion-body">
                                         <strong>Contact information.</strong> If you have any issues with damaged or lost books, please contact the library staff at the provided contact information.
-                                        Contact Faculty: **** - **** - **** | Email: faculty@gmail.com 
+                                        <br>
+                                        <i>Contact Faculty: **** - **** - **** | Email: faculty@gmail.com </i>
                                     </div>
                                 </div>
                             </div>
@@ -1254,7 +1258,9 @@
 
         <script src="script.js"></script>
 
+        
     </div>
+    
 
 
 
