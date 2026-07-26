@@ -30,7 +30,7 @@
         } elseif ($_GET['msg'] == 'borrowFail1') {
             echo '<script> alert("The book is already borrowed"); </script>';
         } elseif ($_GET['msg'] == 'borrowFail2') {
-            echo '<script> alert("You can only borrow up to 3 books"); </script>';
+            echo '<script> alert("You can only borrow up to 4 books"); </script>';
         } elseif ($_GET['msg'] == 'borrowSuccess') {
             echo '<script> alert("Book successfully borrowed!"); </script>';
         } elseif ($_GET['msg'] == 'borrowError') {
@@ -95,10 +95,10 @@
                 <span class="description">Borrowing Books</span> <span class="right-align"> > </span>
             </button>
 
-            <button class="nav-link nav-item-lms" data-section="readBooks" onclick="showSection(this);">
+            <!-- <button class="nav-link nav-item-lms" data-section="readBooks" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-book-half"></i></span>
                 <span class="description">Read Books</span> <span class="right-align"> > </span>
-            </button>
+            </button> -->
 
             <button class="nav-link nav-item-lms" data-section="penalty" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-pen"></i></span>
@@ -168,11 +168,11 @@
                     <span class="description">Borrowing Books</span> <span class="right-align"> > </span>
                 </button>
 
-                <button class="nav-link nav-item-lms" data-section="readBooks"
+                <!-- <button class="nav-link nav-item-lms" data-section="readBooks"
                     onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-book-half"></i></span>
                     <span class="description">Read Books</span> <span class="right-align"> > </span>
-                </button>
+                </button> -->
 
                 <button class="nav-link nav-item-lms" data-section="penalty"
                     onclick="showSection(this); closeOffcanvas();">
@@ -793,8 +793,8 @@
                         id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i>
                     </button>
 
-
-                    <div class="row row-cols-1 row-cols-md-4 g-3 flex-wrap">
+                    <?php borrowingBooks($conn); ?>
+                    <!-- <div class="row row-cols-1 row-cols-md-4 g-3 flex-wrap">
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
@@ -852,7 +852,7 @@
 
 
 
-                    </div>
+                    </div> -->
 
                     <!-- <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="booksTable"> -->

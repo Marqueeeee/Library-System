@@ -242,7 +242,7 @@ require '../View/header.php';
     function showBorrowed($conn)
     {
         try {
-            $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate, Status FROM tblborrowedlist";
+            $sql = "SELECT BorrowID, Name, MembershipID, BookTitle, BookID, DateBorrowed, DueDate FROM tblborrowedlist";
             // Execute the SQL query
             $result = $conn->query($sql);
             // Process the result set
@@ -257,7 +257,6 @@ require '../View/header.php';
                     <th>Book ID</th>
                     <th>Date Borrowed</th>
                     <th>Due Date</th>
-                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>';
@@ -272,14 +271,14 @@ require '../View/header.php';
                     echo "<td>" . $row['DateBorrowed'] . "</td>";
                     echo "<td>" . $row['DueDate'] . "</td>";
 
-                    switch ($row['Status']) {
-                        case "Overdue":
-                            echo '<td><span class="badge-status badge-overdue">Overdue</span></td>';
-                            break;
-                        case "Borrowed":
-                            echo '<td><span class="badge-status badge-borrowed">Borrowed</span></td>';
-                            break;
-                    }
+                    // switch ($row['Status']) {
+                    //     case "Overdue":
+                    //         echo '<td><span class="badge-status badge-overdue">Overdue</span></td>';
+                    //         break;
+                    //     case "Borrowed":
+                    //         echo '<td><span class="badge-status badge-borrowed">Borrowed</span></td>';
+                    //         break;
+                    // }
 
                     echo "</tr>";
                 }

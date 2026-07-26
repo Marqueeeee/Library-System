@@ -37,7 +37,7 @@ try {
         $sql = "SELECT * FROM tblborrowedlist WHERE MembershipID='" . $membershipID . "'";
         $result = $conn->query($sql);
 
-        if ($result->rowCount() >= 3) {
+        if ($result->rowCount() >= 4) {
             while ($row = $result->fetch()) {
                 header("Location: ../View/dashboardStud.php?msg=borrowFail2");
                 exit();
@@ -48,6 +48,8 @@ try {
             $stmt = $conn->prepare($sql);
             // Execute with values
             $stmt->execute([$bookID, $membershipID, $memberName, $bookTitle]);
+
+            //insert update here for quantity -1
 
             header("Location: ../View/dashboardStud.php?msg=borrowSuccess");
             exit();
