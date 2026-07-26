@@ -40,8 +40,8 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    // header("Location: ../View/dashboardStud.php?msg=returnError");
-    // exit();
+    header("Location: ../View/dashboardStud.php?msg=returnError");
+    exit();
 }
 
 

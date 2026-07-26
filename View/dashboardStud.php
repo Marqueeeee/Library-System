@@ -34,7 +34,11 @@
         } elseif ($_GET['msg'] == 'borrowSuccess') {
             echo '<script> alert("Book successfully borrowed!"); </script>';
         } elseif ($_GET['msg'] == 'borrowError') {
-            echo '<script> alert("An unknown error has occurred while borrowing the book!"); </script>';
+            echo '<script> alert("An unknown error has occurred while borrowing the book"); </script>';
+        } elseif ($_GET['msg'] == 'returnSuccess') {
+            echo '<script> alert("Book successfully returned!"); </script>';
+        } elseif ($_GET['msg'] == 'returnError') {
+            echo '<script> alert("An unknown error has occurred while returning the book"); </script>';
         }
     }
 
