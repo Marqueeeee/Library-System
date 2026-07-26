@@ -50,6 +50,9 @@ try {
             $stmt->execute([$bookID, $membershipID, $memberName, $bookTitle]);
 
             //insert update here for quantity -1
+            $sql = "UPDATE tblbooks SET Quantity = Quantity - 1 WHERE BookID = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$bookID]);
 
             header("Location: ../View/dashboardStud.php?msg=borrowSuccess");
             exit();
