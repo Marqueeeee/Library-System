@@ -233,7 +233,7 @@
                     <div class="col-md-4">
                         <div class="btn stat-card" data-section="faculty" onclick="showSection(this);">
                             <div>
-                                <?php showFaculty($conn); ?>
+                                <?php countFaculty($conn); ?>
                                 <div class="stat-label">Faculty Staff</div>
                             </div>
                             <i class="bi bi-person-badge stat-icon"></i>
