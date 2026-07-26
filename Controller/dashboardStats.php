@@ -2,7 +2,7 @@
 function countMembers($conn)
 {
     try {
-        $sql = "SELECT count(MembershipID) as Count FROM tblmembers";
+        $sql = "SELECT count(accountID) as Count FROM accounts where accountType='User'";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
