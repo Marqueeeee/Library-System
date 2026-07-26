@@ -7,37 +7,23 @@ $bookID = $_POST["bookID"];
 $title = $_POST["title"];
 $author = $_POST["author"];
 $genre = $_POST["genre"];
-$category = $_POST["category"];
+$quantity = $_POST["quantity"];
 
-switch ($category) {
-    case "Reference":
-        $credits = 0;
-        break;
-    case "Textbook":
-        $credits = 5;
-        break;
-    case "Special":
-        $credits = 10;
-        break;
-    case "Exclusive":
-        $credits = 15;
-        break;
-}
 
 try {
-    $sql = "UPDATE tblbooks SET Title=?, Author=?, Genre=?, Category=?, CreditsRequired=? WHERE BookID=?";
+    $sql = "UPDATE tblbooks SET Title=?, Author=?, Genre=?, Quantity=? WHERE BookID=?";
     // Prepare the SQL query template
     $stmt = $conn->prepare($sql);
     // Execute with values
-    $stmt->execute([$title, $author, $genre, $category, $credits, $bookID]);
+    $stmt->execute([$title, $author, $genre, $quantity, $bookID]);
 
-    header("Location: ../View/dashboard.php?msg=updated");
+    header("Location: ../View/adminDash.php?msg=updated");
     exit();
     
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    header("Location: ../View/dashboard.php?msg=error");
+    header("Location: ../View/adminDash.php?msg=error");
     exit();
 }
 

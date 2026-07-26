@@ -3,13 +3,13 @@
 require_once "../Config/connDB.php";
 $conn = $connDB->getConn();
 
-$tableID = $_POST['tableID'];
-$deleteID = $_POST['deleteID'];
+$tableID = $_GET['tableID'];
+$entryID = $_GET['entryID'];
 
 try {
     switch ($tableID) {
         case 1:
-            $sql = "DELETE FROM tblmembers WHERE MembershipID=?";
+            $sql = "DELETE FROM accounts WHERE accountID=?";
             // Prepare the SQL query template
             break;
         case 2:
@@ -24,15 +24,15 @@ try {
             break;
     }
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$deleteID]);
+    $stmt->execute([$entryID]);
 
-    header("Location: ../View/dashboard.php?msg=deleted");
+    header("Location: ../View/adminDash.php?msg=deleted");
     exit();
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    header("Location: ../View/dashboard.php?msg=error");
+    header("Location: ../View/adminDash.php?msg=error");
     exit();
 }
 

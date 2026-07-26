@@ -254,8 +254,8 @@
                         <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
                     </div>
 
-                    <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
-                            class="bi bi-plus-lg"></i> Add Member</button>
+                    <!-- <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
+                            class="bi bi-plus-lg"></i> Add Member</button> -->
 
                     <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                         id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
@@ -381,10 +381,10 @@
 
                     </div>
 
-                    <button class="btn btn-success btn-md" onclick="toggleForm('bookForm')"><i
+                    <!-- <button class="btn btn-success btn-md" onclick="toggleForm('bookForm')"><i
                             class="bi bi-plus-lg me-1"></i>Add Book</button>
                     <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
-                            class="bi bi-bag-check me-1"></i>Borrow</button>
+                            class="bi bi-bag-check me-1"></i>Borrow</button> -->
 
                     <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                         id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>

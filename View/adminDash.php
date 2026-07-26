@@ -233,7 +233,7 @@
                     <div class="col-md-4">
                         <div class="btn stat-card" data-section="faculty" onclick="showSection(this);">
                             <div>
-                                <?php showFaculty($conn); ?>
+                                <?php countFaculty($conn); ?>
                                 <div class="stat-label">Faculty Staff</div>
                             </div>
                             <i class="bi bi-person-badge stat-icon"></i>
@@ -550,13 +550,13 @@
                     placeholder="Quick Search" oninput="filterTable('booksTable', this.value)">
                 <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
             </div>
-
-            <button class="btn btn-success btn-md" onclick="toggleForm('bookForm')"><i
-                    class="bi bi-plus-lg me-1"></i>Add Book
-            </button>
-            <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
+            <a href="createBook.php">
+                <button class="btn btn-success btn-md"><i class="bi bi-plus-lg me-1"></i>Add Book
+                </button>
+            </a>
+            <!-- <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
                     class="bi bi-bag-check me-1"></i>Borrow
-            </button>
+            </button> -->
             <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                         id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>
                     <button class="btn btn-primary btn-md " onclick="toggleForm('updateBookForm')" disabled

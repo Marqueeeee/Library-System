@@ -2,7 +2,29 @@
 function countMembers($conn)
 {
     try {
-        $sql = "SELECT count(MembershipID) as Count FROM tblmembers";
+        $sql = "SELECT count(accountID) as Count FROM accounts where accountType='User'";
+        // Execute the SQL query
+        $result = $conn->query($sql);
+        // Process the result set
+        if ($result->rowCount() > 0) {
+            // Output data of each row
+            while ($row = $result->fetch()) {
+                echo '<div class="stat-num">' . $row['Count'] . '</div>';
+            }
+            unset($result);
+        } else {
+            echo '<div class="stat-num">0</div>';
+        }
+
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+function countFaculty($conn)
+{
+    try {
+        $sql = "SELECT count(accountID) as Count FROM accounts where accountType='Faculty'";
         // Execute the SQL query
         $result = $conn->query($sql);
         // Process the result set
