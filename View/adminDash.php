@@ -89,11 +89,11 @@
                 <span class="icon"> <i class="bi bi-bag"></i></span>
                 <span class="description">Borrowed List</span> <span class="right-align"> > </span>
             </button>
-
+<!-- 
             <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-back"></i></span>
                 <span class="description">To Return List</span> <span class="right-align"> > </span>
-            </button>
+            </button> -->
 
             <button class="nav-link nav-item-lms" data-section="returned" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
@@ -221,7 +221,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="btn stat-card" data-section="borrowed" onclick="showSection(this);">
                             <div>
                                 <?php countBorrowedBooks($conn); ?>
@@ -230,7 +230,7 @@
                             <i class="bi bi-bag-check stat-icon"></i>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="btn stat-card" data-section="toreturn" onclick="showSection(this);">
                             <div>
                                 <?php countBorrowedBooks($conn); ?>
@@ -238,8 +238,8 @@
                             </div>
                             <i class="bi bi-back stat-icon"></i>
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                    </div> -->
+                    <div class="col-md-6">
                         <div class="btn stat-card" data-section="returned" onclick="showSection(this);">
                             <div>
                                 <?php countReturnedBooks($conn); ?>
@@ -268,8 +268,8 @@
 
                     </div>
 
-                    <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
-                            class="bi bi-plus-lg"></i> Add new</button>
+                    <!-- <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
+                            class="bi bi-plus-lg"></i> Add new</button> -->
 
                     <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                     <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
@@ -734,8 +734,8 @@
                             <h5>Returned List</h5>
                         </div>
                     </div>
-                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="returnedDelete"><i
-                        class="bi bi-trash3-fill"></i></button>
+                    <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="returnedDelete"><i
+                        class="bi bi-trash3-fill"></i></button> -->
 
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">

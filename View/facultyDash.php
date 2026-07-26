@@ -83,10 +83,10 @@
                 <span class="description">Borrowed List</span> <span class="right-align"> > </span>
             </button>
 
-            <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this);">
+            <!-- <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-back"></i></span>
                 <span class="description">To Return List</span> <span class="right-align"> > </span>
-            </button>
+            </button> -->
 
             <button class="nav-link nav-item-lms" data-section="returned" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
