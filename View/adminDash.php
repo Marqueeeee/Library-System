@@ -37,16 +37,16 @@
 
 <body>
 
-    
+
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/07/20/14/20260720142656-SUXDOZ17.js" defer></script>
-    
-    
+
+
     <!-- ============== SIDEBAR ============== -->
     <div class="sidebar d-none d-md-block">
         <nav class="nav flex-column">
 
-            <!-- System Abbreviation: LMS (Library Management System) -->   
+            <!-- System Abbreviation: LMS (Library Management System) -->
             <div class="card" id="brand">
                 <h3 class="card-title">LMS</h3>
             </div>
@@ -61,12 +61,12 @@
                     </div>
                     <div class="label-name">Admin</div>
 
-                        <select class="form-select form-select-sm" aria-label="select account" style="background-color: #1a5c2a; color: #fff; text-align:center">
+                    <!-- <select class="form-select form-select-sm" aria-label="select account" style="background-color: #1a5c2a; color: #fff; text-align:center">
                             <option selected>Switch</option>
                             <option value="1">Faculty</option>
                             <option value="2">Student</option>
-                        </select>
-                    
+                        </select> -->
+
                 </div>
             </div>
 
@@ -77,19 +77,24 @@
 
             <button class="nav-link nav-item-lms" data-section="members" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-people"></i></span>
-                <span class="description">Members Section</span> <span class="right-align"> > </span>
+                <span class="description">Members</span> <span class="right-align"> > </span>
+            </button>
+
+            <button class="nav-link nav-item-lms" data-section="faculty" onclick="showSection(this);">
+                <span class="icon"><i class="bi bi-people"></i></span>
+                <span class="description">Faculty</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="books" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-book"></i></i></span>
-                <span class="description">Books Section</span> <span class="right-align"> > </span>
+                <span class="description">Books</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="borrowed" onclick="showSection(this);">
                 <span class="icon"> <i class="bi bi-bag"></i></span>
                 <span class="description">Borrowed List</span> <span class="right-align"> > </span>
             </button>
-<!-- 
+            <!-- 
             <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-back"></i></span>
                 <span class="description">To Return List</span> <span class="right-align"> > </span>
@@ -99,7 +104,7 @@
                 <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
                 <span class="description">Returned List</span> <span class="right-align"> > </span>
             </button>
-            
+
             <!-- <button class="nav-link nav-item-lms" data-section="database" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-database"></i></span>
                 <span class="description">Database Record</span>>
@@ -115,14 +120,16 @@
     </div>
 
     <!-- MOBILE  SIDEBAR VIEW -->
-    <div class="offcanvas offcanvas-start" id="mobileSidebar" tabindex="-1" aria-labelledby="mobileSidebarLabel" 
+    <div class="offcanvas offcanvas-start" id="mobileSidebar" tabindex="-1" aria-labelledby="mobileSidebarLabel"
         style="width: 260px; background-color: #1a5c2a ">
-        
-        
+
+
         <div class="offcanvas-header" style="background-color: #1a5c2a; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 padding: 14px 16px;">
-                <span id="mobileSidebarLabel" style="color: #fff; font-size: 1.1rem; font-weight: 700; letter-spacing: 2px;">LMS</span>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <span id="mobileSidebarLabel"
+                style="color: #fff; font-size: 1.1rem; font-weight: 700; letter-spacing: 2px;">LMS</span>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
 
         <div class="offcanvas-body p-0 d-flex flex-column">
@@ -135,7 +142,8 @@
                     </div>
                     <span class="label-name">Admin</span>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Switch
+                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">Switch
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item">Faculty</a></li>
@@ -146,40 +154,53 @@
             </div>
 
             <nav class="nav flex-column flex-grow-1">
-                <button class="nav-link nav-item-lms active" data-section="dashboard" onclick="showSection(this); closeOffcanvas();">
+                <button class="nav-link nav-item-lms active" data-section="dashboard"
+                    onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="description">Dashboard</span> <span class="right-align"> > </span>
                 </button>
-                
-                <button class="nav-link nav-item-lms" data-section="members" onclick="showSection(this); closeOffcanvas();">
+
+                <button class="nav-link nav-item-lms" data-section="members"
+                    onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-people"></i></span>
-                    <span class="description">Members Section</span> <span class="right-align"> > </span>
-                </button>
-                
-                <button class="nav-link nav-item-lms" data-section="books" onclick="showSection(this); closeOffcanvas();">
-                    <span class="icon"><i class="bi bi-book"></i></span>
-                    <span class="description">Books Section</span> <span class="right-align"> > </span>
+                    <span class="description">Members</span> <span class="right-align"> > </span>
                 </button>
 
-                <button class="nav-link nav-item-lms" data-section="borrowed" onclick="showSection(this); closeOffcanvas();">
+                <button class="nav-link nav-item-lms" data-section="faculty"
+                    onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-people"></i></span>
+                    <span class="description">Faculty</span> <span class="right-align"> > </span>
+                </button>
+
+                <button class="nav-link nav-item-lms" data-section="books"
+                    onclick="showSection(this); closeOffcanvas();">
+                    <span class="icon"><i class="bi bi-book"></i></span>
+                    <span class="description">Books</span> <span class="right-align"> > </span>
+                </button>
+
+                <button class="nav-link nav-item-lms" data-section="borrowed"
+                    onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-bag"></i></span>
                     <span class="description">Borrowed List</span> <span class="right-align"> > </span>
                 </button>
-                
-                <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this); closeOffcanvas();">
+
+                <button class="nav-link nav-item-lms" data-section="toreturn"
+                    onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-back"></i></span>
                     <span class="description">To Return List</span> <span class="right-align"> > </span>
                 </button>
 
-                <button class="nav-link nav-item-lms" data-section="returned" onclick="showSection(this); closeOffcanvas();">
+                <button class="nav-link nav-item-lms" data-section="returned"
+                    onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-arrow-return-left"></i></span>
                     <span class="description"> Returned List</span> <span class="right-align"> > </span>
                 </button>
             </nav>
 
-            
+
             <div class="sidebar-footer pb-4">
-                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal" data-bs-dismiss="offcanvas">Logout
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal"
+                    data-bs-dismiss="offcanvas">Logout
                     <i class="bi bi-box-arrow-left ms-1"></i>
                 </button>
             </div>
@@ -188,8 +209,9 @@
 
     <!-- ============== MAIN CONTENT ============== -->
     <div class="main-content">
-    <div class="top-header d-flex justify-content-baseline align-items-center">
-            <button class="btn-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-label="Toggle navigation">
+        <div class="top-header d-flex justify-content-baseline align-items-center">
+            <button class="btn-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar"
+                aria-controls="mobileSidebar" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
             </button>
             <span>Library Management System</span>
@@ -339,7 +361,7 @@
                                 </div>
                         </form>
                     </div>
-                
+
                     <div class="form-section" id="updateMember">
                         <h6><i class="bi bi-person-plus me-2"></i>Update Member</h6>
 
@@ -348,13 +370,13 @@
                                 <input type="hidden" name="membershipID" id="membershipID">
                                 <div class="col-md-4">
                                     <label class="form-label">First Name:</label>
-                                    <input type="text" class="form-control form-control-md" id='firstName' name="firstName"
-                                        required placeholder=>
+                                    <input type="text" class="form-control form-control-md" id='firstName'
+                                        name="firstName" required placeholder=>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Last Name:</label>
-                                    <input type="text" class="form-control form-control-md" id='lastName' name="lastName"
-                                        required placeholder=>
+                                    <input type="text" class="form-control form-control-md" id='lastName'
+                                        name="lastName" required placeholder=>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Contact:</label>
@@ -377,39 +399,164 @@
                 </div>
             </div>
         </div>
-            <!-- ============== BOOKS SECTION ============== -->
-            <div id="section-books" class="section">
-                <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-book-half"></i>
-                            <h5>Books Section</h5>
-                        </div>
-                    </div>
-                
 
-                    <div class="toolbar">
-                        <input type="text" name="member-search" id="member-search" class="form-control"
-                            placeholder="Quick Search" oninput="filterTable('booksTable', this.value)">
-                        <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
+        <!-- ============== MEMBERS SECTION ============== -->
+        <div id="section-faculty" class="section">
+            <div class="panel">
+                <div class="section-heading">
+                    <div class="icon-box">
+                        <i class="bi bi-people-fill"></i>
+                        <h5>Faculty Section</h5>
                     </div>
+                </div>
+                <div class="toolbar">
+                    <input type="text" class="form-control" name="member-search" id="member-search" class="form-control"
+                        placeholder="Quick Search" oninput="filterTable('membersTable', this.value)">
+                    <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
 
-                    <button class="btn btn-success btn-md" onclick="toggleForm('bookForm')"><i
-                            class="bi bi-plus-lg me-1"></i>Add Book
-                    </button>
-                    <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
-                            class="bi bi-bag-check me-1"></i>Borrow
-                    </button>
-                    <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                </div>
+
+                <!-- <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
+                            class="bi bi-plus-lg"></i> Add new</button> -->
+
+                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
+                        id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
+                    <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
+                        id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
+
+
+                <div class="table-responsive">
+                    <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
+
+                        <?php showFaculty($conn) ?>
+                        <!--
+                            <thead>
+                                <tr>
+                                    <th>Membership ID</th>
+                                    <th>Name (FN, LN)</th>
+                                    <th>Contact Number</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>1002</td>
+                                    <td>Daenerys Targaryen</td>
+                                    <td>09935150614</td>
+                                    <td>10.00</td>
+                                </tr>
+                            </tbody>-->
+
+
+                    </table>
+                </div>
+
+                <div class="form-section" id="memberForm">
+                    <h6><i class="bi bi-person-plus me-2"></i>Add New Member</h6>
+
+                    <form action="../Controller/insertMember.php" method="post">
+                        <div class="row g-3">
+
+
+                            <div class="col-md-4">
+                                <label class="form-label">First Name:</label>
+                                <input type="text" class="form-control form-control-md" name="firstName" required
+                                    placeholder=>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Last Name:</label>
+                                <input type="text" class="form-control form-control-md" name="lastName" required
+                                    placeholder=>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Contact:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control form-control-sm" required name="contact">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-12 d-flex gap-3">
+                                <button class="btn btn-success btn-sm" type="submit"><i
+                                        class="bi bi-person-plus me-1"></i>Add
+                                    member</button>
+                                <button class="btn btn-secondary btn-sm" onclick="toggleForm('memberForm')"><i
+                                        class="bi bi-backspace me-1"></i>Cancel</button>
+                            </div>
+                    </form>
+                </div>
+
+                <div class="form-section" id="updateMember">
+                    <h6><i class="bi bi-person-plus me-2"></i>Update Member</h6>
+
+                    <div class="row g-3">
+                        <form action="../Controller/updateMember.php" method="post">
+                            <input type="hidden" name="membershipID" id="membershipID">
+                            <div class="col-md-4">
+                                <label class="form-label">First Name:</label>
+                                <input type="text" class="form-control form-control-md" id='firstName' name="firstName"
+                                    required placeholder=>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Last Name:</label>
+                                <input type="text" class="form-control form-control-md" id='lastName' name="lastName"
+                                    required placeholder=>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Contact:</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">09</div>
+                                    <input type="number" class="form-control form-control-sm" id='contact' required
+                                        name="contact">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-12 d-flex gap-3">
+                                <button class="btn btn-success btn-sm" type="submit"><i
+                                        class="bi bi-person-plus me-1"></i>Update Member</button>
+                                <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateMember')"><i
+                                        class="bi bi-backspace me-1"></i>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============== BOOKS SECTION ============== -->
+    <div id="section-books" class="section">
+        <div class="panel">
+            <div class="section-heading">
+                <div class="icon-box">
+                    <i class="bi bi-book-half"></i>
+                    <h5>Books Section</h5>
+                </div>
+            </div>
+
+
+            <div class="toolbar">
+                <input type="text" name="member-search" id="member-search" class="form-control"
+                    placeholder="Quick Search" oninput="filterTable('booksTable', this.value)">
+                <button class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
+            </div>
+
+            <button class="btn btn-success btn-md" onclick="toggleForm('bookForm')"><i
+                    class="bi bi-plus-lg me-1"></i>Add Book
+            </button>
+            <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
+                    class="bi bi-bag-check me-1"></i>Borrow
+            </button>
+            <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
                         id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>
                     <button class="btn btn-primary btn-md " onclick="toggleForm('updateBookForm')" disabled
                         id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i></button> -->
-                
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
-                            <?php showBooks($conn) ?>
-                            <!--
+
+            <div class="table-responsive">
+                <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
+                    <?php showBooks($conn) ?>
+                    <!--
                                 <thead>
                                     <tr>
                                         <th>Book ID</th>
@@ -442,129 +589,129 @@
                                         <td><span class="badge-status badge-borrowed">Borrowed</span></td>
                                     </tr>
                                 </tbody> -->
-                        </table>
-                    </div>
-                
+                </table>
+            </div>
 
-                <!-- ================= ADD-BOOK FORM ================= -->
-                <div class="form-section" id="bookForm">
-                    <h6><i class="bi bi-bookmark-plus me-2"></i>Add New Book</h6>
-                    <form action="../Controller/insertBook.php" method="post">
-                        <div class="row g-4">
-                            <div class="col-md-4">
-                                <label class="form-label">Title:</label>
-                                <input type="text" class="form-control form-control-md" name="title" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Author:</label>
-                                <input type="text" class="form-control form-control-md" name="author" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Genre:</label>
-                                <select class="form-select form-select-xs" name="genre" required>
-                                    <option value="Fiction">Fiction</option>
-                                    <option value="Non-Fiction">Non-Fiction</option>
-                                    <option value="Drama">Drama</option>
-                                    <option value="Poetry">Poetry</option>
-                                </select>
-                            </div>
-                            
-                            <div class="col-12 d-flex gap-3">
-                                <button class="btn btn-success btn-sm" type="submit"><i
-                                        class="bi bi-bookmark-plus me-2"></i>Add
-                                    book
-                                </button>
-                                <button class="btn btn-secondary btn-sm" onclick="  toggleForm('bookForm')"><i
-                                        class="bi bi-backspace me-2"></i>Cancel
-                                </button>
-                            </div>
+
+            <!-- ================= ADD-BOOK FORM ================= -->
+            <div class="form-section" id="bookForm">
+                <h6><i class="bi bi-bookmark-plus me-2"></i>Add New Book</h6>
+                <form action="../Controller/insertBook.php" method="post">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <label class="form-label">Title:</label>
+                            <input type="text" class="form-control form-control-md" name="title" required>
                         </div>
-                    </form>
-                </div>
-
-                <!-- ================= BORROW-BOOK FORM ================= -->
-                <div class="form-section" id="borrowForm">
-                    <h6><i class="bi bi-bag-plus me-2"></i>Borrow Book</h6>
-                    <div class="row g-3">
-                        <form action="../Controller/insertBorrowed.php" method="post">
-                            <div class="col-md-4">
-                                <label class="form-label">Book Number:</label>
-                                <input type="text" class="form-control form-control-md" required name="bookID">
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Membership Number:</label>
-                                <input type="text" class="form-control form-control-md" required name="membershipID">
-
-                            </div>
-                            <br>
-                            <div class="col-12 d-flex gap-3">
-                                <button class="btn btn-warning btn-sm" type="submit"><i
-                                        class="bi bi-bag-plus me-2"></i>Borrow
-                                </button>
-                                <button class="btn btn-secondary btn-sm" onclick="toggleForm('borrowForm')"><i
-                                        class="bi bi-backspace me-2"></i>Cancel
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- ================= UPDATE BOOK FORM ================= -->
-                <div class="form-section" id="updateBookForm">
-                    <h6><i class="bi bi-bookmark-plus me-2"></i>Update Book</h6>
-                    <form action="../Controller/updateBook.php" method="post">
-                        <input type="hidden" name="bookID" id="bookID">
-                        <div class="row g-6">
-                            <div class="col-md-6">
-                                <label class="form-label">Title:</label>
-                                <input type="text" class="form-control form-control-md" name="title" required
-                                id="bookTitle">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Author:</label>
-                                <input type="text" class="form-control form-control-md" name="author" required
-                                id="bookAuthor">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Genre:</label>
-                                <select class="form-select form-select-xs" name="genre" required id="bookGenre">
-                                    <option value="Fiction">Fiction</option>
-                                    <option value="Non-Fiction">Non-Fiction</option>
-                                    <option value="Drama">Drama</option>
-                                    <option value="Poetry">Poetry</option>
-                                </select>
-                            </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Author:</label>
+                            <input type="text" class="form-control form-control-md" name="author" required>
                         </div>
-                        
-                        <div class="col-12 d-flex gap-3" style="margin-top: 1.2rem;">
+                        <div class="col-md-4">
+                            <label class="form-label">Genre:</label>
+                            <select class="form-select form-select-xs" name="genre" required>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Non-Fiction">Non-Fiction</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Poetry">Poetry</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 d-flex gap-3">
                             <button class="btn btn-success btn-sm" type="submit"><i
-                                    class="bi bi-bookmark-plus me-2"></i>Update
-                                book</button>
-                            <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateBookForm')"><i
-                                    class="bi bi-backspace me-2"></i>Cancel</button>
+                                    class="bi bi-bookmark-plus me-2"></i>Add
+                                book
+                            </button>
+                            <button class="btn btn-secondary btn-sm" onclick="  toggleForm('bookForm')"><i
+                                    class="bi bi-backspace me-2"></i>Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ================= BORROW-BOOK FORM ================= -->
+            <div class="form-section" id="borrowForm">
+                <h6><i class="bi bi-bag-plus me-2"></i>Borrow Book</h6>
+                <div class="row g-3">
+                    <form action="../Controller/insertBorrowed.php" method="post">
+                        <div class="col-md-4">
+                            <label class="form-label">Book Number:</label>
+                            <input type="text" class="form-control form-control-md" required name="bookID">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Membership Number:</label>
+                            <input type="text" class="form-control form-control-md" required name="membershipID">
+
+                        </div>
+                        <br>
+                        <div class="col-12 d-flex gap-3">
+                            <button class="btn btn-warning btn-sm" type="submit"><i
+                                    class="bi bi-bag-plus me-2"></i>Borrow
+                            </button>
+                            <button class="btn btn-secondary btn-sm" onclick="toggleForm('borrowForm')"><i
+                                    class="bi bi-backspace me-2"></i>Cancel
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
-            </div>
-            
-            <!-- ============== BORROWED SECTION ============== -->
-            <div id="section-borrowed" class="section">
-                <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-bag-plus-fill"></i>
-                            <h5>Borrowed List</h5>
+
+            <!-- ================= UPDATE BOOK FORM ================= -->
+            <div class="form-section" id="updateBookForm">
+                <h6><i class="bi bi-bookmark-plus me-2"></i>Update Book</h6>
+                <form action="../Controller/updateBook.php" method="post">
+                    <input type="hidden" name="bookID" id="bookID">
+                    <div class="row g-6">
+                        <div class="col-md-6">
+                            <label class="form-label">Title:</label>
+                            <input type="text" class="form-control form-control-md" name="title" required
+                                id="bookTitle">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Author:</label>
+                            <input type="text" class="form-control form-control-md" name="author" required
+                                id="bookAuthor">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Genre:</label>
+                            <select class="form-select form-select-xs" name="genre" required id="bookGenre">
+                                <option value="Fiction">Fiction</option>
+                                <option value="Non-Fiction">Non-Fiction</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Poetry">Poetry</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="borrowedTable">
-                            <?php showBorrowed($conn); ?>
-                        </table>
-                    </div>
 
-                <!-- Borrow Receipt -->
-                <!-- <div class="form-section-receipt" id="printBorrowForm">
+                    <div class="col-12 d-flex gap-3" style="margin-top: 1.2rem;">
+                        <button class="btn btn-success btn-sm" type="submit"><i
+                                class="bi bi-bookmark-plus me-2"></i>Update
+                            book</button>
+                        <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateBookForm')"><i
+                                class="bi bi-backspace me-2"></i>Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============== BORROWED SECTION ============== -->
+    <div id="section-borrowed" class="section">
+        <div class="panel">
+            <div class="section-heading">
+                <div class="icon-box">
+                    <i class="bi bi-bag-plus-fill"></i>
+                    <h5>Borrowed List</h5>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered lms-table table-striped table-hover" id="borrowedTable">
+                    <?php showBorrowed($conn); ?>
+                </table>
+            </div>
+
+            <!-- Borrow Receipt -->
+            <!-- <div class="form-section-receipt" id="printBorrowForm">
                         <div class="box">
                             <h3>Library Management System</h3>
                             <h5>Borrow Receipt</h5>
@@ -626,38 +773,38 @@
                             <button class="btn btn-primary" onclick="toggleForm('printBorrowForm')">Done</button>
                         </div> 
                     </div> -->
+        </div>
+    </div>
+
+    <!-- ============== TO RETURN SECTION ============== -->
+    <div id="section-toreturn" class="section">
+        <div class="panel">
+            <div class="section-heading">
+                <div class="icon-box">
+                    <i class="bi bi-back"></i>
+                    <h5>To return List</h5>
                 </div>
             </div>
 
-            <!-- ============== TO RETURN SECTION ============== -->
-            <div id="section-toreturn" class="section">
-                <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-back"></i>
-                            <h5>To return List</h5>
-                        </div>
-                    </div>
-                    
-                    <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn"><i
+            <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn"><i
                     class="bi bi-check-circle me-2"></i>Mark
-                    returned</button>
-                    
-                    <form action="../Controller/insertReturned.php" method="POST" id="toReturn">
-                        <input type="hidden" id="toReturnID" name="returnID">
-                        <input type="hidden" id="memberName" name="name">
-                        <input type="hidden" id="returnedBookName" name="title">
-                        <input type="hidden" id="dateBorrowed" name="borrowDate">
-                        <input type="hidden" id="returnDueDate" name="dueDate">
-                        <input type="hidden" id="overDue" name="overDue">
-                        
-                    </form>
+                returned</button>
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
+            <form action="../Controller/insertReturned.php" method="POST" id="toReturn">
+                <input type="hidden" id="toReturnID" name="returnID">
+                <input type="hidden" id="memberName" name="name">
+                <input type="hidden" id="returnedBookName" name="title">
+                <input type="hidden" id="dateBorrowed" name="borrowDate">
+                <input type="hidden" id="returnDueDate" name="dueDate">
+                <input type="hidden" id="overDue" name="overDue">
 
-                            <?php showToReturn($conn); ?>
-                            <!--<thead>
+            </form>
+
+            <div class="table-responsive">
+                <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
+
+                    <?php showToReturn($conn); ?>
+                    <!--<thead>
                                     <tr>
                                         <th>Borrow ID</th>
                                         <th>Member Name</th>
@@ -690,11 +837,11 @@
                                     </tr>
                 
                                 </tbody> -->
-                        </table>
-                    </div>
+                </table>
+            </div>
 
-                    <!-- Return Receipt -->
-                <!-- <div class="form-section-receipt" id="printReturnForm">
+            <!-- Return Receipt -->
+            <!-- <div class="form-section-receipt" id="printReturnForm">
                     <div class="box">
                         <h3>Library Management System</h3>
                         <h5>Return Receipt</h5>
@@ -721,32 +868,32 @@
                         <button class="btn btn-primary">Done</button>
                     </div> 
                 </div> -->
+        </div>
+    </div>
+
+
+    <!-- ============== RETURNED SECTION ============== -->
+    <div id="section-returned" class="section">
+        <div class="panel">
+            <div class="section-heading">
+                <div class="icon-box">
+                    <i class="bi bi-arrow-return-left"></i>
+                    <h5>Returned List</h5>
                 </div>
             </div>
-
-            
-            <!-- ============== RETURNED SECTION ============== -->
-            <div id="section-returned" class="section">
-                <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-arrow-return-left"></i>
-                            <h5>Returned List</h5>
-                        </div>
-                    </div>
-                    <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="returnedDelete"><i
+            <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="returnedDelete"><i
                         class="bi bi-trash3-fill"></i></button> -->
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
-                            <?php showReturned($conn) ?>
-                        </table>
-                    </div>
-                </div>
+            <div class="table-responsive">
+                <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
+                    <?php showReturned($conn) ?>
+                </table>
             </div>
-        
-        <!-- ============== DATABASE SECTION ============== -->
-        <!-- <div id="section-database" class="section">
+        </div>
+    </div>
+
+    <!-- ============== DATABASE SECTION ============== -->
+    <!-- <div id="section-database" class="section">
                 <div class="panel">
                     <div class="section-heading">
                         <div class="icon-box">
@@ -764,55 +911,55 @@
                 </div>
             </div>  -->
 
-        <!-- ============== EXIT SYSTEM ============== -->
-        <div class="modal fade" id="exitModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
-                        <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
-                        <h3 style="color: white;">Exit System</h3>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
+    <!-- ============== EXIT SYSTEM ============== -->
+    <div class="modal fade" id="exitModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
+                    <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
+                    <h3 style="color: white;">Exit System</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Do you really want to exit the system?</div>
+                <form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-primary" formaction="../index.php">Yes</button>
                     </div>
-                    <div class="modal-body">Do you really want to exit the system?</div>
-                    <form>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                            <button type="submit" class="btn btn-primary" formaction="../index.php">Yes</button>
-                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============== DELETE CONFIRMATION ============== -->
+    <div class="modal fade" id="delModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
+                    <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
+                    <h3 style="color: white;">Delete</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="deleteConfirmation">Are you sure you want to delete it?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <form action="../Controller/deleteEntry.php" method="post">
+                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <input type="hidden" name="deleteID" id="deleteID">
+                        <input type="hidden" name="tableID" id="tableID">
                     </form>
                 </div>
             </div>
         </div>
+    </div>
+
+    <script src="script.js"></script>
 
 
-        <!-- ============== DELETE CONFIRMATION ============== -->
-        <div class="modal fade" id="delModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
-                        <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
-                        <h3 style="color: white;">Delete</h3>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body" id="deleteConfirmation">Are you sure you want to delete it?</div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                        <form action="../Controller/deleteEntry.php" method="post">
-                            <button type="submit" class="btn btn-primary">Yes</button>
-                            <input type="hidden" name="deleteID" id="deleteID">
-                            <input type="hidden" name="tableID" id="tableID">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-            <script src="script.js"></script>
-
-            
-        
-    
 
 
 

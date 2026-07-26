@@ -98,6 +98,51 @@ function showMembers($conn)
     }
 }
 
+function showFaculty($conn)
+{
+    // $actionButtons = '<button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square" id="btnEdit"></i></button>
+    //                   <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>';
+    try {
+        $sql = "SELECT accountID, firstName, lastName, email FROM accounts where accountType='Faculty'";
+        // Execute the SQL query
+        $result = $conn->query($sql);
+        // Process the result set
+        if ($result->rowCount() > 0) {
+            echo 
+            '<thead>
+                <tr>
+                    <th>Account ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>';
+            // Output data of each row
+            while ($row = $result->fetch()) {
+                echo "<tr>";
+                echo "<td>" . $row['accountID'] . "</td>";
+                echo "<td>" . $row['firstName'] . "</td>";
+                echo "<td>" . $row['lastName'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . "<form action='' > 
+                                    <button>Update</button>
+                                    <button>Delete</button> 
+                                </form>" . "</td>";
+                echo "</tr>";
+            }
+            echo "</tbody>"; 
+            unset($result);
+        } else {
+            echo "No records found.";
+        }
+
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
 function showBooks($conn)
 {
     try {
