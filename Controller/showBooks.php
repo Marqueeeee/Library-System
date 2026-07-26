@@ -40,33 +40,14 @@ function exploreBooks($conn)
                 echo '<p class="card-text">' . $author . '</p>';
 
                 
-                echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
-                echo "<input type='hidden' name='accountID' value='" . htmlspecialchars($row['accountID']) . "'>";
-                echo "<input type='hidden' name='firstName' value='" . htmlspecialchars($row['firstName']) . "'>";
-                echo "<input type='hidden' name='lastName' value='" . htmlspecialchars($row['lastName']) . "'>";
-                echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
+                echo "<form action='../Controller/insertBorrowed.php' method='POST' style='display:inline;'>";
+                echo "<input type='hidden' name='bookID' value='" . htmlspecialchars($bookID) . "'>";
+                echo "<input type='hidden' name='title' value='" . htmlspecialchars($title) . "'>";
+                echo "<input type='hidden' name='membershipID' value='" . htmlspecialchars($_SESSION['user_id']) . "'>";
                 echo '<button class="btn btn-success btn-sm borrow-btn" type="submit">Borrow</button>';
                 echo "</form>";
 
                 echo '</div> </div> </div>';
-                // echo "<tr>";
-                // echo "<td>" . $row['accountID'] . "</td>";
-                // echo "<td>" . $row['firstName'] . "</td>";
-                // echo "<td>" . $row['lastName'] . "</td>";
-                // echo "<td>" . $row['email'] . "</td>";
-                // echo "<td>";
-
-                // echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
-                // echo "<input type='hidden' name='accountID' value='" . htmlspecialchars($row['accountID']) . "'>";
-                // echo "<input type='hidden' name='firstName' value='" . htmlspecialchars($row['firstName']) . "'>";
-                // echo "<input type='hidden' name='lastName' value='" . htmlspecialchars($row['lastName']) . "'>";
-                // echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
-                // echo "<button type='submit'>Update</button>";
-                // echo "</form>";
-
-                // echo "<button onclick='confirmDelete(" . $row['accountID'] . ",1 )'>Delete</button>";
-                // echo "</td>";
-                // echo "</tr>";
             }
             echo "</div>";
             unset($result);

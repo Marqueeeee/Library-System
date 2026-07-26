@@ -24,9 +24,17 @@
         } elseif ($_GET['msg'] == 'updated') {
             echo '<script> alert("Entry successfully updated!"); </script>';
         } elseif ($_GET['msg'] == 'deleted') {
-            echo '<script> alert("Entry successfully deleted!"); </script>';
+            echo '<script> alert("Entry successfully deleted"); </script>';
         } elseif ($_GET['msg'] == 'error') {
-            echo '<script> alert("An unknown error has occurred!"); </script>';
+            echo '<script> alert("An unknown error has occurred"); </script>';
+        } elseif ($_GET['msg'] == 'borrowFail1') {
+            echo '<script> alert("The book is already borrowed"); </script>';
+        } elseif ($_GET['msg'] == 'borrowFail2') {
+            echo '<script> alert("You can only borrow up to 3 books"); </script>';
+        } elseif ($_GET['msg'] == 'borrowSuccess') {
+            echo '<script> alert("Book successfully borrowed!"); </script>';
+        } elseif ($_GET['msg'] == 'borrowError') {
+            echo '<script> alert("An unknown error has occurred while borrowing the book!"); </script>';
         }
     }
 
