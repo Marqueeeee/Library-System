@@ -16,6 +16,7 @@
     require_once "../Config/connDB.php";
     require_once "../Controller/showTables.php";
     require_once "../Controller/dashboardStats.php";
+    require_once "../Controller/showBooks.php";
 
     if (isset($_GET['msg'])) {
         if ($_GET['msg'] == 'added') {
@@ -39,7 +40,7 @@
 
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/07/20/14/20260720142656-SUXDOZ17.js" defer></script>
-    
+
     <!-- ============== SIDEBAR ============== -->
     <div class="sidebar d-none d-md-block">
         <nav class="nav flex-column">
@@ -85,7 +86,7 @@
 
             <button class="nav-link nav-item-lms" data-section="penalty" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-pen"></i></span>
-                <span class="description">Penalty History</span> <span class="right-align"> > </span>
+                <span class="description">Return History</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="faqs" onclick="showSection(this);">
@@ -160,7 +161,7 @@
                 <button class="nav-link nav-item-lms" data-section="penalty"
                     onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-pen"></i></span>
-                    <span class="description">Penalty History</span> <span class="right-align"> > </span>
+                    <span class="description">Return History</span> <span class="right-align"> > </span>
                 </button>
 
                 <button class="nav-link nav-item-lms" data-section="faqs"
@@ -246,13 +247,13 @@
                             <h5>Explore Books</h5>
                         </div>
                     </div>
-                    <div class="toolbar">
+                    <!-- <div class="toolbar">
                         <input type="text" class="form-control" name="member-search" id="member-search"
                             class="form-control" placeholder="Quick Search"
                             oninput="filterTable('membersTable', this.value)">
-                    </div>
+                    </div> -->
 
-                    <div class="pref-genre">
+                    <!-- <div class="pref-genre">
                         <div class="pref-row">
                             <div class="pref-label">GENRES:</div>
                             <button class="btn btn-secondary btn-md genre">Non-Fiction</button>
@@ -262,7 +263,6 @@
                         </div>
                     </div>
 
-                    <!-- Pagination -->
                     <nav aria-label="...">
                         <ul class="pagination pagination-md mt-3 justify-content-start">
                             <li class="page-item active">
@@ -273,11 +273,11 @@
                             <li class="page-item"><a class="page-link" href="#page-4">4</a></li>
                             <li class="page-item"><a class="page-link" href="#page-5">5</a></li>
                         </ul>
-                    </nav>
+                    </nav> -->
 
                     <!-- EXPLORE BOOKS -->
 
-                    <div class="row row-cols-1 row-cols-sm-6 g-3 flex-wrap">
+                    <!-- <div class="row row-cols-1 row-cols-sm-6 g-3 flex-wrap">
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
@@ -728,12 +728,12 @@
                         </div>
 
 
-                    </div>
+                    </div> -->
 
-                    <div class="table-responsive">
+                    <!-- <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
 
-                            <!--
+                            
                             <thead>
                                 <tr>
                                     <th>Membership ID</th>
@@ -750,11 +750,11 @@
                                     <td>09935150614</td>
                                     <td>10.00</td>
                                 </tr>
-                            </tbody>-->
+                            </tbody>
                         </table>
-                    </div>
+                    </div> -->
 
-
+                    <?php exploreBooks($conn);?>
                 </div>
 
 
@@ -789,7 +789,7 @@
                                         id="non-fiction">Non-Fiction</span>
                                     <h5 class="card-title">Atomic Habits</h5>
                                     <p class="card-text">James Clear</p>
-                                    <button class="btn btn-success btn-sm borrow-btn">Done</button>
+                                    <button class="btn btn-success btn-sm borrow-btn">Return</button>
                                 </div>
                             </div>
                         </div>
@@ -802,7 +802,7 @@
                                     <span class="badge text-bg-dark" class="fiction" id="fiction">Fiction</span>
                                     <h5 class="card-title">A Song of Ice and Fire</h5>
                                     <p class="card-text">George R.R. Martin</p>
-                                    <button class="btn btn-success btn-sm borrow-btn">Done</button>
+                                    <button class="btn btn-success btn-sm borrow-btn">Return</button>
                                 </div>
                             </div>
                         </div>
@@ -815,7 +815,7 @@
                                     <span class="badge text-bg-dark" class="fiction" id="fiction">Fiction</span>
                                     <h5 class="card-title">Pride and Prejudice</h5>
                                     <p class="card-text">Jane Austen</p>
-                                    <button class="btn btn-success btn-sm">Done</button>
+                                    <button class="btn btn-success btn-sm">Return</button>
                                 </div>
                             </div>
                         </div>
@@ -828,7 +828,7 @@
                                     <span class="badge text-bg-dark" class="fiction" id="fiction">Fiction</span>
                                     <h5 class="card-title">To Kill a Mockingbird</h5>
                                     <p class="card-text">Harper Lee</p>
-                                    <button class="btn btn-success btn-sm">Done</button>
+                                    <button class="btn btn-success btn-sm">Return</button>
                                 </div>
                             </div>
                         </div>
@@ -838,11 +838,11 @@
 
                     </div>
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
+                    <!-- <div class="table-responsive">
+                        <table class="table table-bordered lms-table table-striped table-hover" id="booksTable"> -->
 
 
-                            <!--
+                    <!--
                                 <thead>
                                     <tr>
                                         <th>Book ID</th>
@@ -876,8 +876,8 @@
                                     </tr>
                                 </tbody> -->
 
-                        </table>
-                    </div>
+                    <!-- </table>
+                    </div> -->
 
                 </div>
             </div>
@@ -891,13 +891,13 @@
                             <h5>Read Books</h5>
                         </div>
                     </div>
-                    <div class="toolbar">
+                    <!-- <div class="toolbar">
                         <input type="text" class="form-control" name="member-search" id="member-search"
                             class="form-control" placeholder="Quick Search"
                             oninput="filterTable('membersTable', this.value)">
-                    </div>
+                    </div> -->
 
-                    <div class="pref-genre">
+                    <!-- <div class="pref-genre">
                         <div class="pref-row">
                             <div class="pref-label">GENRES:</div>
                             <button class="btn btn-secondary btn-md genre">Non-Fiction</button>
@@ -905,7 +905,7 @@
                             <button class="btn btn-secondary btn-md genre">Poetry</button>
                             <button class="btn btn-secondary btn-md genre">Drama</button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row row-cols-1 row-cols-sm-6 g-3 flex-wrap">
                         <div class="col">
@@ -983,7 +983,7 @@
                     <div class="section-heading">
                         <div class="icon-box">
                             <i class="bi bi-pen-fill"></i>
-                            <h5>Penalty History</h5>
+                            <h5>Return History</h5>
                         </div>
                     </div>
 
