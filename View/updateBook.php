@@ -29,27 +29,29 @@
             <div class="icon-box">
                 <h4>Update a Book</h4>
             </div>
-            <div class="form-floating">
+
+
+            <div class="input-group mb-3">
                 <!-- bookID passed but not auto-filled -->
+                <div class="input-group-text p-3 opacity-75">Title: </div>
                 <input type="hidden" name="bookID" value="<?= htmlspecialchars($bookID) ?>">
                 <input type="text" name="title" id="title" class="form-control" placeholder="Title" required
                     value="<?= htmlspecialchars($title) ?>">
-                <label for="title" class="form-label">Title:</label>
             </div>
-            <div class="form-floating">
+            <div class="input-group mb-3">
+                <div class="input-group-text p-3 opacity-75">Author: </div>
                 <input type="text" name="author" id="author" class="form-control" placeholder="Author" required
                     value="<?= htmlspecialchars($author) ?>">
-                <label for="author" class="form-label">Author:</label>
             </div>
-            <div class="form-floating">
+            <div class="input-group mb-3">
+                <div class="input-group-text p-3 opacity-75">Genre: </div>
                 <input type="text" name="genre" id="genre" class="form-control" placeholder="Genre" required
                     value="<?= htmlspecialchars($genre) ?>">
-                <label for="genre" class="form-label">Genre:</label>
             </div>
-            <div class="form-floating">
+            <div class="input-group mb-3">
+                <div class="input-group-text p-3 opacity-75">Quantity: </div>
                 <input type="number" name="quantity" id="quantity" class="form-control" placeholder="Quantity" min="1"
                     required value="<?= htmlspecialchars($quantity) ?>">
-                <label for="quantity" class="form-label">Quantity:</label>
                 <button class="btn btn-primary btn-md" type="submit">Update book</button>
             </div>
 
