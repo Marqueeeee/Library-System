@@ -854,8 +854,6 @@
                         </div>
 
 
-
-
                     </div> -->
 
                     <!-- <div class="table-responsive">
@@ -1284,8 +1282,6 @@
 
 
 
-
-
                 </div>
             </div>
 
@@ -1310,9 +1306,6 @@
 
             </div>
         </div> -->
-
-
-
 
 
         <!-- ============== EXIT SYSTEM ============== -->
@@ -1361,11 +1354,7 @@
 
         <script src="script.js"></script>
 
-
     </div>
-
-
-
 
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/07/20/14/20260720142656-SUXDOZ17.js" defer></script>

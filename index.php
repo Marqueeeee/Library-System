@@ -52,8 +52,25 @@
 
                             </div>
                         <form>
-                            <div class="modal-footer"">
+                            <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">OK</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 style="color: #1a5c2a;">Login</h5>
+                        </div>
+                        <div class="modal-body" style="text-align: center; background-color:  white; color: #1a5c2a;" id="messageSuccess">
+
+                            </div>
+                        <form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
                             </div>
                         </form>
                     </div>
@@ -76,7 +93,7 @@
             <?php if (isset($_GET['msg'])): if ($_GET['msg'] && $_GET['msg'] == "success"): ?>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                        document.getElementById("message").innerHTML = "Account successfully created!";
+                        document.getElementById("messageSuccess").innerHTML = "Account successfully created!";
                         const el = document.getElementById('modal');
                         
                         if (!el) return;
