@@ -6,12 +6,13 @@ require '../View/header.php';
 ?>
 
 </html>
+
 <style>
     tbody td form:nth-last-of-type(1) {
         margin: auto;
     }
 
-    tbody td button:nth-child(1) {
+    tbody td form button {
         background-color: #0B5ED7;
         color: white;
         border: 0.5px solid #fff;
@@ -34,6 +35,8 @@ require '../View/header.php';
         margin: 0 0 0 1.2rem;
 
     }
+
+    
 
     tbody td button:nth-child(1):hover {
         background-color: #fff;
@@ -381,7 +384,8 @@ require '../View/header.php';
                     echo "<td> ₱ " . $row['Fine'] . "</td>";
                     echo "<td>";
                     // echo "<button onclick='confirmDelete(".$row['ReturnID'].",4 )'>Delete</button>";
-                    echo "<button onclick='confirmDelete(".$row['ReturnID'].", 4)' style=' opacity: 1; font-size: 14px'>Delete</button>";
+                    echo "<button> </button>";
+                    echo "<button onclick='confirmDelete(".$row['ReturnID'].", 4)' style=' opacity: 1; font-size: 14px  '>Delete</button>";
                     echo "</td>";
                     echo "</tr>";
 
