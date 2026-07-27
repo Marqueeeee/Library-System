@@ -14,17 +14,6 @@
     require_once "../Controller/showTables.php";
     require_once "../Controller/dashboardStats.php";
 
-    if (isset($_GET['msg'])) {
-        if ($_GET['msg'] == 'added') {
-            echo '<script> alert("Entry successfully added!"); </script>';
-        } elseif ($_GET['msg'] == 'updated') {
-            echo '<script> alert("Entry successfully updated!"); </script>';
-        } elseif ($_GET['msg'] == 'deleted') {
-            echo '<script> alert("Entry successfully deleted!"); </script>';
-        } elseif ($_GET['msg'] == 'error') {
-            echo '<script> alert("An unknown error has occurred!"); </script>';
-        }
-    }
 
     $conn = $connDB->getConn();
     session_start();
