@@ -102,6 +102,19 @@
                     });
                 </script>
             <?php endif; endif;?> 
+
+            <?php if (isset($_GET['msg'])): if ($_GET['msg'] && $_GET['msg'] == "denied"): ?>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        document.getElementById("message").innerHTML = "Access denied";
+                        const el = document.getElementById('modal');
+                        
+                        if (!el) return;
+                        const modal = new bootstrap.Modal(el);
+                        modal.show();
+                    });
+                </script>
+            <?php endif; endif;?> 
         </form>
     </div>
 

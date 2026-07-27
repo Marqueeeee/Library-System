@@ -20,12 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 switch ($row['accountType']) {
                     case "User":
                         header("Location: ../View/dashboardStud.php");
+                        $_SESSION['accountType'] = $row['accountType'];
                         break;
                     case "Faculty":
                         header("Location: ../View/facultyDash.php");
+                        $_SESSION['accountType'] = $row['accountType'];
                         break;
                     case "Admin":
                         header("Location: ../View/adminDash.php");
+                        $_SESSION['accountType'] = $row['accountType'];
                         break;
                 }
 

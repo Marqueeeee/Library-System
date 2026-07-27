@@ -42,11 +42,10 @@
         }
     }
 
-    session_start();
     $currentUserId = $_SESSION['user_id'] ?? null;
-
-    if ($currentUserId === null) {
-        header("Location: ../index.php");
+    $currentAccount = $_SESSION['accountType'];
+    if ($currentUserId === null || $currentAccount != "User") {
+        header("Location: ../index.php?msg=denied");
         exit();
     }
 
