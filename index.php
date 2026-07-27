@@ -63,7 +63,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 style="color: #1a5c2a;">Login</h5>
+                        <h5>Login</h5>
                         </div>
                         <div class="modal-body" style="text-align: center; background-color: white; color: #1a5c2a;" id="messageSuccess">
 
