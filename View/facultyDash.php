@@ -43,9 +43,6 @@
 
 <body>
 
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2026/07/20/14/20260720142656-SUXDOZ17.js" defer></script>
-
 
     <!-- ============== SIDEBAR ============== -->
     <div class="sidebar d-none d-md-block">
