@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $conn = $connDB->getConn();
 
     try {
-        $sql = "SELECT accountID, accountType, email, password from accounts where email = " . "'$email'";
+        $sql = "SELECT accountID, accountType, email, firstName, password from accounts where email = " . "'$email'";
         $result = $conn->query($sql);
         //check if email matches
         if ($result->rowCount() > 0) {
@@ -17,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 //check the account type (user, admin, or faculty)
                 session_start();
                 $_SESSION['user_id'] = $row['accountID'];
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['name'] = $row['firstName'];
                 switch ($row['accountType']) {
                     case "User":
                         header("Location: ../View/dashboardStud.php");

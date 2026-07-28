@@ -36,7 +36,7 @@ require '../View/header.php';
 
     }
 
-    
+
 
     tbody td button:nth-child(1):hover {
         background-color: #fff;
@@ -60,18 +60,18 @@ require '../View/header.php';
 
 <body>
 
-<script>
-  function confirmDelete(entryID, tableID) {
-    const ok = confirm("Do you want to delete entry ID:" + entryID + "?");
-    if (ok) {
-      window.location.href = `../Controller/deleteEntry.php?entryID=${encodeURIComponent(entryID)}&tableID=${encodeURIComponent(tableID)}`;
-    }
-  }
-</script>
+    <script>
+        function confirmDelete(entryID, tableID) {
+            const ok = confirm("Do you want to delete entry ID:" + entryID + "?");
+            if (ok) {
+                window.location.href = `../Controller/deleteEntry.php?entryID=${encodeURIComponent(entryID)}&tableID=${encodeURIComponent(tableID)}`;
+            }
+        }
+    </script>
 
     <?php
 
-    function showMembers($conn)
+    function showMembers($conn, $type)
     {
         // $actionButtons = '<button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square" id="btnEdit"></i></button>
         //                   <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>';
@@ -108,8 +108,9 @@ require '../View/header.php';
                     echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
                     echo "<button type='submit'>Update</button>";
                     echo "</form>";
-                    
-                    echo "<button onclick='confirmDelete(".$row['accountID'].",1 )'>Delete</button>";
+                    if ($type == "Admin") {
+                        echo "<button onclick='confirmDelete(" . $row['accountID'] . ",1 )'>Delete</button>";
+                    }
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -161,8 +162,7 @@ require '../View/header.php';
                     echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
                     echo "<button type='submit'>Update</button>";
                     echo "</form>";
-                    
-                    echo "<button onclick='confirmDelete(".$row['accountID'].",1 )'>Delete</button>";
+                    echo "<button onclick='confirmDelete(" . $row['accountID'] . ",1 )'>Delete</button>";
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -177,7 +177,7 @@ require '../View/header.php';
         }
     }
 
-    function showBooks($conn)
+    function showBooks($conn, $type)
     {
         try {
             $sql = "SELECT BookID, Title, Author, Genre, Quantity, Status FROM tblbooks";
@@ -226,8 +226,9 @@ require '../View/header.php';
                     echo "<input type='hidden' name='quantity' value='" . htmlspecialchars($row['Quantity']) . "'>";
                     echo "<button type='submit'>Update</button>";
                     echo "</form>";
-                    
-                    echo "<button onclick='confirmDelete(".$row['BookID'].",2 )'>Delete</button>";
+                    if ($type == "Admin") {
+                        echo "<button onclick='confirmDelete(" . $row['BookID'] . ",2 )'>Delete</button>";
+                    }
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -284,7 +285,7 @@ require '../View/header.php';
                     //         echo '<td><span class="badge-status badge-borrowed">Borrowed</span></td>';
                     //         break;
                     // }
-
+    
                     echo "</tr>";
                 }
                 echo "</tbody>";
@@ -352,7 +353,7 @@ require '../View/header.php';
         }
     }
 
-    function showReturned($conn)
+    function showReturned($conn, $type)
     {
         try {
             $sql = "SELECT ReturnID, Member, BookTitle, BorrowedDate, ReturnedDate, Fine FROM tblreturnedlist";
@@ -385,7 +386,9 @@ require '../View/header.php';
                     echo "<td>";
                     // echo "<button onclick='confirmDelete(".$row['ReturnID'].",4 )'>Delete</button>";
                     echo "<button> </button>";
-                    echo "<button onclick='confirmDelete(".$row['ReturnID'].", 4)' style=' opacity: 1; font-size: 14px  '>Delete</button>";
+                    if ($type == "Admin") {
+                        echo "<button onclick='confirmDelete(" . $row['ReturnID'] . ", 4)' style=' opacity: 1; font-size: 14px  '>Delete</button>";
+                    }
                     echo "</td>";
                     echo "</tr>";
 

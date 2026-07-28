@@ -42,6 +42,7 @@
         }
     }
 
+    session_start();
     $currentUserId = $_SESSION['user_id'] ?? null;
     $currentAccount = $_SESSION['accountType'];
     if ($currentUserId === null || $currentAccount != "User") {
@@ -49,8 +50,27 @@
         exit();
     }
 
+
+
+
     $conn = $connDB->getConn();
     ?>
+    
+    <?php if (isset($_SESSION['name'])): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById("currentName").innerHTML = <?= json_encode($_SESSION['name']) ?>;
+            });
+        </script>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['email'])): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById("currentEmail").innerHTML = <?= json_encode($_SESSION['email']) ?>;
+            });
+        </script>
+    <?php endif; ?>
 
 
 </head>
@@ -77,8 +97,8 @@
                         <span class="status-dot"></span>
                         <span class="label-active">active</span>
                     </div>
-                    <div class="label-name">Student</div>
-                    <div class="stud-email">basibasfernando@gmail.com </div>
+                    <div class="label-name" id="currentName"></div>
+                    <div class="stud-email" id="currentEmail"></div>
                 </div>
             </div>
 
@@ -147,8 +167,8 @@
                         <span class="status-dot"></span>
                         <span class="label-active">active</span>
                     </div>
-                    <span class="label-name">Student</span>
-                    <div class="stud-email">basibasfernando@gmail.com</div>
+                    <span class="label-name" id="currentName"></span>
+                    <div class="stud-email" id="currentEmail"></div>
                 </div>
             </div>
 
@@ -244,7 +264,7 @@
                 </div>
 
                 <div class="row">
-                    
+
                     <div class="col-md-6">
                         <div class="btn stat-card" data-section="penalty" onclick="showSection(this);">
                             <div>
@@ -1004,10 +1024,10 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
-                            <?php showReturnedBooks($conn);?>
+                            <?php showReturnedBooks($conn); ?>
                             <!-- <thead>
                                 <tr>
                                     <th>Book ID</th>

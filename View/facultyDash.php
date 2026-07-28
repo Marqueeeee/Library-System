@@ -30,7 +30,8 @@
     }
 
     $conn = $connDB->getConn();
-    
+
+    session_start();
     $currentUserId = $_SESSION['user_id'] ?? null;
     $currentAccount = $_SESSION['accountType'];
     if ($currentUserId === null || $currentAccount != "Faculty") {
@@ -39,6 +40,21 @@
     }
     ?>
 
+    <?php if (isset($_SESSION['name'])): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById("currentName").innerHTML = <?= json_encode($_SESSION['name']) ?>;
+            });
+        </script>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['email'])): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById("currentEmail").innerHTML = <?= json_encode($_SESSION['email']) ?>;
+            });
+        </script>
+    <?php endif; ?>
 </head>
 
 <body>
@@ -61,8 +77,8 @@
                         <span class="status-dot"></span>
                         <span class="label-active">active</span>
                     </div>
-                    <div class="label-name">Faculty</div>
-                    <div class="stud-email">faculty1@gmail.com</div>
+                    <div class="label-name" id="currentName"></div>
+                    <div class="stud-email" id="currentEmail"></div>
                 </div>
             </div>
 
@@ -280,7 +296,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
 
-                            <?php showMembers($conn) ?>
+                            <?php showMembers($conn, "Faculty") ?>
                             <!--
                             <thead>
                                 <tr>
@@ -409,7 +425,7 @@
                     <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
 
 
-                        <?php showBooks($conn) ?>
+                        <?php showBooks($conn, "Faculty") ?>
                         <!--
                                 <thead>
                                     <tr>
@@ -886,7 +902,7 @@
 
                 <div class="table-responsive">
                     <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
-                        <?php showReturned($conn) ?>
+                        <?php showReturned($conn, "Faculty") ?>
                     </table>
                 </div>
             </div>

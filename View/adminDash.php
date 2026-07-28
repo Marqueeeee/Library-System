@@ -32,6 +32,7 @@
 
     $conn = $connDB->getConn();
 
+    session_start();
     $currentUserId = $_SESSION['user_id'] ?? null;
     $currentAccount = $_SESSION['accountType'];
     if ($currentUserId === null || $currentAccount != "Admin") {
@@ -40,6 +41,22 @@
     }
     ?>
 
+
+    <?php if (isset($_SESSION['name'])): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById("currentName").innerHTML = <?= json_encode($_SESSION['name']) ?>;
+            });
+        </script>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['email'])): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById("currentEmail").innerHTML = <?= json_encode($_SESSION['email']) ?>;
+            });
+        </script>
+    <?php endif; ?>
 </head>
 
 <body>
@@ -63,7 +80,7 @@
                         <span class="status-dot"></span>
                         <span class="label-active">active</span>
                     </div>
-                    <div class="label-name">Admin</div>
+                    <div class="label-name" id="currentName"></div>
 
                     <!-- <select class="form-select form-select-sm" aria-label="select account" style="background-color: #1a5c2a; color: #fff; text-align:center">
                             <option selected>Switch</option>
@@ -144,11 +161,11 @@
                         <span class="status-dot"></span>
                         <span class="label-active">active</span>
                     </div>
-                    <span class="label-name">Admin</span>
+                    <span class="label-name" id="currentName"></span>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                        <!-- <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown"
                             aria-expanded="false">Switch
-                        </button>
+                        </button> -->
                         <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item">Faculty</a></li>
                             <li><a href="#" class="dropdown-item">Student</a></li>
@@ -316,7 +333,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
 
-                            <?php showMembers($conn) ?>
+                            <?php showMembers($conn, "Admin") ?>
                             <!--
                             <thead>
                                 <tr>
@@ -569,7 +586,7 @@
 
             <div class="table-responsive">
                 <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
-                    <?php showBooks($conn) ?>
+                    <?php showBooks($conn, "Admin") ?>
                     <!--
                                 <thead>
                                     <tr>
@@ -900,7 +917,7 @@
 
             <div class="table-responsive">
                 <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
-                    <?php showReturned($conn) ?>
+                    <?php showReturned($conn, "Admin") ?>
                 </table>
             </div>
         </div>

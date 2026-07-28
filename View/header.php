@@ -16,11 +16,7 @@
 
 
     $conn = $connDB->getConn();
-    session_start();
-    $currentUserId = $_SESSION['user_id'] ?? null;
-
-    if ($currentUserId === null) {
-        header("Location: ../index.php");
-        exit();
-    }
+    
+    
     ?>
+    
