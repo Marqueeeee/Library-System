@@ -804,7 +804,7 @@
                 <div class="panel">
                     <div class="section-heading">
                         <div class="icon-box">
-                            <i class="bi bi-bag-plus-fill"></i>
+                            <i class="bi bi-bag-plus"></i>
                             <h5>Borrowing Books</h5>
                         </div>
                     </div>
@@ -1014,12 +1014,12 @@
                 </div>
             </div>
 
-            <!-- ============== PENALTY SECTION ============== -->
+            <!-- ============== RETURN SECTION ============== -->
             <div id="section-penalty" class="section">
                 <div class="panel">
                     <div class="section-heading">
                         <div class="icon-box">
-                            <i class="bi bi-pen-fill"></i>
+                            <i class="bi bi-pen"></i>
                             <h5>Return History</h5>
                         </div>
                     </div>
@@ -1095,8 +1095,8 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>Project SIA - One.</strong> Library Management System is an web
-                                        application designed by the team SIA - One.
+                                        <strong>Emualate library operations.</strong> Library Management System is a web
+                                        application designed to emulate library operations such as book borrowing, returning, and tracking of borrowed books.
                                     </div>
                                 </div>
                             </div>
