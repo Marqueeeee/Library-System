@@ -1095,8 +1095,8 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>Emualate library operations.</strong> Library Management System is a web
-                                        application designed to emulate library operations such as book borrowing, returning, and tracking of borrowed books.
+                                        <strong>Emulate Library Operations. </strong> Library Management System is a web
+                                        application designed to emulate library operations such as book borrowing, returning and tracking of borrowed books.
                                     </div>
                                 </div>
                             </div>
