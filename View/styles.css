@@ -85,8 +85,8 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 2.3rem;
-    color: black;
 
+    
 }
 
 .sidebar-user .status-dot {
@@ -165,6 +165,21 @@ body {
 .offcanvas .nav .right-align{
     position: absolute;
     left: 210px;
+}
+
+
+.sidebar .sidebar-section-category {
+    font-size: 14px;
+    font-weight: 500;
+    color: #f8e7c9;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+   
+    Opacity: 0.7;
+    border-bottom: 1px solid #f8e7c9;
+    
 }
 
 .btn-danger {
@@ -290,18 +305,17 @@ body {
     color: rgba(0, 0, 0, 0.822);
 }
 
-.toolbar {
+.toolbar, .input-group {
     display: flex;
     align-items: center;
-    gap: 8px;
     flex-wrap: wrap;
     justify-content: flex-end;
-    margin-right: 1.5rem;
 
 }
 
+
 .toolbar input.form-control {
-    max-width: 250px;
+    max-width: 300px;
     font-size: 14px;
     border-color: green;
 }
@@ -329,13 +343,20 @@ body {
 }
 
 .lms-table thead tbody tr {
+
     font-size: 12px;
+    justify-content: flex-start;
+
     
 }
 
 .lms-table tbody tr td {
     padding-left: 12px;
     font-size: 14px;
+    padding-top: 1.2rem;
+    margin: auto;
+    
+    
     
 }
 

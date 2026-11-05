@@ -90,17 +90,17 @@
 
             <button class="nav-link nav-item-lms" data-section="members" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-people"></i></span>
-                <span class="description">Members Section</span> <span class="right-align"> > </span>
+                <span class="description">Borrowers</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="books" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-book"></i></i></span>
-                <span class="description">Books Section</span> <span class="right-align"> > </span>
+                <span class="description">Book Accessions</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="borrowed" onclick="showSection(this);">
                 <span class="icon"> <i class="bi bi-bag"></i></span>
-                <span class="description">Borrowed List</span> <span class="right-align"> > </span>
+                <span class="description">Borrow/Return</span> <span class="right-align"> > </span>
             </button>
 
             <!-- <button class="nav-link nav-item-lms" data-section="toreturn" onclick="showSection(this);">
@@ -165,13 +165,13 @@
                 <button class="nav-link nav-item-lms" data-section="members"
                     onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-people"></i></span>
-                    <span class="description">Members Section</span> <span class="right-align"> > </span>
+                    <span class="description">Borrowers</span> <span class="right-align"> > </span>
                 </button>
 
                 <button class="nav-link nav-item-lms" data-section="books"
                     onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-book"></i></span>
-                    <span class="description">Books Section</span> <span class="right-align"> > </span>
+                    <span class="description">Book Accessions Section</span> <span class="right-align"> > </span>
                 </button>
 
                 <button class="nav-link nav-item-lms" data-section="borrowed"
@@ -216,6 +216,15 @@
             <!-- ============== DASHBOARD SECTION ============== -->
             <div id="section-dashboard" class="section active">
                 <div class="row">
+                <div class="col-md-6">
+                        <div class="btn stat-card" data-section="books" onclick="showSection(this);">
+                            <div>
+                                <?php countBooks($conn); ?>
+                                <div class="stat-label">Book Accessions</div>
+                            </div>
+                            <i class="bi bi-book stat-icon"></i>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="btn stat-card" data-section="members" onclick="showSection(this);">
                             <div>
@@ -226,15 +235,6 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="btn stat-card" data-section="books" onclick="showSection(this);">
-                            <div>
-                                <?php countBooks($conn); ?>
-                                <div class="stat-label">Book Collection</div>
-                            </div>
-                            <i class="bi bi-book stat-icon"></i>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="row">
@@ -274,7 +274,7 @@
                     <div class="section-heading">
                         <div class="icon-box">
                             <i class="bi bi-people-fill"></i>
-                            <h5>Members Section</h5>
+                            <h5>Borrowers Section</h5>
                         </div>
                     </div>
                     <div class="toolbar">
@@ -294,7 +294,7 @@
 
 
                     <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
+                        <table class="table lms-table table-striped" id="membersTable">
 
                             <?php showMembers($conn, "Faculty") ?>
                             <!--
@@ -399,7 +399,7 @@
                 <div class="section-heading">
                     <div class="icon-box">
                         <i class="bi bi-book-half"></i>
-                        <h5>Books Section</h5>
+                        <h5>Book Accessions Section</h5>
                     </div>
                 </div>
 
@@ -422,7 +422,7 @@
                         id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i></button> -->
 
                 <div class="table-responsive">
-                    <table class="table table-bordered lms-table table-striped table-hover" id="booksTable">
+                    <table class="table lms-table table-striped" id="booksTable">
 
 
                         <?php showBooks($conn, "Faculty") ?>
@@ -592,7 +592,7 @@
                 <div class="section-heading">
                     <div class="icon-box">
                         <i class="bi bi-bag-plus-fill"></i>
-                        <h5>Borrowed List</h5>
+                        <h5>Borrow/Return Section</h5>
                     </div>
                 </div>
                 <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printBorrowForm')"><i
@@ -603,7 +603,7 @@
                         id="borrowedUpdate"><i class="bi bi-pencil-square"></i></button>-->
 
                 <div class="table-responsive">
-                    <table class="table table-bordered lms-table table-striped table-hover" id="borrowedTable">
+                    <table class="table lms-table table-striped" id="borrowedTable">
 
 
                         <?php showBorrowed($conn) ?>
@@ -794,7 +794,7 @@
                 </form>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
+                    <table class="table lms-table table-striped" id="toReturnTable">
 
                         <?php showToReturn($conn); ?>
                         <!--<thead>
@@ -888,21 +888,21 @@
             </div>
         </div>
 
-        <!-- ============== RETURNED SECTION ============== -->
+        <!-- ============== ACTIVITY LOG SECTION ============== -->
         <div id="section-returned" class="section">
             <div class="panel">
                 <div class="section-heading">
                     <div class="icon-box">
-                        <i class="bi bi-arrow-return-left"></i>
-                        <h5>Returned List</h5>
+                        <i class="bi bi-file-text"></i>
+                        <h5>Activity Log</h5>
                     </div>
                 </div>
                 <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="returnedDelete"><i
                             class="bi bi-trash3-fill"></i></button> -->
 
                 <div class="table-responsive">
-                    <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
-                        <?php showReturned($conn, "Faculty") ?>
+                    <table class="table  lms-table table-striped" id="returnedTable">
+                        <?php showReturned($conn, "Fculty") ?>
                     </table>
                 </div>
             </div>

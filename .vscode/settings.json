@@ -1,0 +1,34 @@
+{
+    "explorerSort.rules": [
+        {
+            "name": "Auto-generated for **/View/**",
+            "pathPattern": "**/View/**",
+            "priorities": [
+                {
+                    "condition": "name === 'verifyOTP.php'",
+                    "priority": 0,
+                    "referenceFile": "setNewPassword.php",
+                    "offset": 0
+                },
+                {
+                    "condition": "name === 'setNewPassword.php'",
+                    "priority": 0,
+                    "referenceFile": "verifyOTP.php",
+                    "offset": -1
+                },
+                {
+                    "condition": "name === 'reset.php'",
+                    "priority": 0,
+                    "referenceFile": "verifyOTP.php",
+                    "offset": 0
+                },
+                {
+                    "condition": "name === 'backToLogin.php'",
+                    "priority": 0,
+                    "referenceFile": "setNewPassword.php",
+                    "offset": -1
+                }
+            ]
+        }
+    ]
+}

@@ -8,45 +8,37 @@ require '../View/header.php';
 </html>
 
 <style>
+
     tbody td form:nth-last-of-type(1) {
         margin: auto;
     }
 
     tbody td form button {
-        background-color: #0B5ED7;
-        color: white;
-        border: 0.5px solid #fff;
-        border-radius: 5px;
-        font-family: 'Poppins', sans-serif;
+        color: #0B5ED7;
         padding: 4px 12px;
-        font-weight: 500;
-        margin: 0 0 0 1.2rem;
+        font-size: 1.2rem;
+        border: none;
+        background-color: transparent;
 
     }
 
     tbody td button:nth-child(2) {
-        background-color: #FF4444;
-        color: white;
-        border: 0.5px solid #fff;
-        border-radius: 5px;
-        font-family: 'Poppins', sans-serif;
-        padding: 4px 14px;
-        font-weight: 500;
-        margin: 0 0 0 1.2rem;
-
-    }
-
-
-
-    tbody td button:nth-child(1):hover {
-        background-color: #fff;
-        color: #0B5ED7;
-    }
-
-    tbody td button:nth-child(2):hover {
-        background-color: #fff;
         color: #FF4444;
+        padding: 4px 14px;
+        font-size: 1.2rem;
+        border: none;
+        background-color: transparent;
+
     }
+
+    tbody td form .bi-printer{
+        color: #111113;
+        padding: 4px 12px;
+        font-size: 1.2rem;
+        border: none;
+        background-color: transparent;
+    }
+
 
     #borrowedTable tbody td button:nth-child(1),
     #toReturnTable tbody td button:nth-child(1),
@@ -106,10 +98,10 @@ require '../View/header.php';
                     echo "<input type='hidden' name='firstName' value='" . htmlspecialchars($row['firstName']) . "'>";
                     echo "<input type='hidden' name='lastName' value='" . htmlspecialchars($row['lastName']) . "'>";
                     echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
-                    echo "<button type='submit'>Update</button>";
+                    echo "<button type='submit'><i class='bi bi-pencil-square'></i></button>";
                     echo "</form>";
                     if ($type == "Admin") {
-                        echo "<button onclick='confirmDelete(" . $row['accountID'] . ",1 )'>Delete</button>";
+                        echo "<button onclick='confirmDelete(" . $row['accountID'] . ",1 )'><i class='bi bi-trash3-fill'></i></button>";
                     }
                     echo "</td>";
                     echo "</tr>";
@@ -160,9 +152,9 @@ require '../View/header.php';
                     echo "<input type='hidden' name='firstName' value='" . htmlspecialchars($row['firstName']) . "'>";
                     echo "<input type='hidden' name='lastName' value='" . htmlspecialchars($row['lastName']) . "'>";
                     echo "<input type='hidden' name='email' value='" . htmlspecialchars($row['email']) . "'>";
-                    echo "<button type='submit'>Update</button>";
+                    echo "<button type='submit'><i class='bi bi-pencil-square'></i></button>";
                     echo "</form>";
-                    echo "<button onclick='confirmDelete(" . $row['accountID'] . ",1 )'>Delete</button>";
+                    echo "<button onclick='confirmDelete(" . $row['accountID'] . ",1 )'><i class='bi bi-trash3-fill'></i></button>";
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -224,10 +216,10 @@ require '../View/header.php';
                     echo "<input type='hidden' name='author' value='" . htmlspecialchars($row['Author']) . "'>";
                     echo "<input type='hidden' name='genre' value='" . htmlspecialchars($row['Genre']) . "'>";
                     echo "<input type='hidden' name='quantity' value='" . htmlspecialchars($row['Quantity']) . "'>";
-                    echo "<button type='submit'>Update</button>";
+                    echo "<button type='submit'><i class='bi bi-pencil-square'></i></button>";
                     echo "</form>";
                     if ($type == "Admin") {
-                        echo "<button onclick='confirmDelete(" . $row['BookID'] . ",2 )'>Delete</button>";
+                        echo "<button onclick='confirmDelete(" . $row['BookID'] . ",2 )'><i class='bi bi-trash3-fill'></i></button>";
                     }
                     echo "</td>";
                     echo "</tr>";
@@ -262,6 +254,7 @@ require '../View/header.php';
                     <th>Date Borrowed</th>
                     <th>Due Date</th>
                     <th>Overdue Days </th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>';
@@ -276,6 +269,7 @@ require '../View/header.php';
                     echo "<td>" . $row['DateBorrowed'] . "</td>";
                     echo "<td>" . $row['DueDate'] . "</td>";
                     echo "<td>" . $row['DATEDIFF(CURRENT_DATE, DueDate)'] . " days</td>";
+                    echo "<td>" . $row['<button type="submit"><i class="bi bi-printer"></i> Receipt</button>'] . "</td>";
 
                     // switch ($row['Status']) {
                     //     case "Overdue":
@@ -387,7 +381,7 @@ require '../View/header.php';
                     // echo "<button onclick='confirmDelete(".$row['ReturnID'].",4 )'>Delete</button>";
                     echo "<button> </button>";
                     if ($type == "Admin") {
-                        echo "<button onclick='confirmDelete(" . $row['ReturnID'] . ", 4)' style=' opacity: 1; font-size: 14px  '>Delete</button>";
+                        echo "<button onclick='confirmDelete(" . $row['ReturnID'] . ", 4)'><i class='bi bi-trash3-fill'></i></button>";
                     }
                     echo "</td>";
                     echo "</tr>";

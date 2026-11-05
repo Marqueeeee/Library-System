@@ -20,29 +20,27 @@
 <body>
 
     <div class="container">
-
         <form action="Controller/loginController.php" method="POST">
 
             <div class="icon-box">
-                <h4 class="top">Library </h4>
-                <h4>Management System </h4>
+                <img src="View/SPIST_logo.jpg" alt="Logo" class="img-fluid">
+                <h3>Library Management System</h3>
             </div>
-            <div class="form-floating">
+            
+            <div class="input-group mb-4">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
                 <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
-                <label for="email" class="form-label">Email:</label>
             </div>
-            <div class="form-floating">
+
+            <div class="input-group mb-2">
+                <span class="span input-group-text "><i class="bi bi-lock"></i></span>
                 <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required>
-                <label for="pass" class="form-label">Password:</label>
-
-                <button class="btn btn-primary btn-md" type="submit">Login</button>
             </div>
-            <!-- <p class="reset"><a href="reset.php">Forgot your password?</a></span></p> -->
+            
+            <p class="reset"><a href="reset.html">Forgot your password?</a></span></p>
+            <button class="btn btn-md btn-login" type="submit">Login</button>
 
-            <footer>
-                <p class="register">Don't have an account yet? <a href="register.php">Register</a></p>
-            </footer>
-
+            <footer> <p class="register">Don't have an account yet? <a href="register.php">Register</a></p></footer>
 
 
             <div class="modal fade" id="modal" tabindex="-1">

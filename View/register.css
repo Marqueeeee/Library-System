@@ -73,6 +73,15 @@ h4 {
     
 }
 
+.sidebar-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f8e7c9;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    
+}
+
 form {
     display: flex;
     flex-direction: column;

@@ -114,18 +114,19 @@
             </button>
 
             <button class="nav-link nav-item-lms" data-section="borrowing" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-bag-plus"></i></span>
-                <span class="description">Borrowing Books</span> <span class="right-align"> > </span>
+                <span class="icon"><i class="bi bi-bag"></i></span>
+                <span class="description">Borrow/Return</span> <span class="right-align"> > </span>
             </button>
 
-            <!-- <button class="nav-link nav-item-lms" data-section="readBooks" onclick="showSection(this);">
+            <button class="nav-link nav-item-lms" data-section="readBooks" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-book-half"></i></span>
                 <span class="description">Read Books</span> <span class="right-align"> > </span>
-            </button> -->
+            </button>
 
-            <button class="nav-link nav-item-lms" data-section="penalty" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-pen"></i></span>
-                <span class="description">Return History</span> <span class="right-align"> > </span>
+            
+            <button class="nav-link nav-item-lms" data-section="history" onclick="showSection(this);">
+                <span class="icon"><i class="bi bi-file-text"></i></span>
+                <span class="description">History</span> <span class="right-align"> > </span>
             </button>
 
             <button class="nav-link nav-item-lms" data-section="faqs" onclick="showSection(this);">
@@ -238,7 +239,7 @@
                         <div class="btn stat-card" data-section="explore" onclick="showSection(this);">
                             <div>
                                 <?php countBooks($conn); ?>
-                                <div class="stat-label">Explore Books</div>
+                                <div class="stat-label">Available Books</div>
                             </div>
                             <i class="bi bi-search stat-icon"></i>
                         </div>
@@ -247,34 +248,23 @@
                         <div class="btn stat-card" data-section="borrowing" onclick="showSection(this);">
                             <div>
                                 <?php countBorrowedBooksStud($conn); ?>
-                                <div class="stat-label">Borrowing Books</div>
+                                <div class="stat-label">Borrow/Return Books</div>
                             </div>
-                            <i class="bi bi-bag-plus stat-icon"></i>
+                            <i class="bi bi-bag stat-icon"></i>
                         </div>
                     </div>
-                    <!-- <div class="col-md-6">
+                  <div class="col-md-6">
                         <div class="btn stat-card" data-section="readBooks" onclick="showSection(this);">
                             <div>
 
+                                <?php countReturnedBooksStud($conn); ?>
                                 <div class="stat-label">Read Books</div>
                             </div>
                             <i class="bi bi-book-half stat-icon"></i>
                         </div>
-                    </div> -->
-                </div>
-
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="btn stat-card" data-section="penalty" onclick="showSection(this);">
-                            <div>
-                                <?php countReturnedBooksStud($conn); ?>
-                                <div class="stat-label">Return History</div>
-                            </div>
-                            <i class="bi bi-pen stat-icon"></i>
-                        </div>
                     </div>
                 </div>
+
             </div>
 
             <!-- ============== EXPLORE SECTION ============== -->
@@ -770,7 +760,7 @@
                     </div> -->
 
                     <!-- <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="membersTable">
+                        <table class="table lms-table table-striped " id="membersTable">
 
                             
                             <thead>
@@ -805,7 +795,7 @@
                     <div class="section-heading">
                         <div class="icon-box">
                             <i class="bi bi-bag-plus"></i>
-                            <h5>Borrowing Books</h5>
+                            <h5>Borrow/Return Section</h5>
                         </div>
                     </div>
 
@@ -817,104 +807,7 @@
                     </button>
 
                     <?php borrowingBooks($conn); ?>
-                    <!-- <div class="row row-cols-1 row-cols-md-4 g-3 flex-wrap">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="book-front" style="background-color: #136ac0;">
-                                        <h3 class="bookTitle">AT</h3>
-                                    </div>
-                                    <span class="badge text-bg-primary" class="non-fiction"
-                                        id="non-fiction">Non-Fiction</span>
-                                    <h5 class="card-title">Atomic Habits</h5>
-                                    <p class="card-text">James Clear</p>
-                                    <button class="btn btn-success btn-sm borrow-btn">Return</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="book-front" style="background-color: #212529;">
-                                        <h3 class="bookTitle">SF</h3>
-                                    </div>
-                                    <span class="badge text-bg-dark" class="fiction" id="fiction">Fiction</span>
-                                    <h5 class="card-title">A Song of Ice and Fire</h5>
-                                    <p class="card-text">George R.R. Martin</p>
-                                    <button class="btn btn-success btn-sm borrow-btn">Return</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="book-front" style="background-color: #212529;">
-                                        <h3 class="bookTitle">PP</h3>
-                                    </div>
-                                    <span class="badge text-bg-dark" class="fiction" id="fiction">Fiction</span>
-                                    <h5 class="card-title">Pride and Prejudice</h5>
-                                    <p class="card-text">Jane Austen</p>
-                                    <button class="btn btn-success btn-sm">Return</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="book-front" style="background-color: #212529;">
-                                        <h3 class="bookTitle">SF</h3>
-                                    </div>
-                                    <span class="badge text-bg-dark" class="fiction" id="fiction">Fiction</span>
-                                    <h5 class="card-title">To Kill a Mockingbird</h5>
-                                    <p class="card-text">Harper Lee</p>
-                                    <button class="btn btn-success btn-sm">Return</button>
-                                </div>
-                            </div>
-                        </div>
 
-
-                    </div> -->
-
-                    <!-- <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="booksTable"> -->
-
-
-                    <!--
-                                <thead>
-                                    <tr>
-                                        <th>Book ID</th>
-                                        <th>Title</th>
-                                        <th>Author</th>
-                                        <th>Genre</th>
-                                        <th>Category</th>
-                                        <th>Credits Req.</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>B001</td>
-                                        <td>The Great Gatsby</td>
-                                        <td>F. Scott Fitzgerald</td>
-                                        <td>Non-fiction</td>
-                                        <td>Textbook</td>
-                                        <td>10.00</td>
-                                        <td><span class="badge-status badge-available">Available</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>B001</td>
-                                        <td>The Great Gatsby</td>
-                                        <td>F. Scott Fitzgerald</td>
-                                        <td>Non-fiction</td>
-                                        <td>Textbook</td>
-                                        <td>10.00</td>
-                                        <td><span class="badge-status badge-borrowed">Borrowed</span></td>
-                                    </tr>
-                                </tbody> -->
-
-                    <!-- </table>
-                    </div> -->
 
                 </div>
             </div>
@@ -1008,63 +901,28 @@
 
 
                     <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="returnedTable">
+                        <table class="table lms-table table-striped " id="returnedTable">
                         </table>
                     </div>
                 </div>
             </div>
 
-            <!-- ============== RETURN SECTION ============== -->
-            <div id="section-penalty" class="section">
+           
+
+            <!-- ============== HISTORY SECTION ============== -->
+            <div id="section-history" class="section">
                 <div class="panel">
                     <div class="section-heading">
                         <div class="icon-box">
-                            <i class="bi bi-pen"></i>
+                            <i class="bi bi-file-text"></i>
                             <h5>Return History</h5>
                         </div>
                     </div>
 
 
                     <div class="table-responsive">
-                        <table class="table table-bordered lms-table table-striped table-hover" id="toReturnTable">
+                        <table class="table lms-table table-striped " id="toReturnTable">
                             <?php showReturnedBooks($conn); ?>
-                            <!-- <thead>
-                                <tr>
-                                    <th>Book ID</th>
-                                    <th>Book Title</th>
-                                    <th>Borrowed Date</th>
-                                    <th>Due Date</th>
-                                    <th>Days Overdue</th>
-                                    <th>Penalty Fee</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>B001</td>
-                                    <td>Dune</td>
-                                    <td>2025-05-08</td>
-                                    <td>2025-05-10</td>
-                                    <td>5 day/s</td>
-                                    <td>50.00</td>
-                                </tr>
-                                <tr>
-                                    <td>B002</td>
-                                    <td>To Kill a Mockingbird</td>
-                                    <td>2025-05-03</td>
-                                    <td>2025-05-05</td>
-                                    <td>5 days/</td>
-                                    <td>50.00</td>
-                                </tr>
-                                <tr>
-                                    <td>B003</td>
-                                    <td>1984</td>
-                                    <td>2025-04-23</td>
-                                    <td>2025-05-25</td>
-                                    <td>6 day/s</td>
-                                    <td>60.00</td>
-                                </tr>
-
-                            </tbody> -->
                         </table>
                     </div>
 
