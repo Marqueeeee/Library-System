@@ -62,7 +62,7 @@ if ($currentUserId === null || $currentAccount != "Admin") {
 
 <body>
 
-    <?php require_once __DIR__ . '/superAdminPartials/sidebar.php'; ?>
+    <?php require_once __DIR__ . '/superAdminPartials/sidebar.php'; ?>        
 
     <!-- ============== MAIN CONTENT ============== -->
     <div class="main-content">
@@ -85,14 +85,14 @@ if ($currentUserId === null || $currentAccount != "Admin") {
 
             <?php
             // Each section is its own file. Add/remove/reorder lines here.
-            $sections = ['dashboard','members','faculty','books','borrowed','activity','deleted','reports'];
+            $sections = ['dashboard','members','faculty','books','borrowed','deleted','activity','reports'];
             foreach ($sections as $s) {
                 require __DIR__ . "/superAdminsections/{$s}.php";
             }
             ?>
 
-        </div><!-- /.page-body -->
-    </div><!-- /.main-content -->
+        </div>
+    </div>
 
     <?php require_once __DIR__ . '/superAdminPartials/modals.php'; ?>
 
