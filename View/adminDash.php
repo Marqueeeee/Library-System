@@ -68,7 +68,7 @@
 
             <!-- System Abbreviation: LMS (Library Management System) -->
             <div class="card" id="brand">
-                <h3 class="card-title">LMS</h3>
+                    <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">
             </div>
 
             <!-- User Information Section -->
@@ -95,13 +95,13 @@
             
             <button class="nav-link nav-item-lms" data-section="members" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-people"></i></span>
-                <span class="description">Borrowers</span> <span class="right-align"> > </span>
+                <span class="description">Borrower</span> <span class="right-align"> > </span>
             </button>
             
 
             <button class="nav-link nav-item-lms" data-section="faculty" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-person-badge"></i></span>
-                <span class="description">Library Staff</span> <span class="right-align"> > </span>
+                <span class="description">Admin</span> <span class="right-align"> > </span>
             </button>
 
             <p class="sidebar-section-category">Book Management</p>
@@ -112,20 +112,20 @@
             </button>
 
             <button class="nav-link nav-item-lms" data-section="borrowed" onclick="showSection(this);">
-                <span class="icon"> <i class="bi bi-bag-plus"></i></span>
+                <span class="icon"> <i class="bi bi-bag"></i></span>
                 <span class="description">Borrow/Return</span> <span class="right-align"> > </span>
             </button>
             
             <p class="sidebar-section-category">Activities and Reports</p>
             
-            <button class="nav-link nav-item-lms" data-section="activity" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-file-text"></i></span>
-                <span class="description">Activity Log</span> <span class="right-align"> > </span>
-            </button>
-            
             <button class="nav-link nav-item-lms" data-section="deleted" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-trash3"></i></span>
                 <span class="description">Deleted Recently</span> <span class="right-align"> > </span>
+            </button>
+
+            <button class="nav-link nav-item-lms" data-section="activity" onclick="showSection(this);">
+                <span class="icon"><i class="bi bi-file-text"></i></span>
+                <span class="description">Activity Log</span> <span class="right-align"> > </span>
             </button>
             
             <button class="nav-link nav-item-lms" data-section="reports" onclick="showSection(this);">
@@ -234,11 +234,21 @@
                 aria-controls="mobileSidebar" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
             </button>
-            <span>Library Management System</span>
+            <div class="sys-sch">
+                <span>Library Management System</span>
+                <p> Southern Philippines Institute of Science and Technology</p>
+            </div>
+
+            <div class="date-time">
+                <div class="date">Monday, December 2, 2026</div>
+                <div class="time">| 12:30 PM</div>
+            </div>
         </div>
         <div class="page-body">
 
             <!-- ============== DASHBOARD SECTION ============== -->
+
+            <!-- take-home books -->
             <div id="section-dashboard" class="section active">
                 <div class="row">
                 <div class="col-md-4">
@@ -264,7 +274,7 @@
                         <div class="btn stat-card" data-section="faculty" onclick="showSection(this);">
                             <div>
                                 <?php countFaculty($conn); ?>
-                                <div class="stat-label">Faculty Staff</div>
+                                <div class="stat-label">Library Staff</div>
                             </div>
                             <i class="bi bi-person-badge stat-icon"></i>
                         </div>
@@ -295,13 +305,17 @@
                         <div class="btn stat-card" data-section="returned" onclick="showSection(this);">
                             <div>
                                 <?php countReturnedBooks($conn); ?>
-                                <div class="stat-label">Take-home Books</div>
+                                <div class="stat-label">Total Returned Books</div>
                             </div>
-                            <i class="bi bi-house-add stat-icon"></i>
+                            <i class="bi bi-arrow-left stat-icon"></i>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- mini-table for activity logs (activity in last 7 days,  month, year) -->
+            <!-- book circulation analytics -->
 
             <!-- ============== BORROWERS SECTION ============== -->
             <div id="section-members" class="section">
@@ -312,23 +326,38 @@
                             <h5>Borrower Section</h5>
                         </div>
                     </div>
+                    <hr>
+
                     <div class="toolbar">
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                            <button class="btn btn-success btn-md me-1  " onclick="toggleForm('memberForm')"><i
+                            class="bi bi-plus-lg border-opacity-10"></i> Add new Borrower</button>
+                            <button class="btn btn-secondary btn-md" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
+
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                <label class="form-check-label" for="checkDefault">
+                                    Select All
+                                </label>
+                            </div> -->
+
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-filter"></i>Filter</button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Ascending</a></li>
+                                    <li><a class="dropdown-item" href="#">Descending</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div> -->
                         </div>
                     </div>
                 
 
-                    <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')"><i
-                            class="bi bi-plus-lg"></i> Add new</button>
 
-                    <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                        id="memberDelete"><i class="bi bi-trash3-fill"></i></button>
-                    <button class="btn btn-primary btn-md" onclick="toggleForm('updateMember')" disabled
-                        id="memberUpdate"><i class="bi bi-pencil-square"></i></button> -->
 
 
                     <div class="table-responsive">
@@ -420,21 +449,38 @@
                 <div class="section-heading">
                     <div class="icon-box">
                         <i class="bi bi-people-fill"></i>
-                        <h5>Libary Staff Section</h5>
+                        <h5>Admin Section</h5>
                     </div>
                 </div>
                 <div class="toolbar">
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-search"></i></span>
-                    <input type="text" name="member-search" id="member-search" class="form-control"
-                    placeholder="Search name, book, email, ..." oninput="filterTable('booksTable', this.value)">
-                </div>
-                
-                </div>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="member-search" id="member-search" class="form-control"
+                            placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                            <a href="createBook.php">
+                                <button class="btn btn-success btn-md me-1  " onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus-lg border-opacity-10"></i> Add new Admin</button>
+                            </a>
+                            <button class="btn btn-secondary btn-md" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
 
-                <button class="btn btn-success btn-md" onclick="toggleForm('memberForm')">
-                    <i class="bi bi-plus-lg"></i> Add new
-                </button>
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                <label class="form-check-label" for="checkDefault">
+                                    Select All
+                                </label>
+                            </div> -->
+
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-filter"></i>Filter</button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Ascending</a></li>
+                                    <li><a class="dropdown-item" href="#">Descending</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
 
                 <div class="table-responsive">
                     <table class="table lms-table table-striped" id="membersTable">
@@ -530,62 +576,39 @@
 
 
                 <div class="toolbar">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-search"></i></span>
-                        <input type="text" name="member-search" id="member-search" class="form-control"
-                        placeholder="Search book title, author, ..." oninput="filterTable('booksTable', this.value)">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="member-search" id="member-search" class="form-control"
+                            placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                            <a href="createBook.php">
+                                <button class="btn btn-success btn-md me-1  " onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus-lg border-opacity-10"></i> Add new Book</button>
+                            </a>
+                            <button class="btn btn-secondary btn-md" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
+
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                <label class="form-check-label" for="checkDefault">
+                                    Select All
+                                </label>
+                            </div> -->
+
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-filter"></i>Filter</button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Ascending</a></li>
+                                    <li><a class="dropdown-item" href="#">Descending</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div> -->
+                        </div>
                     </div>
-                    
-                </div>
-                <a href="createBook.php">
-                    <button class="btn btn-success btn-md"><i class="bi bi-plus-lg me-1"></i>Add Book
-                    </button>
-                </a>
-                <!-- <button class="btn btn-warning btn-md" onclick="toggleForm('borrowForm')"><i
-                        class="bi bi-bag-check me-1"></i>Borrow
-                </button> -->
-                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                            id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i></button>
-                        <button class="btn btn-primary btn-md " onclick="toggleForm('updateBookForm')" disabled
-                            id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i></button> -->
 
 
                 <div class="table-responsive">
                     <table class="table lms-table table-striped " id="booksTable">
                         <?php showBooks($conn, "Admin") ?>
-                        <!--
-                                    <thead>
-                                        <tr>
-                                            <th>Book ID</th>
-                                            <th>Title</th>
-                                            <th>Author</th>
-                                            <th>Genre</th>
-                                            <th>Category</th>
-                                            <th>Credits Req.</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td>B001</td>
-                                            <td>The Great Gatsby</td>
-                                            <td>F. Scott Fitzgerald</td>
-                                            <td>Non-fiction</td>
-                                            <td>Textbook</td>
-                                            <td>10.00</td>
-                                            <td><span class="badge-status badge-available">Available</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>B001</td>
-                                            <td>The Great Gatsby</td>
-                                            <td>F. Scott Fitzgerald</td>
-                                            <td>Non-fiction</td>
-                                            <td>Textbook</td>
-                                            <td>10.00</td>
-                                            <td><span class="badge-status badge-borrowed">Borrowed</span></td>
-                                        </tr>
-                                    </tbody> -->
                     </table>
                 </div>
 
@@ -692,7 +715,7 @@
             </div>
         </div>
 
-        <!-- ============== BORROWED SECTION ============== -->
+        <!-- ============== BORROWING/RETURNS SECTION ============== -->
         <div id="section-borrowed" class="section">
             <div class="panel">
                 <div class="section-heading">
@@ -702,11 +725,39 @@
                     </div>
                 </div>
 
-                <button class="btn btn-dark" id="penalty-receipt">
-                    <i class="bi bi-printer me-2"></i>Print Receipt
-                </button>
+                <div class="toolbar">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="member-search" id="member-search" class="form-control"
+                            placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                            <a href="createBook.php">
+                                <button class="btn btn-success btn-md me-1  " onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus-lg border-opacity-10"></i> Add new Borrow</button>
+                            </a>
+                            <a href="createBook.php">
+                                <button class="btn btn-warning btn-md me-1  " onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus-lg border-opacity-10"></i> Add new Return</button>
+                            </a>
+                            <button class="btn btn-secondary btn-md" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
 
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                <label class="form-check-label" for="checkDefault">
+                                    Select All
+                                </label>
+                            </div> -->
 
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-filter"></i>Filter</button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Ascending</a></li>
+                                    <li><a class="dropdown-item" href="#">Descending</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
 
                 <div class="table-responsive">
                     <table class="table lms-table table-striped" id="borrowedTable">
@@ -714,69 +765,6 @@
                     </table>
                 </div>
 
-                <!-- Borrow Receipt -->
-                <!-- <div class="form-section-receipt" id="printBorrowForm">
-                            <div class="box">
-                                <h3>Library Management System</h3>
-                                <h5>Borrow Receipt</h5>
-                                <p id="date-borrowed">03/06/2026</p>
-
-                                <input type="hidden" name="borrowedID" id="borrowedID">
-
-                                <div class="row g-3">
-
-                                    <div class="col-md-2">
-                                        <label class="form-label">Member Name:</label>
-                                        <input type="text" class="form-control form-control-md" name="memberName" required
-                                            id="borrowerName"> 
-                                    </div>
-                                    <div class="col-md-2">
-                                        <label class="form-label">Membership ID:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-text">100</div>
-                                            <input type="text" class="form-control form-control-md" name="membershipID" required
-                                                id="borrowerID">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label">Book Title:</label>
-                                        <input type="text" class="form-control form-control-md" name="bookTitle" required
-                                            id="borrowedBookTitle">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label">Book ID:</label>
-                                        <input type="text" class="form-control form-control-md" name="bookID" required
-                                            id="borrowedBookID">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label">Date Borrowed:</label>
-                                        <input type="text" class="form-control form-control-md" name="date" required
-                                            id="borrowedDate">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label">Due Date:</label>
-                                        <input type="text" class="form-control form-control-md" name="dueDate" required
-                                            id="borrowedDueDate">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label">Status:</label>
-                                        <select class="form-select form-select-xs" name="status" required id="borrowedStatus">
-                                            <option value="Borrowed">Borrowed</option>
-                                            <option value="Overdue">Overdue</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 d-flex gap-3">
-                                        <button class="btn btn-success btn-sm" type="submit"><i
-                                                class="bi bi-bookmark-plus me-2"></i>Update
-                                            book</button>
-                                        <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateBookForm')"><i
-                                                class="bi bi-backspace me-2"></i>Cancel</button>
-                                    </div>
-                                </div>
-                                <p class="dotted-top">Return date: <span class="return-date">2026-06-03</span></p>
-                                <button class="btn btn-primary" onclick="toggleForm('printBorrowForm')">Done</button>
-                            </div> 
-                        </div> -->
             </div>
         </div>
 
@@ -795,6 +783,24 @@
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                            <button class="btn btn-secondary btn-md" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
+
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                <label class="form-check-label" for="checkDefault">
+                                    Select All
+                                </label>
+                            </div> -->
+
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-filter"></i>Filter</button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Ascending</a></li>
+                                    <li><a class="dropdown-item" href="#">Descending</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div> -->
                         </div>
                     </div>
                 
@@ -818,12 +824,36 @@
                 </div>
 
                 <div class="toolbar">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-search"></i></span>
-                            <input type="text" name="member-search" id="member-search" class="form-control"
-                            placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
-                        </div>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" name="member-search" id="member-search" class="form-control"
+                        placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                        <button class="btn btn-secondary btn-md" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
+
+                        <!-- <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                                Select All
+                            </label>
+                        </div> -->
+
+                        <!-- <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-filter"></i>Filter</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Ascending</a></li>
+                                <li><a class="dropdown-item" href="#">Descending</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div> -->
                     </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table lms-table table-striped" id="returnedTable">
+                        <?php showReturned($conn, "Admin") ?>
+                    </table>
+                </div>
 
                 <form action="../Controller/insertReturned.php" method="POST" id="toReturn">
                     <input type="hidden" id="toReturnID" name="returnID">
@@ -836,73 +866,12 @@
                 </form>
 
                 <div class="table-responsive">
-                    <table class="table lms-table table-striped" id="toReturnTable">
+                    <table class="table lms-table table-striped" id="toDelRecentTable">
 
-                        <?php showToReturn($conn); ?>
-                        <!--<thead>
-                                        <tr>
-                                            <th>Borrow ID</th>
-                                            <th>Member Name</th>
-                                            <th>Book Title</th>
-                                            <th>Due Date</th>
-                                            <th>Days Overdue</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>BR001</td>
-                                            <td>Aegon Targaryen</td>
-                                            <td>Dune</td>
-                                            <td>2025-05-15</td>
-                                            <td>14 day/s</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>BR002</td>
-                                            <td>Jon Snow</td>
-                                            <td>To Kill a Mockingbird</td>
-                                            <td>2025-05-10</td>
-                                            <td>0 days/</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>BR003</td>
-                                            <td>Sansa Stark</td>
-                                            <td>1984</td>
-                                            <td>2025-05-15</td>
-                                            <td>0 day/s</span></td>
-                                        </tr>
-                    
-                                    </tbody> -->
+                        <!-- <?php // deleteRecently($conn); ?>  Deleted Recently Logs -->
+                                        
                     </table>
                 </div>
-
-                <!-- Return Receipt -->
-                <!-- <div class="form-section-receipt" id="printReturnForm">
-                        <div class="box">
-                            <h3>Library Management System</h3>
-                            <h5>Return Receipt</h5>
-                            <p id="date-return">dd/mm/yyyy</p>
-
-                            <div class="receipt-details">
-                                <div class="label">Borrow ID:</div>
-                                <div class="value" id="borrow-id">BR001</div>
-
-                                <div class="label">Book ID:</div>
-                                <div class="value" id="book-id">B004</div>
-
-                                <div class="label">Membership ID:</div>
-                                <div class="value" id="member-id">10018</div>
-
-                                <div class="label">Date Borrowed:</div>
-                                <div class="value" id="title">Dune</div>
-
-                                <div class="label">Days Overdue:</div>
-                                <div class="value" id="title">14</div>
-                            </div>
-
-                            <p class="dotted-top">Total: <span class="return-date"></span></p>
-                            <button class="btn btn-primary">Done</button>
-                        </div> 
-                    </div> -->
             </div>
         </div>
 
@@ -916,13 +885,11 @@
                     </div>
                 </div>
 
-               
-
                     <h6>File Selection:</h6>
 
                     <input type="file" name="" id="fileInput" hidden>
-                    <button type="button" class="btn btn-dark" id="importBtn">Import file</button>
-                    <button type="button" class="btn btn-primary" id="exportBtn">Export file</button>
+                    <button type="button" class="btn btn-outline-primary" id="exportBtn">Export file</button>
+                    <button type="button" class="btn btn-outline-dark" id="importBtn">Import file</button>
 
 
                 <form action="../Controller/insertReturned.php" method="POST" id="toReturn">
@@ -936,42 +903,14 @@
                 </form>
 
                 <div class="table-responsive">
-                    <table class="table lms-table table-striped" id="toReturnTable">
+                    <table class="table lms-table table-striped" id="toReportsTable">
 
-                        <?php showToReturn($conn); ?>
-                        
+                    <!-- activity log + dashboard analytics -->
+                        <!-- <?php // showBorrowLog($conn); ?> Summarize reports -->
+                        <?php showReturned($conn, "Admin"); ?>
                                         
                     </table>
                 </div>
-
-                <!-- Return Receipt -->
-                <!-- <div class="form-section-receipt" id="printReturnForm">
-                        <div class="box">
-                            <h3>Library Management System</h3>
-                            <h5>Return Receipt</h5>
-                            <p id="date-return">dd/mm/yyyy</p>
-
-                            <div class="receipt-details">
-                                <div class="label">Borrow ID:</div>
-                                <div class="value" id="borrow-id">BR001</div>
-
-                                <div class="label">Book ID:</div>
-                                <div class="value" id="book-id">B004</div>
-
-                                <div class="label">Membership ID:</div>
-                                <div class="value" id="member-id">10018</div>
-
-                                <div class="label">Date Borrowed:</div>
-                                <div class="value" id="title">Dune</div>
-
-                                <div class="label">Days Overdue:</div>
-                                <div class="value" id="title">14</div>
-                            </div>
-
-                            <p class="dotted-top">Total: <span class="return-date"></span></p>
-                            <button class="btn btn-primary">Done</button>
-                        </div> 
-                    </div> -->
             </div>
         </div>
 
