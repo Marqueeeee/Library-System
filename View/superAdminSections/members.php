@@ -8,7 +8,6 @@
                             <h5>Borrower Section</h5>
                         </div>
                     </div>
-                    <hr>
 
                     <div class="toolbar">
                         <div class="input-group">

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-require '../View/header.php';
-?>
+
 
 </html>
 
