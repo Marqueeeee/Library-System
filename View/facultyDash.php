@@ -297,26 +297,7 @@
                         <table class="table lms-table table-striped" id="membersTable">
 
                             <?php showMembers($conn, "Faculty") ?>
-                            <!--
-                            <thead>
-                                <tr>
-                                    <th>Membership ID</th>
-                                    <th>Name (FN, LN)</th>
-                                    <th>Contact Number</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>1002</td>
-                                    <td>Daenerys Targaryen</td>
-                                    <td>09935150614</td>
-                                    <td>10.00</td>
-                                </tr>
-                            </tbody>-->
-
-
+                            
                         </table>
                     </div>
 
@@ -426,42 +407,7 @@
 
 
                         <?php showBooks($conn, "Faculty") ?>
-                        <!--
-                                <thead>
-                                    <tr>
-                                        <th>Book ID</th>
-                                        <th>Title</th>
-                                        <th>Author</th>
-                                        <th>Genre</th>
-                                        <th>Category</th>
-                                        <th>Credits Req.</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>B001</td>
-                                        <td>The Great Gatsby</td>
-                                        <td>F. Scott Fitzgerald</td>
-                                        <td>Non-fiction</td>
-                                        <td>Textbook</td>
-                                        <td>10.00</td>
-                                        <td><span class="badge-status badge-available">Available</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>B001</td>
-                                        <td>The Great Gatsby</td>
-                                        <td>F. Scott Fitzgerald</td>
-                                        <td>Non-fiction</td>
-                                        <td>Textbook</td>
-                                        <td>10.00</td>
-                                        <td><span class="badge-status badge-borrowed">Borrowed</span></td>
-                                    </tr>
-                                </tbody> -->
-
-
-
+                       
                     </table>
                 </div>
 
@@ -595,54 +541,13 @@
                         <h5>Borrow/Return Section</h5>
                     </div>
                 </div>
-                <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printBorrowForm')"><i
-                            class="bi bi-printer me-2"></i>Print</button> 
-                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal"
-                        id="borrowedDelete" disabled><i class="bi bi-trash3-fill"></i></button>
-                    <button class="btn btn-primary btn-md" onclick="toggleForm('updateBorrowedForm')" disabled
-                        id="borrowedUpdate"><i class="bi bi-pencil-square"></i></button>-->
+
 
                 <div class="table-responsive">
                     <table class="table lms-table table-striped" id="borrowedTable">
 
-
                         <?php showBorrowed($conn) ?>
-                        <!--<thead>
-                                    <tr>
-                                        <th>Borrow ID</th>
-                                        <th>Member Name</th>
-                                        <th>Book Title</th>
-                                        <th>Date Borrowed</th>
-                                        <th>Due Date</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>BR001</td>
-                                        <td>Aegon Targaryen</td>
-                                        <td>Dune</td>
-                                        <td>2025-05-01</td>
-                                        <td>2025-05-01</td>
-                                        <td><span class="badge-status badge-overdue">Overdue</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>BR002</td>
-                                        <td>Jon Snow</td>
-                                        <td>To Kill a Mockingbird</td>
-                                        <td>2025-05-10</td>
-                                        <td>2025-05-10</td>
-                                        <td><span class="badge-status badge-borrowed">Borrowed</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>BR003</td>
-                                        <td>Sansa Stark</td>
-                                        <td>1984</td>
-                                        <td>2025-05-15</td>
-                                        <td>2025-05-15</td>
-                                        <td><span class="badge-status badge-borrowed">Borrowed</span></td>
-                                    </tr>
-                                </tbody> -->
+                        
                     </table>
                 </div>
 
@@ -775,11 +680,6 @@
                     </div>
                 </div>
 
-                <!-- <button class="btn btn-dark btn-md" onclick="toggleForm('printReturnForm')"><i
-                    class="bi bi-printer me-2"></i>Print</button>
-                    <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled
-                    id="toReturnDelete"><i class="bi bi-trash3-fill"></i></button> -->
-
                 <button class="btn btn-success btn-mark" disabled id="toMarkReturned" type="submit" form="toReturn"><i
                         class="bi bi-check-circle me-2"></i>Mark returned</button>
 
@@ -797,39 +697,7 @@
                     <table class="table lms-table table-striped" id="toReturnTable">
 
                         <?php showToReturn($conn); ?>
-                        <!--<thead>
-                                    <tr>
-                                        <th>Borrow ID</th>
-                                        <th>Member Name</th>
-                                        <th>Book Title</th>
-                                        <th>Due Date</th>
-                                        <th>Days Overdue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>BR001</td>
-                                        <td>Aegon Targaryen</td>
-                                        <td>Dune</td>
-                                        <td>2025-05-15</td>
-                                        <td>14 day/s</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>BR002</td>
-                                        <td>Jon Snow</td>
-                                        <td>To Kill a Mockingbird</td>
-                                        <td>2025-05-10</td>
-                                        <td>0 days/</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>BR003</td>
-                                        <td>Sansa Stark</td>
-                                        <td>1984</td>
-                                        <td>2025-05-15</td>
-                                        <td>0 day/s</span></td>
-                                    </tr>
-                
-                                </tbody> -->
+
                     </table>
                 </div>
 
@@ -897,8 +765,6 @@
                         <h5>Activity Log</h5>
                     </div>
                 </div>
-                <!-- <button class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#delModal" disabled id="returnedDelete"><i
-                            class="bi bi-trash3-fill"></i></button> -->
 
                 <div class="table-responsive">
                     <table class="table  lms-table table-striped" id="returnedTable">
