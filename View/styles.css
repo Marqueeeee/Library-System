@@ -2,21 +2,32 @@
 @import "transitions.css";
 
 :root {
-    --main-color--: green;
-    --submain-color--: #217a38;
-    --add-color--: #2a9648;
-    --text-color--: #fff;
+    --main-color--: #145220;
+    --submain-color--: #74C476;
+    --add-color--: #BAE4B3;
+    --text-color--: #EDF8E9;
+
+    --alt-text-color: rgba(0, 0, 0, 0.822);
+
     --text-icon-color--: #ebe1e1;
-    --bg-color: #f4f6f4;
+    --bg-color: #EDF8E9;
     --sidebar-w: 260px;
-    --green-dark: #1a5c2a;
+    --green-dark:#238B45;
     --green-mid: #217a38;
-    --green-light: #2a9648;
+    --green-light: #BAE4B3;
     --green-active: #145220;
+
+
     --white: #ffffff;
     --gray-bg: #f4f6f4;
     --gray-row: #e8ede9;
     --sidebar-w: 260px;
+
+ 
+    --font-family-inter: 'Inter', sans-serif;
+    --font-family-poppins: 'Poppins', sans-serif;
+
+    --alt-text-color: rgba(0, 0, 0, 0.822);
 
 
 }
@@ -29,6 +40,9 @@ body {
     font-family: 'Poppins', sans-serif;
 
 }
+html{
+    scroll-behavior: smooth;
+}
 
 /*----------------- Sidebar -------------------------*/
 
@@ -36,9 +50,9 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 93vh;
+    height: 85dvh;
     width: 260px;
-    background-color: var(--green-dark);
+    background-color: var(--main-color--);
     border-radius: 12px 12px 0 0;
 
 }
@@ -47,11 +61,20 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 5vh;
+    height: 12dvh;
     width: 260px;
-    background-color: var(--green-dark);
-    border-radius: 0 0 12px 12px;
+    background-color: var(--main-color--);
+    border-radius: 0 0 12px 0;
 
+}
+
+.sidebar #brand img{
+    display: block;
+    margin: auto;
+    height: 8dvh;
+    width: 6dvw;
+    background-position: center;
+    border-radius: 50%;
 }
 
 .sidebar #brand h3 {
@@ -69,7 +92,7 @@ body {
     padding: 14px 16px;
     gap: 10px;
     margin-bottom: 1.2rem;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0 10px 0 0;
     overflow: hidden;
     max-width: 100%;
     
@@ -206,18 +229,36 @@ body {
 }
 
 .top-header {
-    background-color: var(--green-dark);
+    background-color: var(--main-color--);
     color: var(--text-color--);
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-align: center;
+    padding: 1rem 2.5rem;
+    font-size: 24px;
+    font-weight: 800;
     border-radius: 0 0 0 12px;
-    margin-left: 10px;
+    margin: auto 12px;
     position: sticky;
     top: 0;
     z-index: 99;
+    text-align: left;
+}
+
+.top-header .sys-sch {
+    margin-top: 0.5rem;
+}
+
+.top-header .sys-sch p {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.top-header .date-time{
+    display: flex;
+    position: absolute;
+    right: 3rem;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .nav-item-lms.active {
@@ -281,6 +322,11 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
+.panel hr{
+    width: 100%;
+    border: 1px solid #0e0d0d;
+}
+
 .section-heading {
     display: flex;
     align-items: center;
@@ -298,6 +344,7 @@ body {
     padding-left: 2.5rem;
 }
 
+
 .section-heading .icon-box h5 {
     font-weight: 700;
     margin: 0;
@@ -305,19 +352,21 @@ body {
     color: rgba(0, 0, 0, 0.822);
 }
 
-.toolbar, .input-group {
+.toolbar{
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    flex-flow: row wrap;
+    justify-content: center;
 
 }
+
+
 
 
 .toolbar input.form-control {
     max-width: 300px;
     font-size: 14px;
     border-color: green;
+    margin-right: 6px;
 }
 
 
@@ -338,7 +387,7 @@ body {
     padding-left: 12px;
     padding: 1rem;
     white-space: nowrap;
-    background-color: var(--green-active);
+    background-color: var(--main-color--);
     color: var(--text-icon-color--);
 }
 

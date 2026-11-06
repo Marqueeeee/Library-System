@@ -1,22 +1,19 @@
 function toggleForm(id) {
     document.getElementById(id).classList.toggle('show');
-    document.getElementById(id).scrollIntoView(
-        {
-            behavior: 'smooth'
-
-        });
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'});
 }
 
 
 let selectedRow = null;
 
-function enableRowButtons() {
-    document.querySelectorAll(".btn-action-row").forEach((btn) => (btn.disabled = false));
-}
+// function enableRowButtons() {
+//     document.querySelectorAll(".btn-action-row").forEach((btn) => (btn.disabled = false));
+// }
 
-function disableRowButtons() {
-    document.querySelectorAll(".btn-action-row").forEach(btn => (btn.disabled = true));
-}
+// function disableRowButtons() {
+//     document.querySelectorAll(".btn-action-row").forEach(btn => (btn.disabled = true));
+// }
 
 function initTableSelection(tableId) {
     const rows = document.querySelectorAll("#" + tableId + " tbody tr");
@@ -287,3 +284,37 @@ function refreshBorrowedTable() {
         })
         .catch(error => console.error('Error:', error));
 }
+
+const timeElement = document.querySelector('.time');
+const dateElement = document.querySelector('.date');
+
+/**
+ * 
+ * @param {Date} date 
+ */
+
+function formatTime(date) {
+    const hours12 = date.getHours() % 12 || 12;
+    const minutes = date.getMinutes();
+    const amPm = date.getHours() >= 12 ? "PM" : "AM";
+
+    return `${hours12.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${amPm}`;
+
+}
+
+/**
+ * 
+ * @param {Date} date 
+ */
+function formatDate(date) {
+    const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    return `${DAYS[date.getDay()].toString().padEnd(9, " ,")} ${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+}
+setInterval(() => {
+    const now = new Date();
+
+    dateElement.textContent = formatDate(now);
+    timeElement.textContent = formatTime(now);
+}, 200);
