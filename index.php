@@ -37,7 +37,7 @@
                 <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required>
             </div>
             
-            <p class="reset"><a href="reset.html">Forgot your password?</a></span></p>
+            <p class="reset"><a href="reset.php">Forgot your password?</a></span></p>
             <button class="btn btn-md btn-login" type="submit">Login</button>
 
             <footer> <p class="register">Don't have an account yet? <a href="register.php">Register</a></p></footer>

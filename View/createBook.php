@@ -9,36 +9,52 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="libraryAdd.css">
 
 </head>
 
 <body>
 
     <div class="container">
-
         <form action="../Controller/insertBook.php" method="POST">
-            <div class="icon-box">
-                <h4>Add a Book</h4>
-            </div>
+        <i class="bi bi-x-lg"></i>
+            
+        <div class="header">
+            <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">
+            <h6 class="me-6">Southern Philippines Institute <br>of Science and Technology</h6>
+            
+        </div>
+        <div class="icon-box">
+            <i class="bi bi-book-half me-4 "></i>
+            <h4>Add book in the Library</h4>
+        </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-text p-3 opacity-75">Title: </div>
-                <input type="text" name="title" id="title" class="form-control" placeholder="Title"
-                    required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-text p-3 opacity-75">Author: </div>
-                <input type="text" name="author" id="author" class="form-control" placeholder="Author" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-text p-3 opacity-75">Genre: </div>
-                <input type="text" name="genre" id="genre" class="form-control" placeholder="Genre" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-text p-3 opacity-75">Quantity: </div>
-                <input type="number" name="quantity" id="quantity" class="form-control" placeholder="Quantity" min="1" required>
-                <button class="btn btn-success btn-md" type="submit">Add book</button>
+        <div class="form-field">
+            <label for="Title" class="form-label">Book Title *</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="e.g., Atomic Habits" required>
+        </div>
+        
+        
+        <div class="form-field">
+            <label for="Author" class="form-label">Author *</label>
+            <input type="text" name="author" id="author" class="form-control" placeholder="e.g., James Clear" required>
+        </div>
+        
+        <div class="form-field">
+            <label for="Copyright" class="form-label">Copyright *</label>
+            <input type="text" name="copyright" id="copyright" class="form-control" placeholder="e.g., 2020" required>
+        </div>
+        
+        <div class="form-field">
+            <label for="Publisher" class="form-label">Publisher *</label>
+            <input type="text" name="publisher" id="publisher" class="form-control" placeholder="e.g., Penguin Random House" required>
+        </div>
+
+
+            <div class="addBook">
+                    <!-- <i class="bi bi-plus-circle me-3"></i>
+                    <label for="quantity">10</label> -->
+                <button class="btn btn-md" type="submit"><i class="bi bi-plus-lg me-2"></i> Add new book</button>
             </div>
 
 

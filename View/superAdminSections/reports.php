@@ -5,7 +5,7 @@
                 <div class="section-heading">
                     <div class="icon-box">
                         <i class="bi bi-flag-fill"></i>
-                        <h5>Reports Section </h5>
+                        <span>Reports Section </span>
                     </div>
                 </div>
 

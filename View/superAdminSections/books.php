@@ -5,7 +5,7 @@
                 <div class="section-heading">
                     <div class="icon-box">
                         <i class="bi bi-book-half"></i>
-                        <h5>Book Accessions Section</h5>
+                        <span>Book Accessions Section</span>
                     </div>
                 </div>
 
@@ -16,10 +16,10 @@
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
                             <a href="createBook.php">
-                                <button class="btn btn-success btn-md me-1  " onclick="toggleForm('memberForm')"><i
-                                class="bi bi-plus-lg border-opacity-10"></i> Add new Book</button>
+                                <button class="btn btn-success btn-md me-5 rounded-0" onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus rounded-0"></i> Add new Book</button>
                             </a>
-                            <button class="btn btn-secondary btn-md" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
+                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">

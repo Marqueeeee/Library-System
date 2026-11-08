@@ -75,7 +75,6 @@
                     '<thead>
                 <tr>
                     <th>Account ID</th>
-                    <th>Timestamp</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -88,7 +87,6 @@
                 while ($row = $result->fetch()) {
                     echo "<tr>";
                     echo "<td>" . $row['accountID'] . "</td>";
-                    echo "<td>" . $row['accountID'] . "</td>";     //update to timestamp
                     echo "<td>" . $row['firstName'] . "</td>";
                     echo "<td>" . $row['lastName'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";          //update to contact

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         $_SESSION['accountType'] = $row['accountType'];
                         break;
                     case "Admin":
-                        header("Location: ../View/adminDash.php");
+                        header("Location: ../View/superAdmin.php");
                         $_SESSION['accountType'] = $row['accountType'];
                         break;
                 }

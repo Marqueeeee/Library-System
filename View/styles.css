@@ -6,7 +6,7 @@
     --submain-color--: #74C476;
     --add-color--: #BAE4B3;
     --text-color--: #EDF8E9;
-
+    --actual-main-color--: #238b45;
     --alt-text-color: rgba(0, 0, 0, 0.822);
 
     --text-icon-color--: #ebe1e1;
@@ -50,7 +50,7 @@ html{
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 85dvh;
+    height: 88dvh;
     width: 260px;
     background-color: var(--main-color--);
     border-radius: 12px 12px 0 0;
@@ -61,7 +61,7 @@ html{
     position: fixed;
     top: 0;
     left: 0;
-    height: 12dvh;
+    height: 11dvh;
     width: 260px;
     background-color: var(--main-color--);
     border-radius: 0 0 12px 0;
@@ -89,47 +89,39 @@ html{
     display: flex;
     align-items: center;
     background-color: var(--text-icon-color--);
-    padding: 14px 16px;
+    padding: 1.2rem 16px;
     gap: 10px;
     margin-bottom: 1.2rem;
     border-radius: 0 10px 0 0;
     overflow: hidden;
     max-width: 100%;
+    border: 1px solid var(--main-color--);
     
 }
 
 .sidebar-user .avatar {
     display: flex;
     flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    margin-left: 0.5rem;
-    margin-right: 1.2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     align-items: center;
     justify-content: center;
-    font-size: 2.3rem;
+    font-size: 3rem;
 
     
 }
 
-.sidebar-user .status-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #28a745;
-    display: inline-block;
-    margin-right: 4px;
-}
 
 .sidebar-user .label-active {
-    font-size: 11px;
-    color: #28a745;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--alt-text-color);
 }
 
 .sidebar-user .label-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--green-dark);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--main-color--);
 }
 .sidebar-user .user-info {
     display: flex;
@@ -231,10 +223,10 @@ html{
 .top-header {
     background-color: var(--main-color--);
     color: var(--text-color--);
-    padding: 1rem 2.5rem;
+    padding: 0.6rem 2.5rem;
     font-size: 24px;
     font-weight: 800;
-    border-radius: 0 0 0 12px;
+    border-radius: 0 0 12px 12px;
     margin: auto 12px;
     position: sticky;
     top: 0;
@@ -338,18 +330,18 @@ html{
 
 .section-heading .icon-box {
     font-size: 3.5rem;
-    color: var(--green-dark);
+    color: var(--main-color--);
     margin-top: 1.5rem;
-    border-left: 2px solid var(--green-dark);
+    border-left: 3px solid var(--main-color--);
     padding-left: 2.5rem;
 }
 
 
-.section-heading .icon-box h5 {
+.section-heading .icon-box span {
     font-weight: 700;
-    margin: 0;
+    margin-left: 1.2rem;
     font-size: 2rem;
-    color: rgba(0, 0, 0, 0.822);
+    color: var(--alt-text-color);
 }
 
 .toolbar{
@@ -360,13 +352,21 @@ html{
 }
 
 
+.toolbar .input-group-text {
+    padding: 0.5rem 0.8rem;
+    background-color: var(--main-color--);
+    color: var(--text-color--);
+    font-weight: 600;
+}
 
 
-.toolbar input.form-control {
+.toolbar input {
     max-width: 300px;
-    font-size: 14px;
-    border-color: green;
-    margin-right: 6px;
+    font-size: 12px;
+    margin-right: 1.2rem;
+    border-radius: 24px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+
 }
 
 

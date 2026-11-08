@@ -18,7 +18,7 @@
                         <div class="btn stat-card" data-section="members" onclick="showSection(this);">
                             <div>
                                 <?php countMembers($conn); ?>
-                                <div class="stat-label">Registered Borrowers</div>
+                                <div class="stat-label">Registered Members</div>
                             </div>
                             <i class="bi bi-people stat-icon"></i>
                         </div>

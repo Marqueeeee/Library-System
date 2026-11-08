@@ -12,11 +12,9 @@
             <div class="sidebar-user">
                 <i class="bi bi-person-bounding-box avatar"></i>
                 <div class="user-info">
-                    <div>
-                        <span class="status-dot"></span>
-                        <span class="label-active">active</span>
-                    </div>
+
                     <div class="label-name" id="currentName"></div>
+                    <span class="label-active">Super Admin</span>           
 
                 </div>
             </div>
@@ -31,13 +29,13 @@
             
             <button class="nav-link nav-item-lms" data-section="members" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-people"></i></span>
-                <span class="description">Borrower</span> <span class="right-align"> > </span>
+                <span class="description">Members</span> <span class="right-align"> > </span>
             </button>
             
 
             <button class="nav-link nav-item-lms" data-section="faculty" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-person-badge"></i></span>
-                <span class="description">Admin</span> <span class="right-align"> > </span>
+                <span class="description">Library Staff</span> <span class="right-align"> > </span>
             </button>
 
             <p class="sidebar-section-category">Book Management</p>

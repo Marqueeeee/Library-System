@@ -6,7 +6,7 @@ require_once "../Controller/dashboardStats.php";
 
 $conn = $connDB->getConn();
 
-//session_start(); 
+session_start(); 
 $currentUserId = $_SESSION['user_id'] ?? null;
 $currentAccount = $_SESSION['accountType'] ?? null;
 if ($currentUserId === null || $currentAccount != "Admin") {
