@@ -17,7 +17,7 @@
 
     <div class="container">
         <form action="../Controller/insertBook.php" method="POST">
-        <button class="btn"><i class="bi bi-x-lg"></i></button>
+        <button class="btn"><a href="../View/superAdmin.php"><i class="bi bi-x-lg"></i></a></button>
             
         <div class="header">
             <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">

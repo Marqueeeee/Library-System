@@ -17,7 +17,7 @@
 
     <div class="container">
         <form action="../Controller/insertMember.php" method="POST">
-        <button class="btn"><i class="bi bi-x-lg"></i></button>
+        <button class="btn"><a href="../View/superAdmin.php"><i class="bi bi-x-lg"></i></a></button>
             
         <div class="header">
             <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">
@@ -63,7 +63,7 @@
             <div class="addBook">
                     <!-- <i class="bi bi-plus-circle me-3"></i>
                     <label for="quantity">10</label> -->
-                <button class="btn btn-md" type="submit"><i class="bi bi-plus-lg me-2"></i> Add new member</button>
+                <button class="btn btn-md" type="submit"><i class="bi bi-plus-lg me-2"></i> Add new Member</button>
             </div>
 
             </div>

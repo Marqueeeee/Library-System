@@ -77,6 +77,10 @@ form .bi-x-lg {
     border-radius: 8px;
 }
 
+form .btn a {
+    color: var(--alt-text-color);
+}
+
 form .bi-x-lg:hover {
     background-color: rgb(160, 12, 12);
     color: var(--text-color--);

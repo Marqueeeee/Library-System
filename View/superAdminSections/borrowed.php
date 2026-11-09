@@ -14,11 +14,11 @@
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
-                            <a href="addBorrowing.php">
+                            <a href="addBorrow.php">
                                 <button class="btn btn-success btn-md me-2 rounded-0" onclick="toggleForm('memberForm')"><i
                                 class="bi bi-bag-plus  rounded-0 "></i> Borrowing book</button>
                             </a>
-                            <a href="addReturning.php">
+                            <a href="addReturn.php">
                                 <button class="btn btn-warning btn-md rounded-0  me-5" onclick="toggleForm('memberForm')"><i
                                 class="bi bi-arrow-left rounded-0"></i> Returning book</button>
                             </a>

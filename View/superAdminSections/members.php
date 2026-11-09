@@ -15,10 +15,11 @@
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
                             <a href="addMember.php">
-                                <button class="btn btn-success btn-md me-5 rounded-0" onclick="toggleForm('memberForm')">
+                                <button class="btn btn-success btn-md me-5 rounded-0">
                                     <i class="bi bi-plus-lg"></i> Add new Member
                                 </button>
                             </a>
+                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">
@@ -46,11 +47,14 @@
                     <div class="table-responsive">
                         <table class="table lms-table table-striped" id="membersTable">
 
-                            <?php showMembers($conn, "Admin") ?>
+                        <?php showMembers($conn, "Admin") ?>
 
 
-                        </table>
+                        </table>    
                     </div>
+
+
+                    <!-- //To be discarded -->
 
                     <div class="form-section" id="memberForm">
                         <h6><i class="bi bi-person-plus me-2"></i>Add New Member</h6>
