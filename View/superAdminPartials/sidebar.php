@@ -10,7 +10,7 @@
 
             <!-- User Information Section -->
             <div class="sidebar-user">
-                <i class="bi bi-person-bounding-box avatar"></i>
+                <i class="bi bi-person-check avatar"></i>
                 <div class="user-info">
 
                     <div class="label-name" id="currentName"></div>

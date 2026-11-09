@@ -13,7 +13,7 @@
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
-                            <a href="addFaculty.php">
+                            <a href="addAdmin.php">
                                 <button class="btn btn-success btn-md me-5 rounded-0" onclick="toggleForm('memberForm')">
                                     <i class="bi bi-plus-lg  rounded-0"></i> Add new Admin
                                 </button>

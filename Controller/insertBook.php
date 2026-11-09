@@ -16,13 +16,13 @@ try {
     // Execute with values
     $stmt->execute([$title, $author, $genre, $quantity]);
 
-    header("Location: ../View/adminDash.php?msg=added");
+    header("Location: ../View/superAdmin.php?msg=added");
     exit();
     
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    header("Location: ../View/adminDash.php?msg=error");
+    header("Location: ../View/superAdmin.php?msg=error");
     exit();
 }
 

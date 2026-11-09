@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --main-color--: #238B45;
+    --main-color--: #145220;
     --submain-color--: #74C476;
     --alt-submain-color--: #BAE4B3;
     --text-color--: #EDF8E9;
@@ -28,10 +28,10 @@ body{
 
 .container {
     display: flex;
-    max-width: 40vw;
+    max-width: 600px;
     background-color: var(--text-color--);
-    border-radius: 24px;
-    padding: 2rem 2rem;
+    border-radius: 8px;
+    padding: 1rem 2rem;
     position:absolute;
     top: 50%;
     left: 50%;
@@ -39,9 +39,13 @@ body{
 
 }
 
+.container .card {
+    background-color: transparent;
+    border: none;
+}
+
 .header {
     display: flex;
-    font-size: 3rem;
     color: var(--main-color--);
     margin-bottom: 0.5rem;
     
@@ -57,24 +61,30 @@ body{
 
 .header h6 {
     color: var(--alt-text-color);
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-top: 0.5rem;
-    font-weight: 400;
+    font-weight: 500;
 }
+
 
 form .bi-x-lg {
     position: absolute;
-    left: 90%;
-    font-size: 1rem;
+    left: 88%;
+    font-size: 1.2rem;
     cursor: pointer;
-    border: 1px solid var(--alt-text-color);
-    padding: 6px 12px;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
     border-radius: 8px;
+}
+
+form .bi-x-lg:hover {
+    background-color: rgb(160, 12, 12);
+    color: var(--text-color--);
+
 }
 
 .icon-box {
     display: flex;
-    margin-top: 1rem;
     margin-bottom: 1rem;
     color: var(--main-color--);
     
@@ -102,7 +112,7 @@ form .bi-x-lg {
     font-size: 1.5rem;
     font-weight: 700;
     margin-top: 1rem;
-    text-transform: uppercase;
+    
     
 }
 

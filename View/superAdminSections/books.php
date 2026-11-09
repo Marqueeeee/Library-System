@@ -49,7 +49,7 @@
 
 
                 <!-- ================= ADD-BOOK FORM ================= -->
-                <div class="form-section" id="bookForm">
+                <!-- <div class="form-section" id="bookForm">
                     <h6><i class="bi bi-bookmark-plus me-2"></i>Add New Book</h6>
                     <form action="../Controller/insertBook.php" method="post">
                         <div class="row g-4">
@@ -82,10 +82,10 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
 
                 <!-- ================= BORROW-BOOK FORM ================= -->
-                <div class="form-section" id="borrowForm">
+                <!-- <div class="form-section" id="borrowForm">
                     <h6><i class="bi bi-bag-plus me-2"></i>Borrow Book</h6>
                     <div class="row g-3">
                         <form action="../Controller/insertBorrowed.php" method="post">
@@ -109,7 +109,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- ================= UPDATE BOOK FORM ================= -->
                 <div class="form-section" id="updateBookForm">

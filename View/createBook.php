@@ -17,17 +17,26 @@
 
     <div class="container">
         <form action="../Controller/insertBook.php" method="POST">
-        <i class="bi bi-x-lg"></i>
+        <button class="btn"><i class="bi bi-x-lg"></i></button>
             
         <div class="header">
             <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">
             <h6 class="me-6">Southern Philippines Institute <br>of Science and Technology</h6>
             
         </div>
-        <div class="icon-box">
-            <i class="bi bi-book-half me-4 "></i>
-            <h4>Add book in the Library</h4>
-        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <div class="icon-box">
+                        <i class="bi bi-book-half me-4 "></i>
+                        <h4>Add Library Book</h4>
+                    </div>
+                </div>
+
+                <div class="card-subtitle"></div>
+                <div class="card-text"></div>
+            
 
         <div class="form-field">
             <label for="Title" class="form-label">Book Title *</label>
@@ -57,6 +66,8 @@
                 <button class="btn btn-md" type="submit"><i class="bi bi-plus-lg me-2"></i> Add new book</button>
             </div>
 
+            </div>
+        </div>
 
         </form>
     </div>

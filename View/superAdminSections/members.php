@@ -1,5 +1,5 @@
 <?php /* Borrowers (members) section - included by adminDash.php ($conn is available here) */ ?>
-            <!-- ============== BORROWERS SECTION ============== -->
+            <!-- ============== MEMBERS SECTION ============== -->
             <div id="section-members" class="section">
                 <div class="panel">
                     <div class="section-heading">
@@ -19,7 +19,6 @@
                                     <i class="bi bi-plus-lg"></i> Add new Member
                                 </button>
                             </a>
-                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">

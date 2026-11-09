@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scanBook.js"></script>
+</head>
+<style>
+    body {
+        background-color: var(--main-color--);
+        height: 100dvh;
+    }
+</style>
+
+<body>
+    
+    <div class="scanner-card mb-3">
+        <div class="card-body">
+            <div class="header">
+                <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">
+                <h6 class="me-5">Southern Philippines Institute <br>of Science and Technology</h6>
+                <button class=" btn btn-close ms-5"></button>
+            </div>
+            <div class="card-title"><i class="bi bi-upc-scan me-2"></i>Scan to Borrow / Return</div>
+            <div class="card-text">
+                
+                <div class="borrow-return-button">
+                    <button type="submit" class="btn btn-primary mb-2">
+                        <i class="bi-bag-plus"></i>
+                        <p>Borrow</p>
+                    </button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2">
+                        <i class="bi-arrow-left"></i>
+                        <p>Return</p>
+                    </button>
+                </div>
+                <div class="card-subtitle"><strong>Note</strong> : Scan the book and student ID to <strong>borrow</strong> / <strong>return</strong> a book</div>
+                
+            </div>
+        </div>
+    </div>
+ 
+</body>
+</html>
