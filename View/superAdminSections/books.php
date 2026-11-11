@@ -17,7 +17,7 @@
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
                             <a href="createBook.php">
                                 <button class="btn btn-success btn-md me-5 rounded-0" onclick="toggleForm('memberForm')"><i
-                                class="bi bi-plus rounded-0"></i> Add new Book</button>
+                                class="bi bi-plus-lg rounded-0"></i> Add new Book</button>
                             </a>
                             <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
 

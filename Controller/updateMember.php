@@ -17,13 +17,13 @@ try {
     // Execute with values
     $stmt->execute([$fName, $lName, $email, $accountID]);
 
-    header("Location: ../View/adminDash.php?msg=updated");
+    header("Location: ../View/superAdmin.php?msg=updated");
     exit();
     
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    header("Location: ../View/adminDash.php?msg=error");
+    header("Location: ../View/superAdmin.php?msg=error");
     exit();
 }
 

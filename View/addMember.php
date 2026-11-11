@@ -40,23 +40,23 @@
 
         <div class="form-field">
             <label for="Title" class="form-label">First Name *</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="e.g., John" required>
+            <input type="text" name="title" id="title" class="form-control" placeholder="John" required>
         </div>
         
         
         <div class="form-field">
             <label for="Author" class="form-label">Last Name *</label>
-            <input type="text" name="author" id="author" class="form-control" placeholder="e.g., Doe" required>
+            <input type="text" name="author" id="author" class="form-control" placeholder="Doe" required>
         </div>
         
         <div class="form-field">
             <label for="Copyright" class="form-label">Email *</label>
-            <input type="text" name="copyright" id="copyright" class="form-control" placeholder="e.g., johndoe@gmail.com" required>
+            <input type="text" name="copyright" id="copyright" class="form-control" placeholder="johndoe@gmail.com" required>
         </div>
         
         <div class="form-field">
             <label for="Publisher" class="form-label">Contact *</label>
-            <input type="text" name="publisher" id="publisher" class="form-control" placeholder="e.g., 09123456789" required>
+            <input type="text" name="publisher" id="publisher" class="form-control" placeholder="09123456789" required>
         </div>
 
 

@@ -4,7 +4,7 @@
             <div class="panel">
                 <div class="section-heading">
                     <div class="icon-box">
-                        <i class="bi bi-people-fill"></i>
+                        <i class="bi bi-person-badge"></i>
                         <span>Library Staff Section</span>
                     </div>
                 </div>

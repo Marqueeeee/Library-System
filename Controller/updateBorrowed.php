@@ -19,13 +19,13 @@ try {
     // Execute with values
     $stmt->execute([$bookID, $membershipID, $memberName, $bookTitle, $date, $dueDate, $status, $borrowedID]);
 
-    header("Location: ../View/dashboard.php?msg=updated");
+    header("Location: ../View/superAdmin.php?msg=updated");
     exit();
     
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 
-    header("Location: ../View/dashboard.php?msg=error");
+    header("Location: ../View/superAdmin.php?msg=error");
     exit();
 }
 

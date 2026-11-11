@@ -40,23 +40,23 @@
 
         <div class="form-field">
             <label for="Title" class="form-label">Book Title *</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="e.g., Atomic Habits" required>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Atomic Habits" required>
         </div>
         
         
         <div class="form-field">
             <label for="Author" class="form-label">Author *</label>
-            <input type="text" name="author" id="author" class="form-control" placeholder="e.g., James Clear" required>
+            <input type="text" name="author" id="author" class="form-control" placeholder="James Clear" required>
         </div>
         
         <div class="form-field">
             <label for="Copyright" class="form-label">Copyright *</label>
-            <input type="text" name="copyright" id="copyright" class="form-control" placeholder="e.g., 2020" required>
+            <input type="text" name="copyright" id="copyright" class="form-control" placeholder="2020" required>
         </div>
         
         <div class="form-field">
             <label for="Publisher" class="form-label">Publisher *</label>
-            <input type="text" name="publisher" id="publisher" class="form-control" placeholder="e.g., Penguin Random House" required>
+            <input type="text" name="publisher" id="publisher" class="form-control" placeholder="Penguin Random House" required>
         </div>
 
 
