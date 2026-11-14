@@ -19,7 +19,7 @@
                                     <i class="bi bi-plus-lg"></i> Add new Member
                                 </button>
                             </a>
-                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm(' ')"><i class="bi bi-filetype-xls"></i> Download</button>
+                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm(' ')"><i class="bi bi-filetype-xls"></i> Download File</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">

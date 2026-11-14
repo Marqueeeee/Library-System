@@ -11,41 +11,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<style>
+    body {
+        background-color: var(--main-color--);
+        height: 100dvh;
+    }
+</style>
+
 <body>
     <div class="card book-details-card">
+        <div class="header">
+            <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">
+            <h6>Southern Philippines Institute of Science and Technology</h6>
+            <button class="btn"><a href="../View/superAdmin.php"><i class="bi bi-x-lg"></i></a></button>
+        </div>
         <div class="card-body">
             <img src="../View/wh.jpg" alt="book-img" class="mb-3">
-            <h5 class="card-title">Wuthering Heights</h5>
-            <div class="book-details">
+            
+            <div class="book-section-detail">
+                <div class="book-details">
+                    <h5 class="card-title">Wuthering Heights</h5>
+                    <p class="card-text copyright"> &copy; 1847</p>
+                </div>
                 <p class="card-text author"> Emily Brontë</p>
-                <p class="card-text copyright"> &copy; 1847</p>
+                
+                <div class="book-details-publisher">
+                    <p class="card-text published"> Published by: </p>
+                    <p class="card-text publisher"> Harpers and Brothers of New York</p>
+                </div>
             </div>
-            <div class="book-details-publisher">
-                <p class="card-text published"> Published by: </p>
-                <p class="card-text publisher"> Harpers and Brothers of New York</p>
+            <div class="card-text description">
+                <h6 class="card-text fw-bold mb-2">Synopsis:</h6>
+                <p class="card-text"> lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem</p>
             </div>
-            <p class="card-text description"> Wuthering Heights is a Gothic tragedy set on the isolated West Yorkshire moors. It explores obsession, revenge, social class, and the destructive legacy of two interconnected families: the Earnshaws and the Lintons.</p>
         </div>
     </div>
 
-    <div class="main-content">
-        <div class="top-header d-flex justify-content-baseline align-items-center">
-            <button class="btn-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar"
-                aria-controls="mobileSidebar" aria-label="Toggle navigation">
-                <i class="bi bi-list"></i>
-            </button>
-            <div class="sys-sch">
-                <span>Library Management System</span>
-                <p> Southern Philippines Institute of Science and Technology</p>
-            </div>
+    
 
-            <div class="date-time">
-                <div class="date">Monday, December 2, 2026</div>
-                <div class="time">| 12:30 PM</div>
-            </div>
-        </div>
+     <!-- <div class="main-content">
         <div class="page-body">
-
             <div id="section-borrowed" class="section">
                 <div class="panel">
                     <div class="section-heading">
@@ -70,14 +75,14 @@
                                 </a>
                                 <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls  rounded-0"></i> Download</button>
     
-                                <!-- <div class="form-check">
+                                <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="checkDefault">x
                                     <label class="form-check-label" for="checkDefault">
                                         Select All
                                     </label>
-                                </div> -->
+                                </div>
     
-                                <!-- <div class="dropdown">
+                               <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-filter"></i>Filter</button>
                                     <ul class="dropdown-menu">
@@ -85,7 +90,7 @@
                                         <li><a class="dropdown-item" href="#">Descending</a></li>
                                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                                     </ul>
-                                </div> -->
+                                </div> 
                             </div>
                         </div>
     
@@ -110,7 +115,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
         
 

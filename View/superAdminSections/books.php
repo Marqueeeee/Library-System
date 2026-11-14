@@ -19,7 +19,7 @@
                                 <button class="btn btn-success btn-md me-5 rounded-0" onclick="toggleForm('memberForm')"><i
                                 class="bi bi-plus-lg rounded-0"></i> Add new Book</button>
                             </a>
-                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
+                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download File</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">

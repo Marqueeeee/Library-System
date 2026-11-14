@@ -153,7 +153,8 @@ html{
 }
 
 .sidebar .nav-link:hover {
-    background-color: rgba(4, 65, 4, 0.808);
+    background-color: var(--text-color--);
+    color: var(--main-color--);
 }
 
 .sidebar .description {
@@ -193,7 +194,6 @@ html{
     margin-bottom: 0.2rem;
     margin-left: 1rem;
     margin-right: 1rem;
-   
     Opacity: 0.7;
     border-bottom: 1px solid #f8e7c9;
     
@@ -287,6 +287,10 @@ html{
     color: var(--text-color--);
     cursor: pointer;
 
+}
+
+.stat-card:hover {
+    border-color: var(--alt-text-color--);
 }
 
 .stat-card .stat-num {
@@ -737,7 +741,7 @@ html{
 .book-details-card {
     display: flex;
     max-width: 350px;
-    background-color: var(--add-color--);
+    background-color: var(--text-color--);
     border-radius: 0;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
@@ -745,37 +749,78 @@ html{
     text-align: justify;
 }
 
+.book-details-card .header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.book-details-card .header button a {
+    color: var(--alt-text-color--);
+}
+
+
+.book-details-card .header .bi-x-lg {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 8px;
+
+}
+
+.book-details-card .header .bi-x-lg:hover {
+    background-color: rgb(160, 12, 12);
+    color: var(--text-color--);
+
+}
+
 .book-details-card .card-body p, .book-details-card .card-body h5 {
     color: var(--main-color--);
-}
+}   
 
 .book-details-card .card-body img{
     width: 250px;
     height: auto;
     border-radius: 12px;
+    box-shadow: 0 5px 5px var(--main-color--);
+    background-size: cover;
+    background-position: center;
 }
+
+.book-details-card .card-body .book-section-detail {
+
+    font-family: var(--font-family-inter);
+    font-size: 12px;
+    padding: 6px 10px;
+    line-height: 0.8;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
 
 .book-details-card .card-body .book-details {
     display: flex;  
 }
 
-.book-details-card .card-body .book-details .author{
-    margin-right: 10px;
-
+.book-details-card .card-body .book-details .copyright{
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 3px;
 }
 
-.book-details-card .card-body .publisher {
+.book-details-card .card-body .author{
     font-size: 12px;
-}   
-
-.book-details-card .card-body .description {
-    font-family: var(--font-family-inter);
 }
 
 .book-details-card .card-body .book-details-publisher {
     display: flex;
-    margin-bottom: 1rem;
-
+    
 }
 .book-details-card .card-body .book-details-publisher .published {
     margin-right: 8px;
@@ -784,6 +829,14 @@ html{
     font-size: 10px;
 }
 
+.book-details-card .card-body .description {
+    font-family: var(--font-family-inter);
+    font-size: 12px;
+    background-color: var(--text-color--);
+    border-left: 3px solid var(--main-color--);
+    padding: 14px 12px;
+    border-radius: 8px;
+}
 
 /* ========== RESPONSIVENESS ========== */
 
