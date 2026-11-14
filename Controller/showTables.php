@@ -52,6 +52,20 @@
         background-color: transparent;
     }
 
+    tbody td a {
+        text-decoration: none;
+        color: var(--alt-text-color--);
+        font-weight: 600;
+        cursor: pointer;
+        padding: 2px 8px;
+        border-radius: 4px;
+    }
+
+    tbody td a:hover {
+        color: var(--main-color--);
+        border-bottom: 2px solid var(--main-color--);
+    }
+
 
     #borrowedTable tbody td button:nth-child(1),
     #toReturnTable tbody td button:nth-child(1),
@@ -104,8 +118,8 @@
                     echo "<td>" . $row['accountID'] . "</td>";
                     echo "<td>" . $row['firstName'] . "</td>";
                     echo "<td>" . $row['lastName'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";          //update to contact
-                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td> <a href='borrowingHistory.php?accountID=" . $row['accountID'] . "'>" . $row['email'] . "</a> </td>";          
+                    echo "<td>" . $row['email'] . "</td>";          //change to contact
                     echo "<td>";
 
                     echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
@@ -160,8 +174,8 @@
                     echo "<td>" . $row['accountID'] . "</td>";
                     echo "<td>" . $row['firstName'] . "</td>";
                     echo "<td>" . $row['lastName'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";          //update to contact
+                    echo "<td> <a href='borrowingHistory.php?accountID=" . $row['accountID'] . "'>" . $row['email'] . "</a></td>";
+                    echo "<td>" . $row['email'] . "</td>";          //change to contact
                     echo "<td>";
 
                     echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
@@ -185,6 +199,8 @@
             echo "Error: " . $e->getMessage();
         }
     }
+
+    
 
     function showBooks($conn, $type)
     {
@@ -211,10 +227,10 @@
                 while ($row = $result->fetch()) {
                     echo "<tr>";
                     echo "<td>" . $row['BookID'] . "</td>";
-                    echo "<td>" . $row['Title'] . "</td>";
+                    echo "<td> <a href='viewBook.php?id=" . $row['BookID'] . "'>" . $row['Title'] . "</a> </td>";
                     echo "<td>" . $row['Author'] . "</td>";
-                    echo "<td>" . $row['Quantity'] . "</td>";    //update to copyright
-                    echo "<td>" . $row['Genre'] . "</td>";      //update to publisher
+                    echo "<td>" . $row['Quantity'] . "</td>";    //change to copyright
+                    echo "<td>" . $row['Genre'] . "</td>";      //change to publisher
 
                                                                 //status: Available, Borrowed, Lost, Damaged
                     switch ($row['Status']) {
@@ -281,7 +297,7 @@
                 while ($row = $result->fetch()) {
                     echo "<tr>";
                     echo "<td>" . $row['BorrowID'] . "</td>";
-                    echo "<td>" . $row['BorrowID'] . "</td>";           //update to timestamp/
+                    echo "<td>" . $row['BorrowID'] . "</td>";           //change to timestamp/
                     echo "<td>" . $row['BookTitle'] . "</td>";
                     echo "<td>" . $row['MembershipID'] . "</td>";
                     echo "<td>" . $row['Name'] . "</td>";
@@ -404,12 +420,12 @@
                 while ($row = $result->fetch()) {
                     echo "<tr>";
                     echo "<td>" . $row['ReturnID'] . "</td>";
-                    echo "<td>" . $row['ReturnID'] . "</td>";       //update to timestamp
-                    echo "<td>" . $row['Member'] . "</td>";         //update to borrower email
-                    echo "<td>" . $row['BorrowedDate'] . "</td>";   //update to borrower contact                    
-                    echo "<td>" . $row['BookTitle'] . "</td>";      //update to purpose: borrow/return  
-                    echo "<td>" . $row['BookTitle'] . "</td>";      //update to book title
-                    echo "<td>" . $row['BookTitle'] . "</td>";      //update to status: success/failed
+                    echo "<td>" . $row['ReturnID'] . "</td>";       //change to timestamp
+                    echo "<td>" . $row['Member'] . "</td>";         //change to borrower email
+                    echo "<td>" . $row['BorrowedDate'] . "</td>";   //change to borrower contact                    
+                    echo "<td>" . $row['BookTitle'] . "</td>";      //change to purpose: borrow/return  
+                    echo "<td>" . $row['BookTitle'] . "</td>";      //change to book title
+                    echo "<td>" . $row['BookTitle'] . "</td>";      //change to status: success/failed
                     
                     echo "</tr>";
 
@@ -455,12 +471,12 @@
     //             while ($row = $result->fetch()) {
     //                 echo "<tr>";
     //                 echo "<td>" . $row['ReturnID'] . "</td>";
-    //                 echo "<td>" . $row['ReturnID'] . "</td>";       //update to timestamp
-    //                 echo "<td>" . $row['Member'] . "</td>";         //update to borrower email
-    //                 echo "<td>" . $row['BorrowedDate'] . "</td>";   //update to borrower contact                    
-    //                 echo "<td>" . $row['BookTitle'] . "</td>";      //update to purpose: borrow/return  
-    //                 echo "<td>" . $row['BookTitle'] . "</td>";      //update to book title
-    //                 echo "<td>" . $row['BookTitle'] . "</td>";      //update to status: success/failed
+    //                 echo "<td>" . $row['ReturnID'] . "</td>";       //change to timestamp
+    //                 echo "<td>" . $row['Member'] . "</td>";         //change to borrower email
+    //                 echo "<td>" . $row['BorrowedDate'] . "</td>";   //change to borrower contact                    
+    //                 echo "<td>" . $row['BookTitle'] . "</td>";      //change to purpose: borrow/return  
+    //                 echo "<td>" . $row['BookTitle'] . "</td>";      //change to book title
+    //                 echo "<td>" . $row['BookTitle'] . "</td>";      //change to status: success/failed
     //                 echo "<td><button class='btn btn-outline-success'><i class='bi bi-arrow-counterclockwise'></i> Restore</button></td>";
     //                 echo "</tr>";
 
@@ -509,7 +525,7 @@
     //             // Output data of each row
     //             while ($row = $result->fetch()) {
     //                 echo "<tr>";
-    //                 echo "<td>" . $row['BorrowID'] . "</td>";           //update to timestamp/
+    //                 echo "<td>" . $row['BorrowID'] . "</td>";           //change to timestamp/
     //                 echo "<td>" . $row['BorrowID'] . "</td>";
     //                 echo "<td>" . $row['BookTitle'] . "</td>";
     //                 echo "<td>" . $row['MembershipID'] . "</td>";

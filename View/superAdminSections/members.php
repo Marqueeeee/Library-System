@@ -19,7 +19,7 @@
                                     <i class="bi bi-plus-lg"></i> Add new Member
                                 </button>
                             </a>
-                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download</button>
+                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm(' ')"><i class="bi bi-filetype-xls"></i> Download</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">
@@ -54,6 +54,17 @@
                     </div>
 
 
+                    <nav class="page-separator">
+                        <ul class="pagination">
+                            <li class="page-item"><a href="#" class="page-link">Prev</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#" aria-current="page">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+
+
                     <!-- //To be discarded -->
 
                     <div class="form-section" id="memberForm">
@@ -61,7 +72,6 @@
 
                         <form action="../Controller/insertMember.php" method="post">
                             <div class="row g-3">
-
 
                                 <div class="col-md-4">
                                     <label class="form-label">First Name:</label>
@@ -90,41 +100,7 @@
                                 </div>
                         </form>
                     </div>
-
-                    <div class="form-section" id="updateMember">
-                        <h6><i class="bi bi-person-plus me-2"></i>Update Member</h6>
-
-                        <div class="row g-3">
-                            <form action="../Controller/updateMember.php" method="post">
-                                <input type="hidden" name="membershipID" id="membershipID">
-                                <div class="col-md-4">
-                                    <label class="form-label">First Name:</label>
-                                    <input type="text" class="form-control form-control-md" id='firstName'
-                                        name="firstName" required placeholder=>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Last Name:</label>
-                                    <input type="text" class="form-control form-control-md" id='lastName'
-                                        name="lastName" required placeholder=>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Contact:</label>
-                                    <div class="input-group">
-                                        <div class="input-group-text">09</div>
-                                        <input type="number" class="form-control form-control-sm" id='contact' required
-                                            name="contact">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="col-12 d-flex gap-3">
-                                    <button class="btn btn-success btn-sm" type="submit"><i
-                                            class="bi bi-person-plus me-1"></i>Update Member</button>
-                                    <button class="btn btn-secondary btn-sm" onclick="toggleForm('updateMember')"><i
-                                            class="bi bi-backspace me-1"></i>Cancel</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
