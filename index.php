@@ -24,7 +24,7 @@
 
             <div class="icon-box">
                 <img src="View/SPIST_logo.jpg" alt="Logo" class="img-fluid">
-                <h3>Library Management System</h3>
+                <h3>SPIST-Library System</h3>
             </div>
             
             <div class="input-group mb-4">
