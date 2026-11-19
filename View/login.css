@@ -84,9 +84,18 @@ form .input-group span {
 
 form .input-group input{
     padding: 10px;
-    outline: none;
-    border-color: none;
+    font-size: 14px;
+    
 }
+
+form .input-group input:focus{
+    outline: none;
+    box-shadow: 0 0 5px var(--main-color--);
+    border-color: var(--main-color--);
+
+} 
+    
+
 
 
 

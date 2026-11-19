@@ -16,7 +16,6 @@
 <body>
 
     <div class="container">
-
         <form action="Controller/registrationController.php" method="POST">
             <div class="icon-box">
                 <img src="View/SPIST_logo.jpg" alt="Logo" class="img-fluid">
@@ -29,10 +28,21 @@
                 <input type="password" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required>
             </div>
 
+            <div class="input-group mb-4">
+                <span class="input-group-text"><i class="bi bi-mortarboard"></i></span>
+                <input type="email" name="gradeLevel" id="gradeLevel" class="form-control" placeholder="Grade Level" required>
+                <input type="password" name="section" id="section" class="form-control" placeholder="Section" required>
+            </div>
+
             
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                <input type="email" name="email" id="email" class="form-control" placeholder="example@spist.edu.ph" required>
+            </div>
+
+            <div class="input-group mb-4">
+                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                <input type="email" name="email" id="email" class="form-control" placeholder="0912-3456-789" required>
             </div>
 
             <div class="input-group mb-4">
@@ -41,7 +51,11 @@
                 <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="Confirm Password" required  minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
             </div>
             <p class="form-text">
-                <span class="req">* </span>Your password must be 8-20 characters and must contain letters and numbers.
+                <span class="req">* </span>Use your SPIST valid email address. <br>
+                <span class="req">* </span>Your password must have 8-20 characters. <br>
+                <span class="req">* </span>Must contain letters [(A-Z)(a-z)].      <br>
+                <span class="req">* </span>Must contain numbers [(0-9)].                            <br>
+                <span class="req">* </span>Must have special symbol [(!@#$%^&*()-+)].
             </p>
 
 
