@@ -34,7 +34,9 @@
 
             <div class="input-group mb-2">
                 <span class="span input-group-text "><i class="bi bi-lock"></i></span>
-                <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required>
+                <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}" required>
+
+                <i class="bi bi-eye-slash log" id="togglePass"></i>
             </div>
             
             <p class="reset"><a href="reset.php">Forgot your password?</a></span></p>
@@ -127,6 +129,7 @@
     </div>
 
 
+    <script src="View/script.js"></script>
 
 </body>
 

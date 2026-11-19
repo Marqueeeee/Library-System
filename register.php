@@ -10,7 +10,8 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="View/login.css">
-.
+    
+
 </head>
 
 <body>
@@ -24,14 +25,14 @@
 
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="bi bi-person"></i></span>
-                <input type="email" name="firstName" id="firstName" class="form-control" placeholder="First Name" required>
-                <input type="password" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required>
+                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" required>
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required>
             </div>
 
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="bi bi-mortarboard"></i></span>
-                <input type="email" name="gradeLevel" id="gradeLevel" class="form-control" placeholder="Grade Level" required>
-                <input type="password" name="section" id="section" class="form-control" placeholder="Section" required>
+                <input type="text" name="gradeLevel" id="gradeLevel" class="form-control" placeholder="Grade Level" required>
+                <input type="text" name="section" id="section" class="form-control" placeholder="Section" required>
             </div>
 
             
@@ -42,14 +43,18 @@
 
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="bi bi-telephone"></i></span>
-                <input type="email" name="email" id="email" class="form-control" placeholder="0912-3456-789" required>
+                <input type="tel" name="contact" id="contact" class="form-control" placeholder="09123456789" min-length="11" max-length="11" required>
             </div>
 
-            <div class="input-group mb-4">
+            <div class="input-group mb-3">
                 <span class="span input-group-text "><i class="bi bi-lock"></i></span>
                 <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required  minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}" >
                 <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="Confirm Password" required  minlength="8" maxlength="20" pattern="[A-Za-z0-9]{8,20}">
+            
+                <i class="bi bi-eye-slash reg" id="togglePass"></i>
+                
             </div>
+
             <p class="form-text">
                 <span class="req">* </span>Use your SPIST valid email address. <br>
                 <span class="req">* </span>Your password must have 8-20 characters. <br>
@@ -121,7 +126,7 @@
 
 
 
-
+    <script src="View/script.js"></script>
 </body>
 
 </html>
