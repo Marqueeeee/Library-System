@@ -2,79 +2,68 @@
         <!-- ============== REPORTS SECTION  ============== -->
         <div id="section-reports" class="section">
             <div class="panel">
-                <div class="section-heading">
-                    <div class="icon-box">
-                        <i class="bi bi-flag-fill"></i>
-                        <span>Reports Section </span>
-                    </div>
-                </div>
-
-
-                    <h6>File Selection:</h6>
-
-                    <input type="file" name="" id="fileInput" hidden>
-                    <button type="button" class="btn btn-outline-primary" id="exportBtn">Export file</button>
-                    <button type="button" class="btn btn-outline-dark" id="importBtn">Import file</button>
-
+                
                 <div class="row">
-                    <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="books" onclick="showSection(this);">
+                    <div class="col-sm-2 ">
+                        <div class="btn stat-card bg-primary" data-section="books" onclick="showSection(this);">
+                            <i class="bi bi-stack stat-icon"></i>
                             <div>
                                 <?php countBooks($conn); ?>
-                                <div class="stat-label">Book Accessions</div>
+                                <div class="stat-label">Total Books</div>
                             </div>
-                            <i class="bi bi-book stat-icon"></i>
                         </div>
                     </div>
-
                     <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="members" onclick="showSection(this);">
+                        <div class="btn stat-card bg-success" data-section="books" onclick="showSection(this);">
+                            <i class="bi bi-book-half stat-icon"></i>
+                            <div>
+                                <?php countBooks($conn); ?>
+                                <div class="stat-label">Available</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="btn stat-card bg-info" data-section="members" onclick="showSection(this);">
+                            <i class="bi bi-people-fill stat-icon"></i>
                             <div>
                                 <?php countMembers($conn); ?>
-                                <div class="stat-label">Registered Members</div>
+                                <div class="stat-label">Members</div>
                             </div>
-                            <i class="bi bi-people stat-icon"></i>
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="faculty" onclick="showSection(this);">
+                        <div class="btn stat-card bg-secondary" data-section="faculty" onclick="showSection(this);">
+                            <i class="bi bi-person-badge stat-icon"></i>
                             <div>
                                 <?php countFaculty($conn); ?>
                                 <div class="stat-label">Library Staff</div>
                             </div>
-                            <i class="bi bi-person-badge stat-icon"></i>
                         </div>
                     </div>
-
-            
-                    <div class="col-sm-3">
-                        <div class="btn stat-card" data-section="borrowed" onclick="showSection(this);">
+                    <div class="col-sm-2">
+                        <div class="btn stat-card bg-warning" data-section="borrowed" onclick="showSection(this);">
+                            <i class="bi bi-bag-plus-fill stat-icon"></i>
                             <div>
                                 <?php countBorrowedBooks($conn); ?>
-                                <div class="stat-label">Total Borrowed Books</div>
+                                <div class="stat-label">Borrowed</div>
                             </div>
-                            <i class="bi bi-bag stat-icon"></i>
                         </div>
                     </div>
-                    <!-- <div class="col-md-4">
-                        <div class="btn stat-card" data-section="toreturn" onclick="showSection(this);">
-                            <div>
-                                <?php countBorrowedBooks($conn); ?>
-                                <div class="stat-label">To Return Books</div>
-                            </div>
+                    <div class="col-sm-2">
+                        <div class="btn stat-card bg-danger" data-section="returned" onclick="showSection(this);">
                             <i class="bi bi-back stat-icon"></i>
-                        </div>
-                    </div> -->
-                    <div class="col-sm-3">
-                        <div class="btn stat-card" data-section="returned" onclick="showSection(this);">
                             <div>
                                 <?php countReturnedBooks($conn); ?>
-                                <div class="stat-label">Total Returned Books</div>
+                                <div class="stat-label">Returning</div>
                             </div>
-                            <i class="bi bi-arrow-left stat-icon"></i>
                         </div>
                     </div>
                 </div>
+
+                <h6>File Selection:</h6>
+
+                    <input type="file" name="" id="fileInput" hidden>
+                    <button type="button" class="btn btn-outline-dark me-2" id="exportBtn"><i class="bi bi-printer"></i> Print</button>
 
 
                 <form action="../Controller/insertReturned.php" method="POST" id="toReturn">

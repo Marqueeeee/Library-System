@@ -72,7 +72,7 @@ if ($currentUserId === null || $currentAccount != "Admin") {
                 <i class="bi bi-list"></i>
             </button>
             <div class="sys-sch">
-                <span>Library Management System</span>
+                <span>Welcome, Administrator!</span>
                 <p> Southern Philippines Institute of Science and Technology</p>
             </div>
 

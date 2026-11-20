@@ -25,20 +25,20 @@
 
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="bi bi-person"></i></span>
-                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" required>
-                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" required>
+                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" maxlength="20" required>
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" maxlength="20" required>
             </div>
 
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="bi bi-mortarboard"></i></span>
-                <input type="text" name="gradeLevel" id="gradeLevel" class="form-control" placeholder="Grade Level" required>
-                <input type="text" name="section" id="section" class="form-control" placeholder="Section" required>
+                <input type="text" name="gradeLevel" id="gradeLevel" class="form-control" placeholder="Grade Level" maxlength="8" required>
+                <input type="text" name="section" id="section" class="form-control" placeholder="Section" maxlength="12" required>
             </div>
 
             
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                <input type="email" name="email" id="email" class="form-control" placeholder="example@spist.edu.ph" required>
+                <input type="email" name="email" id="email" class="form-control" placeholder="example@spist.edu.ph" required>  <!--pattern="[a-zA-Z._]+@spist\.edu.ph"-->
             </div>
 
             <div class="input-group mb-4">
@@ -60,7 +60,8 @@
                 <span class="req">* </span>Your password must have 8-20 characters. <br>
                 <span class="req">* </span>Must contain letters [(A-Z)(a-z)].      <br>
                 <span class="req">* </span>Must contain numbers [(0-9)].                            <br>
-                <span class="req">* </span>Must have special symbol [(!@#$%^&*()-+)].
+                <span class="req">* </span>Must have special symbol [(!@#$%^&*()-+)].       <br>
+                <span class="req">* </span>Grade level for College student format (e.g., 1st-Year, 2nd-Year, etc.).
             </p>
 
 

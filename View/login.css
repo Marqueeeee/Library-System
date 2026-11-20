@@ -89,7 +89,7 @@ form .input-group span {
 }
 
 form .input-group input{
-    padding: 10px;
+    padding: 8px;
     font-size: 14px;
     
 }
@@ -102,7 +102,7 @@ form .input-group .log{
 
 
 form .input-group .reg, form .input-group .log{
-    padding: 4px 0 0 12px;
+    padding: 4px 0 0 8px;
     cursor: pointer;
     
     

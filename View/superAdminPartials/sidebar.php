@@ -14,7 +14,8 @@
                 <div class="user-info">
 
                     <div class="label-name" id="currentName"></div>
-                    <span class="label-active">Super Admin</span>           
+                    <span class="label-active">Head Librarian</span>           
+                    <span class="label-active">(Super Admin)</span>           
 
                 </div>
             </div>
