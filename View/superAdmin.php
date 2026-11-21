@@ -25,7 +25,9 @@ if ($currentUserId === null || $currentAccount != "Admin") {
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="../View/section.js" defer></script>
+    <script src="section.js" defer></script>
+    
+    
 
     
     <?php
@@ -43,22 +45,22 @@ if ($currentUserId === null || $currentAccount != "Admin") {
     ?>
 
 
-    <?php if (isset($_SESSION['name'])): ?>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                document.getElementById("currentName").innerHTML = <?= json_encode($_SESSION['name']) ?>;
-            });
-        </script>
-    <?php endif; ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nameEl = document.getElementById("currentName");
+            const emailEl = document.getElementById("currentEmail");
 
-    <?php if (isset($_SESSION['email'])): ?>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                document.getElementById("currentEmail").innerHTML = <?= json_encode($_SESSION['email']) ?>;
-            });
-        </script>
-    <?php endif; ?>
+            <?php if (isset($_SESSION['name'])): ?>
+            if (nameEl) nameEl.textContent = <?= json_encode($_SESSION['name']) ?>;
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['email'])): ?>
+            if (emailEl) emailEl.textContent = <?= json_encode($_SESSION['email']) ?>;
+            <?php endif; ?>
+        });
+    </script>
 </head>
+
 
 <body>
 
@@ -78,7 +80,7 @@ if ($currentUserId === null || $currentAccount != "Admin") {
 
             <div class="date-time">
                 <div class="date">Monday, December 2, 2026</div>
-                <div class="time">| 12:30 PM</div>
+                <div class="time">12:30 PM</div>
             </div>
         </div>
         <div class="page-body">
@@ -96,7 +98,67 @@ if ($currentUserId === null || $currentAccount != "Admin") {
 
     <?php require_once __DIR__ . '/superAdminPartials/modals.php'; ?>
 
-    <script src="../View/script.js"></script>
+
+    <script>
+        //Date and Time Display
+
+        const timeElement = document.querySelector(".time");
+        const dateElement = document.querySelector(".date");
+
+        /**
+         *
+         * @param {Date} date
+         */
+
+        function formatTime(date) {
+            const hours12 = date.getHours() % 12 || 12;
+            const minutes = date.getMinutes();
+            const amPm = date.getHours() >= 12 ? "PM" : "AM";
+
+            return `${hours12.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${amPm}`;
+            }
+
+            /**
+             *
+             * @param {Date} date
+             */
+            
+            function formatDate(date) {
+            const DAYS = [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+            ];
+            const MONTHS = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ];
+
+            return `${DAYS[date.getDay()]}, ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+            }
+            setInterval(() => {
+            const now = new Date();
+
+            dateElement.textContent = formatDate(now);
+            timeElement.textContent = `| ${formatTime(now)}`;
+    }, 200);
+
+
+    </script>
 
 
 </body>
