@@ -11,21 +11,23 @@
 
 // }
 
-
-
+//Show section
 
 function showSection(btn) {
   const target = btn.dataset.section;
 
-    // remove highlight from nav buttons
-  document.querySelectorAll('.nav-item-lms').forEach(b => b.classList.remove('active'));
-  
-  // add active all matched data-section
-    document.querySelectorAll('[data-section="' + target + ' "]').forEach(b => b.classList.add('active'));
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  // nav highlight: only touch nav buttons
+  document.querySelectorAll(".nav-item-lms").forEach((b) => {
+    b.classList.toggle("active", b.dataset.section === target);
+  });
 
-    const section = document.getElementById('section-' + target);
-    if (section) section.classList.add('active');
+  // switch visible section
+  document
+    .querySelectorAll(".section")
+    .forEach((s) => s.classList.remove("active"));
+
+  const section = document.getElementById("section-" + target);
+  if (section) section.classList.add("active");
 }
 
 function closeOffcanvas() {
@@ -45,4 +47,6 @@ const collapseList = [...collapseElementList].map(
 const bsCollapse = new bootstrap.Collapse("#myCollapse", {
   toggle: false,
 });
+
+
 

@@ -21,7 +21,7 @@
             </div>
 
             <button class="nav-link nav-item-lms active" data-section="dashboard" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="icon"><i class="bi bi-grid"></i></span>
                 <span class="description">Dashboard</span> <span class="right-align"> > </span>
             </button>
 
@@ -51,7 +51,7 @@
                 <span class="description">Borrow/Return</span> <span class="right-align"> > </span>
             </button>
             
-            <p class="sidebar-section-category">Activities and Reports</p>
+            <p class="sidebar-section-category">Library Activities</p>
             
             <button class="nav-link nav-item-lms" data-section="deleted" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-trash3"></i></span>
@@ -68,6 +68,20 @@
                 <span class="description">Reports</span> <span class="right-align"> > </span>
             </button>
 
+            <p class="sidebar-section-category">Configuration</p>
+
+            <button class="nav-link nav-item-lms" data-section="notifications" onclick="showSection(this);">
+                    <span class="icon"><i class="bi bi-bell"></i></i></span>
+                <span class="description">Notifications</span> <span class="right-align"> > </span>
+            </button>
+
+            <button class="nav-link nav-item-lms" data-section="settings" onclick="showSection(this);">
+                <span class="icon"><i class="bi bi-gear"></i></i></span>
+                <span class="description">Settings</span> <span class="right-align"> > </span>
+            </button>
+
+
+
         </nav>
 
         <div class="sidebar-footer">
@@ -75,6 +89,7 @@
                 <i class="bi bi-box-arrow-left ms-1"></i>
             </button>
         </div>
+        
     </div>
 
     <!-- MOBILE  SIDEBAR VIEW -->

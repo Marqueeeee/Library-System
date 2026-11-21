@@ -4,7 +4,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
-                        <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
+                        <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg m-1"></i>
                         <h3 style="color: white;">Exit System</h3>
                         <button class="btn-close" data-bs-dismiss="modal"></button>
                     </div>

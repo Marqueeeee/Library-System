@@ -12,14 +12,10 @@
     --bg-color: #EDF8E9;
     --sidebar-w: 260px;
     --green-dark:#238B45;
-    --green-mid: #217a38;
-    --green-light: #BAE4B3;
+    --green-mid: #217a38;   
+    --green-light: #e8f4ec;
     --green-active: #145220;
 
-
-    --white: #ffffff;
-    --gray-bg: #f4f6f4;
-    --gray-row: #e8ede9;
     --sidebar-w: 260px;
 
  
@@ -27,21 +23,114 @@
     --font-family-poppins: 'Poppins', sans-serif;
 
     --alt-text-color: rgba(0, 0, 0, 0.822);
+    
+    --text-logo-color1--: #90762D;
+    --text-logo-color2--: #469552;
+    --text-logo-color3--: #EDF8E9;
 
 
 }
 
-body {
-    background-color: var(--bg-color);
-    display: flex;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+:root {
+    --green: #1e7a4c;
 
+    --chart-line: #1e7a4c;
+    --chart-bar: #3fa56d;
+    --chart-grid: #dcebe1;
+    --chart-text: #5c7466;
 }
-html{
-    scroll-behavior: smooth;
+
+
+.card {
+    border-color: var(--add-color--);
 }
+
+.stat-value:not(.text-danger) {
+    color: var(--green);
+}
+
+.table thead th {
+    color: var(--main-color--);
+    border-bottom-color: #cfe3d6;
+}
+
+.btn-success {
+    --bs-btn-bg: var(--green);
+    --bs-btn-border-color: var(--green);
+    --bs-btn-hover-bg: var(--green-dark);
+    --bs-btn-hover-border-color: var(--green-dark);
+    --bs-btn-active-bg: var(--green-dark);
+    --bs-btn-active-border-color: var(--green-dark);
+}
+.form-select-sm {
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0.4rem;
+    background-color: #f7f2f2;
+    color: var(--alt-text-color--);
+    border: none; 
+    font-weight: 500;
+}
+
+.form-select-sm:hover {
+    border-color: var(--submain-color--);
+    box-shadow: 0 0 6px rgba(28, 161, 39, 0.71);
+}
+
+
+.card-body .top-right {
+    position: absolute;
+    top: 36px;
+    right: 40px;
+}
+
+.card-body .top-right  {
+    padding: 0 6px;
+}
+
+.text-bg-success {
+    background-color: var(--green) !important;
+}
+
+#tip {
+    background: var(--green-dark);
+}
+
+
+.stat-value {
+    font-family: Georgia, serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+.chart-box {
+    position: relative;
+    height: 260px;
+}
+
+.chart-box canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#tip {
+    position: fixed;
+    pointer-events: none;
+    display: none;
+    z-index: 1080;
+}
+
+.view-details a {
+    text-decoration: none;
+}
+
+.view-details a:hover {
+    border-bottom: 1px solid var(--main-color--);
+    color: var(--main-color--);
+}
+
+
 
 /*----------------- Sidebar -------------------------*/
 
@@ -97,7 +186,7 @@ html{
     overflow: hidden;
     max-width: 100%;
     border: 3px solid var(--main-color--);
-    background-color: var(--text-color--);
+    background-color: var(--text-logo-color3--);
     
 }
 
@@ -154,9 +243,12 @@ html{
 .sidebar .nav-link {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px 20px;
+    gap: 18px;
+    padding: 12px 16px;
     color: var(--text-color--);
+    margin:0 12px;
+    border-radius: 8px;
+    margin-bottom: 4px;
 
 }
 
@@ -222,10 +314,12 @@ html{
 
 }
 
+/* Hide section */
 .section {
     display: none;
 }
 
+/* Show section */
 .section.active {
     display: block;
 }
@@ -264,8 +358,8 @@ html{
 }
 
 .nav-item-lms.active {
-    background-color: var(--green-active);
-    color: var(--white);
+    background-color: var(--text-color--);
+    color: var(--main-color--);
     
 }
 
@@ -281,6 +375,9 @@ html{
     padding: 28px 30px;
     flex: 1;
 }
+
+
+/* Dashboard */
 
 .stat-card {
     display: flex;
@@ -298,8 +395,9 @@ html{
 }
 
 .stat-card:hover {
-    color: var(--main-color--);
+    color: var(--text-color--);
     box-shadow: 6px 6px 6px var(--main-color--);
+    transform: translateY(-4px);
     transition: all 0.2s ease-in;
 }
 
@@ -322,11 +420,9 @@ html{
     padding-right: 0 1rem;
 }
 
-
 /*----------------- Control Panel -------------------------*/
 
 .panel {
-    background-color: var(--text-color--);
     border-radius: 12px;
     padding: 24px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
@@ -432,10 +528,8 @@ html{
 
 .badge-status {
     font-size: 11px;
-    padding: 5px 15px;
     border-radius: 10px;
     font-weight: 600;
-    text-align: center;
 }
 
 .badge-borrowed {

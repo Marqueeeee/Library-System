@@ -14,11 +14,11 @@
     tbody td form button {
         color: #0B5ED7;
         padding: 4px 10px;
-        font-size: 1.2rem;
+        font-size: 1rem;
         border: 1px solid #0B5ED7;
         background-color: #e5e6e9;
         border-radius: 4px;
-        margin-right: 10px;
+        margin: auto 6px;
 
     }
 
@@ -31,10 +31,11 @@
     tbody td button:nth-child(2) {
         color: #FF4444;
         padding: 4px 10px;
-        font-size: 1.2rem;
+        font-size: 1rem;
         border: 1px solid #FF4444;
         border-radius: 4px;
         background-color: #e9e6e5;
+        margin: auto 6px;
 
     }
 
