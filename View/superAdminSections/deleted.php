@@ -13,8 +13,8 @@
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-search"></i></span>
                         <input type="text" name="member-search" id="member-search" class="form-control"
-                        placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
-                        <button class="btn btn-outline-secondary btn-md rounded-0  ms-5" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download File</button>
+                        placeholder="Search email, contact, purpose, ..." oninput="filterTable('booksTable', this.value)">
+                        <button class="btn btn-dark btn-md  dl-file rounded-3" onclick="toggleForm('memberForm')"><i class="bi bi-download me-1"></i> Download</button>
 
                         <!-- <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="checkDefault">

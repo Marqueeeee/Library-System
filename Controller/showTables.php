@@ -15,10 +15,10 @@
         color: #0B5ED7;
         padding: 4px 10px;
         font-size: 1rem;
-        border: 1px solid #0B5ED7;
-        background-color: #e5e6e9;
+        border: transparent;
+        background-color: transparent;
         border-radius: 4px;
-        margin: auto 6px;
+        margin: 0 6px;
 
     }
 
@@ -32,10 +32,10 @@
         color: #FF4444;
         padding: 4px 10px;
         font-size: 1rem;
-        border: 1px solid #FF4444;
+        border: transparent;
+        background-color: transparent;
         border-radius: 4px;
-        background-color: #e9e6e5;
-        margin: auto 6px;
+        margin: 0 6px;
 
     }
 
@@ -105,9 +105,10 @@
                     '<thead>
                 <tr>
                     <th>Account ID</th>
+                    <th>Email</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Email</th>
+                    <th>Grade & Section</th>
                     <th>Contact</th>
                     <th>Actions</th>
                 </tr>
@@ -117,10 +118,11 @@
                 while ($row = $result->fetch()) {
                     echo "<tr>";
                     echo "<td>" . $row['accountID'] . "</td>";
+                    echo "<td> <a href='borrowingHistory.php?accountID=" . $row['accountID'] . "'>" . $row['email'] . "</a> </td>";          
                     echo "<td>" . $row['firstName'] . "</td>";
                     echo "<td>" . $row['lastName'] . "</td>";
-                    echo "<td> <a href='borrowingHistory.php?accountID=" . $row['accountID'] . "'>" . $row['email'] . "</a> </td>";          
-                    echo "<td>" . $row['email'] . "</td>";          //change to contact
+                    echo "<td>" . $row['lastName'] . "</td>";
+                    echo "<td>" . $row['accountID'] . "</td>";          //change to contact
                     echo "<td>";
 
                     echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";
@@ -161,9 +163,9 @@
                     '<thead>
                 <tr>
                     <th>Account ID</th>
+                    <th>Email</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Email</th>
                     <th>Contact</th>
                     <th>Actions</th>
                 </tr>
@@ -173,10 +175,10 @@
                 while ($row = $result->fetch()) {
                     echo "<tr>";
                     echo "<td>" . $row['accountID'] . "</td>";
+                    echo "<td> <a href='borrowingHistory.php?accountID=" . $row['accountID'] . "'>" . $row['email'] . "</a></td>";
                     echo "<td>" . $row['firstName'] . "</td>";
                     echo "<td>" . $row['lastName'] . "</td>";
-                    echo "<td> <a href='borrowingHistory.php?accountID=" . $row['accountID'] . "'>" . $row['email'] . "</a></td>";
-                    echo "<td>" . $row['email'] . "</td>";          //change to contact
+                    echo "<td>" . $row['accountID'] . "</td>";      //change to contact
                     echo "<td>";
 
                     echo "<form action='updateAccount.php' method='POST' style='display:inline;'>";

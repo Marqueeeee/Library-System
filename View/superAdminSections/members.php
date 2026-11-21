@@ -15,11 +15,11 @@
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
                             <a href="addMember.php">
-                                <button class="btn btn-success btn-md me-5 rounded-0">
+                                <button class="btn btn-success btn-md me-5">
                                     <i class="bi bi-plus-lg"></i> Add new Member
                                 </button>
                             </a>
-                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm(' ')"><i class="bi bi-filetype-xls"></i> Download File</button>
+                            <button class="btn btn-dark btn-md dl-file rounded-3" onclick="toggleForm(' ')"><i class="bi bi-download me-1"></i> Download</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">

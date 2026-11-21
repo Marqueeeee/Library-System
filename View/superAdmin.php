@@ -25,7 +25,7 @@ if ($currentUserId === null || $currentAccount != "Admin") {
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="section.js"></script>
+    <script src="../View/section.js" defer></script>
 
     
     <?php
@@ -96,7 +96,7 @@ if ($currentUserId === null || $currentAccount != "Admin") {
 
     <?php require_once __DIR__ . '/superAdminPartials/modals.php'; ?>
 
-    <script src="script.js"></script>
+    <script src="../View/script.js"></script>
 
 
 </body>

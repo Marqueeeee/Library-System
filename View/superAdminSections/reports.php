@@ -2,7 +2,7 @@
         <!-- ============== REPORTS SECTION  ============== -->
         <div id="section-reports" class="section">
             <div class="panel">
-                
+
             <div class="row">
                 <div class="col-sm-2 ">
                         <div class="btn stat-card" data-section="books" onclick="showSection(this);" style="background-color: #045224;">
@@ -60,11 +60,6 @@
                     </div>
                 </div>
 
-                <!-- <h6>File Selection:</h6> -->
-
-                    <input type="file" name="" id="fileInput" hidden>
-                    <button type="button" class="btn btn-outline-dark me-2" id="exportBtn"><i class="bi bi-printer"></i> Print</button>
-
                     <div class="row g-3 mb-3 top-analytics">
                     <div class="col-lg-8">
                         <div class="card shadow-sm w-100">
@@ -111,6 +106,20 @@
                     <input type="hidden" id="overDue" name="overDue">
 
                 </form>
+
+            <div class="reports-toolbar">
+                <div class="toolbar">
+                    <div class="input-group ">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" name="member-search" id="member-search" class="form-control"
+                        placeholder="Search anything ..." oninput="filterTable('booksTable', this.value)">
+
+                        <button type="button" class="btn btn-light border-dark me-2 rounded-3" id="exportBtn"><i class="bi bi-download me-1"></i>Import</button>
+                        <button type="button" class="btn btn-dark me-2 rounded-3" id="exportBtn"><i class="bi bi-upload me-1"></i>Export</button>
+                    </div>
+                </div>
+            </div>
+
 
                 <div class="table-responsive">
                     <table class="table lms-table table-striped" id="toReportsTable">

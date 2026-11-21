@@ -69,7 +69,7 @@
                 <!-- Charts -->
                 <div class="row g-3 mb-3 top-analytics">
                     <div class="col-lg-8">
-                        <div class="card shadow-sm w-100">
+                        <div class="card shadow-md w-100">
                             <div class="card-body">
                                 <h2 class="h6 card-title">Borrowing Activity</h2>
                                 <span class="top-right">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="card shadow-sm w-100">
+                        <div class="card shadow-md w-100">
                             <div class="card-body">
                             <h2 class="h6 card-title">Borrowed by Category</h2>
                             <div class="top-right">
@@ -113,9 +113,9 @@
                 </div>
 
                         <!-- Library table -->
-                         <div class="row">
+                        <div class="row">
                             <div class="col-lg-6">
-                                <div class="card shadow-sm bot-analytics w-100">
+                                <div class="card shadow-md bot-analytics w-100">
                                     <div class="card-body">
                                         <h2 class="h6 card-title">Library Monitoring </h2>
                                         <div class="top-right">
@@ -152,7 +152,7 @@
 
                             <!-- Library table -->
                             <div class="col-lg-6">
-                                <div class="card shadow-sm bot-analytics w-100">
+                                <div class="card shadow-md bot-analytics w-100">
                                     <div class="card-body">
                                         <h2 class="h6 card-title">Recent Activities</h2>
                                         <div class="top-right">

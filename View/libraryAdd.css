@@ -154,6 +154,17 @@ form .bi-x-lg:hover {
     box-shadow: 0 0 5px var(--submain-color--);
 }
 
+form ul {
+    position: relative;
+    list-style: none;
+    left: -20px;
+    
+}
+
+ .fieldset ul li {
+    font-size: 14px;
+}
+
 .form .addBook {
     display: flex;
 }

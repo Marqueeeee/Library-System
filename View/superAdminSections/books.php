@@ -14,12 +14,12 @@
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" name="member-search" id="member-search" class="form-control"
-                            placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                            placeholder="Search title, author, publisher, ..." oninput="filterTable('booksTable', this.value)">
                             <a href="createBook.php">
-                                <button class="btn btn-success btn-md me-5 rounded-0" onclick="toggleForm('memberForm')"><i
-                                class="bi bi-plus-lg rounded-0"></i> Add new Book</button>
+                                <button class="btn btn-success btn-md me-5" onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus-lg"></i> Add new Book</button>
                             </a>
-                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls"></i> Download File</button>
+                            <button class="btn btn-dark btn-md dl-file rounded-3" onclick="toggleForm('memberForm')"><i class="bi bi-download me-1"></i> Download</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">

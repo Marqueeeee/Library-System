@@ -30,7 +30,7 @@
                 <div class="card-title">
                     <div class="icon-box">
                         <i class="bi bi-people-fill me-4 "></i>
-                        <h4>Add Library Member</h4>
+                        <h4>Create Account</h4>
                     </div>
                 </div>
 
@@ -39,31 +39,54 @@
             
 
         <div class="form-field">
-            <label for="Title" class="form-label">First Name *</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="John" required>
-        </div>
-        
-        
-        <div class="form-field">
-            <label for="Author" class="form-label">Last Name *</label>
-            <input type="text" name="author" id="author" class="form-control" placeholder="Doe" required>
-        </div>
-        
-        <div class="form-field">
-            <label for="Copyright" class="form-label">Email *</label>
-            <input type="text" name="copyright" id="copyright" class="form-control" placeholder="johndoe@gmail.com" required>
-        </div>
-        
-        <div class="form-field">
-            <label for="Publisher" class="form-label">Contact *</label>
-            <input type="text" name="publisher" id="publisher" class="form-control" placeholder="09123456789" required>
+            <label for="Title" class="form-label">Name *</label>
+            <div class="input-group mb-4">
+                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" maxlength="20" required>
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" maxlength="20" required>
+            </div>
         </div>
 
+        <div class="form-field">
+            <label for="grade-section" class="form-label">Grade & Section *</label>
+            <div class="input-group mb-4">
+                <input type="text" name="gradeLevel" id="gradeLevel" class="form-control" placeholder="Grade Level" maxlength="8" required>
+                <input type="text" name="section" id="section" class="form-control" placeholder="Section" maxlength="12" required>
+            </div>
+        </div>
+        
+        <div class="form-field">
+            <label for="email" class="form-label">Email *</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="example@spist.edu.ph" required>
+        </div>
+        
+        <div class="form-field">
+            <label for="contact" class="form-label">Contact *</label>
+            <input type="text" name="contact" id="contact" class="form-control" placeholder="09123456789" required>
+        </div>
+
+        <div class="form-field">
+            <label for="accountID" class="form-label">Student ID *</label>
+            <input type="text" name="accountID" id="accountID" class="form-control" placeholder="2026******" required>
+        </div>
+
+        <div class="form-field fieldset">
+
+            <ul>
+                <li><input type="checkbox" name="all" id="all" class="form-control-checkbox me-2"><span">Select all</span></li>
+                <li><input type="checkbox" name="borrow-allowed" id="borrow-allowed" class="form-control-checkbox me-2"><span">Can create account</span></li>
+                <li><input type="checkbox" name="takeHome-allowed" id="takeHome-allowed" class="form-control-checkbox me-2"><span">Can take-home book</span></li>
+                <li><input type="checkbox" name="loanBook-allowed" id="loanBook-allowed" class="form-control-checkbox me-2"><span">Can loan book</span></li>
+            </ul>
+      
+            
+        </div>
+
+        
 
             <div class="addBook">
                     <!-- <i class="bi bi-plus-circle me-3"></i>
                     <label for="quantity">10</label> -->
-                <button class="btn btn-md" type="submit"><i class="bi bi-plus-lg me-2"></i> Add new Member</button>
+                <button class="btn btn-md" type="submit"><i class="bi bi-plus-lg me-2"></i> Create Account</button>
             </div>
 
             </div>

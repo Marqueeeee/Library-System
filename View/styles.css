@@ -65,8 +65,8 @@
 .form-select-sm {
     font-size: 12px;
     cursor: pointer;
-    padding: 0.4rem;
-    background-color: #f7f2f2;
+    padding: 0.5rem;
+    background-color: #f7f2f2ec;
     color: var(--alt-text-color--);
     border: none; 
     font-weight: 500;
@@ -461,7 +461,6 @@
 .toolbar{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
 
 }
 
@@ -470,23 +469,40 @@
     padding: 0.5rem 0.8rem;
     background-color: var(--main-color--);
     color: var(--text-color--);
-    font-weight: 600;
 }
 
 
 .toolbar input {
-    max-width: 300px;
-    font-size: 12px;
+    max-width: 400px;
+    font-size: 14px;
     margin-right: 1.2rem;
-    border-radius: 24px;
-    box-shadow: inset 0 1px 2px var(--main-color--);
+    border-radius: 0 8px 8px 0;
+    font-weight: 400;
 
 }
 
 .toolbar input:focus {
     outline: none;
-    box-shadow: 0 0 5px var(--main-color--);
-    border-color: var(--main-color--);
+    box-shadow: none;
+    border-color: var(--submain-color--);
+}
+
+.reports-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.reports-toolbar .toolbar input {
+    width: 250px;
+}
+
+
+.toolbar .dl-file {
+    position: absolute;
+    top: 0;
+    right: 10px;
+
 }
 
 
@@ -530,6 +546,7 @@
     font-size: 11px;
     border-radius: 10px;
     font-weight: 600;
+    padding: 0.2rem 0.5rem;
 }
 
 .badge-borrowed {
@@ -555,6 +572,12 @@
     color: rgba(255, 0, 0, 0.747);
     border-radius: 20px;
 
+}
+
+.badge-pending {
+    background-color: rgba(73, 72, 72, 0.192);
+    color: rgba(19, 18, 18, 0.747);
+    border-radius: 20px;
 }
 
 .btn-success {
@@ -654,8 +677,23 @@
 /*----------------- Modal -------------------------*/
 .modal-content {
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--font-family-inter);
 
+}
+
+.modal-header h3 {
+    font-family: var(--font-family-poppins);
+    font-size: 18px;
+}
+
+.modal-content .btn-close {
+    border: 1px solid #000000;
+    padding: 0.5rem;
+}
+
+.modal-content .btn-close:hover {
+    background-color: red;
+    color: var(--text-color--);
 }
 
 .modal {
@@ -670,6 +708,17 @@
 .modal-dialog {
 
     z-index: 1056 !important;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    padding: auto;
+}
+
+.modal-footer button {
+    padding: 0.5rem 6rem;
 }
 
 .right {

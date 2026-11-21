@@ -85,8 +85,8 @@
         </nav>
 
         <div class="sidebar-footer">
-            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal">Exit System
-                <i class="bi bi-box-arrow-left ms-1"></i>
+            
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal"> <i class="bi bi-box-arrow-left me-2"></i>Exit System
             </button>
         </div>
         

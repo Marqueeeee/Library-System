@@ -13,16 +13,16 @@
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" name="member-search" id="member-search" class="form-control"
-                            placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
+                            placeholder="Search borrower, date, status, ..." oninput="filterTable('borrowingBooks', this.value)">
                             <a href="addBorrow.php">
-                                <button class="btn btn-success btn-md me-2 rounded-0" onclick="toggleForm('memberForm')"><i
-                                class="bi bi-bag-plus  rounded-0 "></i> Borrowing book</button>
+                                <button class="btn btn-success btn-md me-2" onclick="toggleForm('memberForm')"><i
+                                class="bi bi-bag-plus"></i> Borrowing book</button>
                             </a>
                             <a href="addReturn.php">
-                                <button class="btn btn-warning btn-md rounded-0  me-5" onclick="toggleForm('memberForm')"><i
-                                class="bi bi-arrow-left rounded-0"></i> Returning book</button>
+                                <button class="btn btn-warning btn-md  me-5" onclick="toggleForm('memberForm')"><i
+                                class="bi bi-arrow-left"></i> Returning book</button>
                             </a>
-                            <button class="btn btn-outline-secondary btn-md rounded-0" onclick="toggleForm('memberForm')"><i class="bi bi-filetype-xls  rounded-0"></i> Download File</button>
+                            <button class="btn btn-dark btn-md dl-file rounded-3" onclick="toggleForm('memberForm')"><i class="bi bi-download me-1"></i> Download</button>
 
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">x
