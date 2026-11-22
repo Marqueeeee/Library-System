@@ -39,7 +39,7 @@
             
 
         <div class="form-field">
-            <label for="Title" class="form-label">Name *</label>
+            <label for="Title" class="form-label">Name <span class="req">*</span></label>
             <div class="input-group mb-4">
                 <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" maxlength="20" required>
                 <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" maxlength="20" required>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-field">
-            <label for="grade-section" class="form-label">Grade & Section *</label>
+            <label for="grade-section" class="form-label">Grade & Section <span class="req">*</span> </label>
             <div class="input-group mb-4">
                 <input type="text" name="gradeLevel" id="gradeLevel" class="form-control" placeholder="Grade Level" maxlength="8" required>
                 <input type="text" name="section" id="section" class="form-control" placeholder="Section" maxlength="12" required>
@@ -55,26 +55,26 @@
         </div>
         
         <div class="form-field">
-            <label for="email" class="form-label">Email *</label>
+            <label for="email" class="form-label">Email <span class="req">*</span></label>
             <input type="email" name="email" id="email" class="form-control" placeholder="example@spist.edu.ph" required>
         </div>
         
         <div class="form-field">
-            <label for="contact" class="form-label">Contact *</label>
+            <label for="contact" class="form-label">Contact <span class="req">*</span></label>
             <input type="text" name="contact" id="contact" class="form-control" placeholder="09123456789" required>
         </div>
 
         <div class="form-field">
-            <label for="accountID" class="form-label">Student ID *</label>
+            <label for="accountID" class="form-label">Student ID <span class="req">*</span></label>
             <input type="text" name="accountID" id="accountID" class="form-control" placeholder="2026******" required>
         </div>
 
         <div class="form-field fieldset">
 
             <ul>
-                <h6>Role Access</h6>
-                <li><input type="radio" name="borrow-allowed" id="borrow-allowed" class="form-control-radio me-2"><span">Student</span></li>
-                <li><input type="radio" name="takeHome-allowed" id="takeHome-allowed" class="form-control-radio me-2"><span">Staff</span></li>
+                <h6>Select role <span class="req"> *</span></h6>
+                <li><input type="radio" name="user-access" id="student" class="radio me-2" value="student" checked><span">Student</span></li>
+                <li><input type="radio" name="user-access" id="staff" class="radio me-2" value="staff"><span">Staff</span></li>
             </ul>
       
             
@@ -85,7 +85,7 @@
             <div class="addBook">
                     <!-- <i class="bi bi-plus-circle me-3"></i>
                     <label for="quantity">10</label> -->
-                <button class="btn btn-md" type="submit"><i class="bi bi-plus-lg me-2"></i> Create Account</button>
+                <button class="btn btn-md " type="submit"><i class="bi bi-plus-lg me-2"></i>Register Account</button>
             </div>
 
             </div>

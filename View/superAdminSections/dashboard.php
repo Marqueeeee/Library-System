@@ -154,8 +154,10 @@
                                         <option value="Reference">Reference</option>
                                         <option value="Fiction" selected>Fiction</option>
                                         <option value="History">History</option>
+                                        <option value="Non-Fiction">Non-Fiction</option>
                                         <option value="Science">Science</option>
-                                        <option value="Kids">Kids</option>
+                                        <option value="Science">Article</option>
+                                        <option value="Science">Journal</option>
                                     </select>
                                     </span>
 
@@ -183,6 +185,13 @@
                                             <span class="bar-label">History</span>
                                         </div>
                                         <div class="bar-col">
+                                            <div class="bar-track" style="--h: 55%;" title="Non-Fiction: 55">
+                                                <span class="bar-value">55</span>
+                                                <span class="bar-fill"></span>
+                                            </div>
+                                            <span class="bar-label">Non-Fiction</span>
+                                        </div>
+                                        <div class="bar-col">
                                             <div class="bar-track" style="--h: 70%;" title="Science: 70">
                                                 <span class="bar-value">70</span>
                                                 <span class="bar-fill"></span>
@@ -190,11 +199,18 @@
                                             <span class="bar-label">Science</span>
                                         </div>
                                         <div class="bar-col">
-                                            <div class="bar-track" style="--h: 30%;" title="Kids: 30">
+                                            <div class="bar-track" style="--h: 30%;" title="Article: 30">
                                                 <span class="bar-value">30</span>
                                                 <span class="bar-fill"></span>
                                             </div>
-                                            <span class="bar-label">Kids</span>
+                                            <span class="bar-label">Article</span>
+                                        </div>
+                                        <div class="bar-col">
+                                            <div class="bar-track" style="--h: 30%;" title="Journal: 30">
+                                                <span class="bar-value">30</span>
+                                                <span class="bar-fill"></span>
+                                            </div>
+                                            <span class="bar-label">Journal</span>
                                         </div>
                                     </div>
                                 </div>

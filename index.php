@@ -18,7 +18,9 @@
 </head>
 
 <body>
-
+    
+    
+    <!-- <img src="View/spist_ofc-bg.jpg" alt="school background" class="img-fluid bg-image"> -->
     <div class="container">
         <form action="Controller/loginController.php" method="POST">
 

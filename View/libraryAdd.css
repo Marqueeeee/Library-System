@@ -172,6 +172,10 @@ form ul h6 {
     margin-left: 1rem;
 }
 
+.form-field .req {
+    color: red;
+}
+
 .form .addBook {
     display: flex;
 }
