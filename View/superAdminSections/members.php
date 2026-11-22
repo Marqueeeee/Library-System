@@ -16,7 +16,7 @@
                             placeholder="Search name, email, ..." oninput="filterTable('booksTable', this.value)">
                             <a href="addMember.php">
                                 <button class="btn btn-success btn-md me-5">
-                                    <i class="bi bi-plus-lg"></i> Add new Member
+                                    <i class="bi bi-person-add me-1"></i> Create Account
                                 </button>
                             </a>
                             <button class="btn btn-dark btn-md dl-file rounded-3" onclick="toggleForm(' ')"><i class="bi bi-download me-1"></i> Download</button>

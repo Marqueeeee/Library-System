@@ -9,6 +9,8 @@
                     <h1 class="h4 mb-0">Dashboard</h1>
                     
                 </div> -->
+
+                <!-- //Status-cards -->
                 <div class="row">
                 <div class="col-sm-2 ">
                         <div class="btn stat-card" data-section="books" onclick="showSection(this);" style="background-color: #045224;">
@@ -276,7 +278,7 @@
                                                         <td>January 23 - 26, 2025</td>
                                                         <td>January 26, 2025</td>
                                                         <td> ----- </td>
-                                                        <td class="badge-status badge-returned">Returned</td>
+                                                        <td><span class="badge-status badge-returned">Returned</span></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -313,7 +315,7 @@
                                                         <td>January 23 - 26, 2025</td>
                                                         <td>January 26, 2025</td>
                                                         <td> ----- </td>
-                                                        <td class="badge-status badge-returned">Returned</td>
+                                                        <td><span class="badge-status badge-pending">Pending</span></td>
                                                     </tr>
                                                 </tbody>
                                             </table>

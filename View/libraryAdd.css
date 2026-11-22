@@ -155,14 +155,21 @@ form .bi-x-lg:hover {
 }
 
 form ul {
+    display: flex;
     position: relative;
     list-style: none;
     left: -20px;
     
 }
+form ul h6 {
+    font-size: 14px;
+    font-weight: 600;
+    padding-right: 1rem;
+}
 
  .fieldset ul li {
     font-size: 14px;
+    margin-left: 1rem;
 }
 
 .form .addBook {

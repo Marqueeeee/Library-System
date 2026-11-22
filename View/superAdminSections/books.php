@@ -16,8 +16,8 @@
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search title, author, publisher, ..." oninput="filterTable('booksTable', this.value)">
                             <a href="createBook.php">
-                                <button class="btn btn-success btn-md me-5" onclick="toggleForm('memberForm')"><i
-                                class="bi bi-plus-lg"></i> Add new Book</button>
+                                <button class="btn btn-success btn-md " onclick="toggleForm('memberForm')"><i
+                                class="bi bi-plus-lg me-1"></i> Add new Book</button>
                             </a>
                             <button class="btn btn-dark btn-md dl-file rounded-3" onclick="toggleForm('memberForm')"><i class="bi bi-download me-1"></i> Download</button>
 

@@ -16,11 +16,11 @@
                             placeholder="Search borrower, date, status, ..." oninput="filterTable('borrowingBooks', this.value)">
                             <a href="addBorrow.php">
                                 <button class="btn btn-success btn-md me-2" onclick="toggleForm('memberForm')"><i
-                                class="bi bi-bag-plus"></i> Borrowing book</button>
+                                class="bi bi-bag-plus me-1"></i> Borrowing Book</button>
                             </a>
                             <a href="addReturn.php">
                                 <button class="btn btn-warning btn-md  me-5" onclick="toggleForm('memberForm')"><i
-                                class="bi bi-arrow-left"></i> Returning book</button>
+                                class="bi bi-arrow-left me-1"></i> Returning Book</button>
                             </a>
                             <button class="btn btn-dark btn-md dl-file rounded-3" onclick="toggleForm('memberForm')"><i class="bi bi-download me-1"></i> Download</button>
 

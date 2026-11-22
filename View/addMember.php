@@ -72,10 +72,9 @@
         <div class="form-field fieldset">
 
             <ul>
-                <li><input type="checkbox" name="all" id="all" class="form-control-checkbox me-2"><span">Select all</span></li>
-                <li><input type="checkbox" name="borrow-allowed" id="borrow-allowed" class="form-control-checkbox me-2"><span">Can create account</span></li>
-                <li><input type="checkbox" name="takeHome-allowed" id="takeHome-allowed" class="form-control-checkbox me-2"><span">Can take-home book</span></li>
-                <li><input type="checkbox" name="loanBook-allowed" id="loanBook-allowed" class="form-control-checkbox me-2"><span">Can loan book</span></li>
+                <h6>Role Access</h6>
+                <li><input type="radio" name="borrow-allowed" id="borrow-allowed" class="form-control-radio me-2"><span">Student</span></li>
+                <li><input type="radio" name="takeHome-allowed" id="takeHome-allowed" class="form-control-radio me-2"><span">Staff</span></li>
             </ul>
       
             

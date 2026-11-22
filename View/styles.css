@@ -50,7 +50,7 @@
 
 /* Charts */
 
-#section-dashboard .chart-box {
+#section-dashboard .chart-box , #section-reports .chart-box{
     height: 320px;
     border-radius: 8px;
 }
@@ -306,10 +306,7 @@ margin: 2rem 0;
     border-bottom-color: #cfe3d6;
 }
 
-.btn-success {
-    --btn-bg: var(--main-color--);
-    --bs-btn-color: var(--main-color--);
-}
+
 
 .form-select-sm {
     font-size: 12px;
@@ -434,8 +431,8 @@ margin: 2rem 0;
     border-radius: 0 16px 0 0;
     overflow: hidden;
     max-width: 100%;
-    border: 3px solid var(--main-color--);
-    background-color: var(--text-logo-color3--);
+    border: 2px solid var(--main-color--);
+    background-color: var(--text-color--);
     
 }
 
@@ -717,8 +714,10 @@ margin: 2rem 0;
 
 .toolbar .input-group-text {
     padding: 0.5rem 0.8rem;
-    background-color: var(--main-color--);
-    color: var(--text-color--);
+    background-color: var(--gray--);
+    border: transparent;
+    color: var(--alt-text-color);
+    padding-left: 1rem;
 }
 
 
@@ -728,13 +727,17 @@ margin: 2rem 0;
     margin-right: 1.2rem;
     border-radius: 0 8px 8px 0;
     font-weight: 400;
+    border: transparent;
+    background-color: var(--gray--);
+    font-weight: 450;
+
 
 }
 
 .toolbar input:focus {
     outline: none;
     box-shadow: none;
-    border-color: var(--submain-color--);
+    background-color: var(--gray--);
 }
 
 .reports-toolbar {
@@ -788,6 +791,10 @@ margin: 2rem 0;
     
 }
 
+.btn-success {
+    background-color: var(--main-color--);
+    color: var(--text-color--);
+}
 
 .badge-status {
     font-size: 11px;
@@ -808,8 +815,8 @@ margin: 2rem 0;
 }
 
 .badge-returned {
-    background-color: var(--text-color--);
-    color: var(--green-dark);
+    background-color: var(--green--);
+    color: var(--gray--);
     border-radius: 20px;
 
 }
@@ -827,9 +834,6 @@ margin: 2rem 0;
     border-radius: 20px;
 }
 
-.btn-success {
-    background-color: var(--green-active);
-}
 
 .btn-mark {
     background-color: var(--green-active);
@@ -893,6 +897,7 @@ margin: 2rem 0;
     margin-left: 2.5rem;
 
 }
+
 
 
 .form-section-receipt ul li {

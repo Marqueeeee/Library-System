@@ -3,64 +3,7 @@
         <div id="section-reports" class="section">
             <div class="panel">
 
-            <div class="row">
-                <div class="col-sm-2 ">
-                        <div class="btn stat-card" data-section="books" onclick="showSection(this);" style="background-color: #045224;">
-                            <i class="bi bi-stack stat-icon"></i>
-                            <div>
-                                <?php countBooks($conn); ?>
-                                <div class="stat-label">Total Books</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="books" onclick="showSection(this);" style="background-color: #116434;">
-                            <i class="bi bi-book-half stat-icon"></i>
-                            <div>
-                                <?php countBooks($conn); ?>
-                                <div class="stat-label">Available</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="members" onclick="showSection(this);" style="background-color: #287936 ;">
-                            <i class="bi bi-people-fill stat-icon"></i>
-                            <div>
-                                <?php countMembers($conn); ?>
-                                <div class="stat-label">Members</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="faculty" onclick="showSection(this);" style="background-color: #268d3c;">
-                            <i class="bi bi-person-badge stat-icon"></i>
-                            <div>
-                                <?php countFaculty($conn); ?>
-                                <div class="stat-label">Library Staff</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="borrowed" onclick="showSection(this);" style="background-color: #40831a;">
-                            <i class="bi bi-bag-plus-fill stat-icon"></i>
-                            <div>
-                                <?php countBorrowedBooks($conn); ?>
-                                <div class="stat-label">Borrowed</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="btn stat-card" data-section="returned" onclick="showSection(this);" style="background-color: #34881b; ;">
-                            <i class="bi bi-back stat-icon"></i>
-                            <div>
-                                <?php countReturnedBooks($conn); ?>
-                                <div class="stat-label">Returning</div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-
-            <div class="row">
+             <div class="row">
                 <div class="col-sm-2 ">
                         <div class="btn stat-card" data-section="books" onclick="showSection(this);" style="background-color: #045224;">
                             <i class="bi bi-stack stat-icon"></i>
@@ -115,20 +58,21 @@
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
 
-                <div class="reports-toolbar">
+            <div class="reports-toolbar">
                     <div class="toolbar">
                         <div class="input-group ">
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" name="member-search" id="member-search" class="form-control"
                             placeholder="Search anything ..." oninput="filterTable('booksTable', this.value)">
 
-                            <button type="button" class="btn btn-light border-dark me-2 rounded-3" id="exportBtn"><i class="bi bi-download me-1"></i>Import</button>
-                            <button type="button" class="btn btn-dark me-2 rounded-3" id="exportBtn"><i class="bi bi-upload me-1"></i>Export</button>
+                            <button type="button" class="btn btn-sm btn-light border-dark me-2 rounded-3 " id="exportBtn"><i class="bi bi-download me-1"></i>Import</button>
+                            <button type="button" class="btn btn-sm btn-dark me-2 rounded-3"  id="exportBtn"><i class="bi bi-upload me-1"></i>Export</button>
                         </div>
                     </div>
-                </div>
+                </div> 
+
 
 
                 <!-- Charts -->
@@ -294,88 +238,9 @@
                                 </div>
                         </div>
                     </div>
-                    
-
-
+                
                 </div>
 
-                        <!-- Library table -->
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card shadow-md bot-analytics w-100">
-                                    <div class="card-body">
-                                        <h2 class="h6 card-title">Library Monitoring </h2>
-                                        <div class="top-right">
-                                        
-                                        <span class="view-details"><a href="">View Details <i class=" bi bi-arrow-right  "></i></a></span>
-                                    </div>
-                                        <div class="table-responsive">
-                                            <table class="table lms-table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Book</th>
-                                                        <th>Member</th>
-                                                        <th>Borrow & Due date</th>
-                                                        <th>Return Date</th>
-                                                        <th>Fine</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="book-transaction-log">
-                                                    <tr>
-                                                        <td>Atomic Habits</td>
-                                                        <td>Fernando Basibas</td>
-                                                        <td>January 23 - 26, 2025</td>
-                                                        <td>January 26, 2025</td>
-                                                        <td> ----- </td>
-                                                        <td class="badge-status badge-returned">Returned</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Library table -->
-                            <div class="col-lg-6">
-                                <div class="card shadow-md bot-analytics w-100">
-                                    <div class="card-body">
-                                        <h2 class="h6 card-title">Recent Activities</h2>
-                                        <div class="top-right">
-                                        
-                                        <span class="view-details"><a href="">View Details <i class=" bi bi-arrow-right  "></i></a></span>
-                                    </div>
-                                        <div class="table-responsive">
-                                            <table class="table lms-table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Book</th>
-                                                        <th>Member</th>
-                                                        <th>Borrow & Due date</th>
-                                                        <th>Return Date</th>
-                                                        <th>Fine</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="book-transaction-log">
-                                                    <tr>
-                                                        <td>Atomic Habits</td>
-                                                        <td>Fernando Basibas</td>
-                                                        <td>January 23 - 26, 2025</td>
-                                                        <td>January 26, 2025</td>
-                                                        <td> ----- </td>
-                                                        <td class="badge-status badge-returned">Returned</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                <div id="tip" class="badge text-dark fs-6 fw-normal"></div>
 
                 <div class="table-responsive">
                     <table class="table lms-table table-striped" id="toReportsTable">

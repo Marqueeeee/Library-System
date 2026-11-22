@@ -216,7 +216,7 @@
                 echo
                     '<thead>
                 <tr>
-                    <th>Accession No.</th>
+                    <th>Accession #</th>
                     <th>Book Title</th>
                     <th>Author</th>
                     <th>Copyright</th>
@@ -285,7 +285,7 @@
                     <th>Borrow ID</th>
                     <th>Timestamp</th>
                     <th>Book Title</th>
-                    <th>Accession No.</th>
+                    <th>Accession #</th>
                     <th>Borrower</th>
                     <th>Account ID</th>
                     <th>Date Borrowed</th>
