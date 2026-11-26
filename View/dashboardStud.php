@@ -1058,8 +1058,8 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="book-front" style="background-color: #136ac0;">
-                                        <h3 class="bookTitle">AT</h3>
+                                    <div class="book-front bk2" style="background-color: #136ac0;">
+                                        <!-- <h3 class="bookTitle">AT</h3> -->
                                     </div>
                                     <h5 class="card-title">Atomic Habits</h5>
                                     <p class="card-text">James Clear</p>
@@ -1072,8 +1072,8 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="book-front" style="background-color: #212529;">
-                                        <h3 class="bookTitle">SF</h3>
+                                    <div class="book-front bk6" style="background-color: #212529;">
+                                        <!-- <h3 class="bookTitle">SF</h3> -->
                                     </div>
                                     <h5 class="card-title">A Song of Ice and Fire</h5>
                                     <p class="card-text">George R.R. Martin</p>
@@ -1086,8 +1086,8 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="book-front" style="background-color: #212529;">
-                                        <h3 class="bookTitle">PP</h3>
+                                    <div class="book-front bk5" style="background-color: #212529;">
+                                        <!-- <h3 class="bookTitle">PP</h3> -->
                                     </div>
                                     <h5 class="card-title">Pride and Prejudice</h5>
                                     <p class="card-text">Jane Austen</p>
@@ -1100,8 +1100,8 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="book-front" style="background-color: #212529;">
-                                        <h3 class="bookTitle">SF</h3>
+                                    <div class="book-front bk4" style="background-color: #212529;">
+                                        <!-- <h3 class="bookTitle">SF</h3> -->
                                     </div>
                                     <h5 class="card-title">To Kill a Mockingbird</h5>
                                     <p class="card-text">Harper Lee</p>

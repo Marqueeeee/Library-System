@@ -50,8 +50,33 @@
 /* Book images */
 
 .bk1 {
-    background-image: ;
+    background: url(book_imgs/1984.png) center/cover ;
 }
+.bk2 {
+    background: url(book_imgs/a-habits.png) center/cover ;
+}
+.bk3 {
+    background: url(book_imgs/ggatsby.png) center/cover ;
+}
+.bk4 {
+    background: url(book_imgs/k-bird.png) center/cover ;
+}
+.bk5 {
+    background: url(book_imgs/pap.png) center/cover ;
+}
+.bk6 {
+    background: url(book_imgs/s-ice-fire.png) center/cover ;
+}
+.bk7 {
+    background: url(book_imgs/tprag-prog.png) center/cover ;
+}
+.bk8 {
+    background: url(book_imgs/world-exe.png) center/cover ;
+}
+.bk9 {
+    background: url(wh.jpg) center/cover ;
+}
+
 
 
 /* Charts */

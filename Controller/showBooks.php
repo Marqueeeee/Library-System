@@ -32,7 +32,7 @@ function exploreBooks($conn)
                 echo '<div class="col">';
                 echo '<div class="card">';
                 echo '<div class="card-body">';
-                echo '<div class="book-front" style="background-color: #1a5c2a;">';
+                echo '<div class="book-front " style="background-color: #1a5c2a;">';
                 echo '<h3 class="bookTitle">' . $abbr . '</h3>';
                 echo '</div>';
                 echo '<span class="badge text-bg-primary" class="non-fiction" id="non-fiction">' . $genre . '</span>';
@@ -44,7 +44,7 @@ function exploreBooks($conn)
                 echo "<input type='hidden' name='bookID' value='" . htmlspecialchars($bookID) . "'>";
                 echo "<input type='hidden' name='title' value='" . htmlspecialchars($title) . "'>";
                 echo "<input type='hidden' name='membershipID' value='" . htmlspecialchars($_SESSION['user_id']) . "'>";
-                echo '<button class="btn btn-success btn-sm borrow-btn" type="submit">Borrow</button>';
+                echo '<button class="btn btn-warning btn-sm borrow-btn w-100" type="submit">Borrow</button>';
                 echo "</form>";
 
                 echo '</div> </div> </div>';
@@ -94,10 +94,10 @@ function borrowingBooks($conn)
                 echo '<div class="col">';
                 echo '<div class="card">';
                 echo '<div class="card-body">';
-                echo '<div class="book-front" style="background-color: #1a5c2a;">';
-                echo '<h3 class="bookTitle">' . $abbr . '</h3>';
+                echo '<div class="book-front bk7" style="background-color: #1a5c2a;">';
+                // echo '<h3 class="bookTitle">' . $abbr . '</h3>';
                 echo '</div>';
-                echo '<span class="badge text-bg-primary" class="non-fiction" id="non-fiction">Days Due: ' . $overDue . ' days</span>';
+                echo '<span class="badge text-bg-primary" class="non-fiction" id="non-fiction">Due: ' . $overDue . ' days</span>';
                 echo '<h5 class="card-title">' . $title . '</h5>';
                 echo '<p class="card-text">Date Borrowed: ' . $dateBorrowed . '</p>';
 
@@ -118,7 +118,7 @@ function borrowingBooks($conn)
                 echo "<input type='hidden' name='dueDate' value='" . htmlspecialchars($dueDate) . "'>";
                 echo "<input type='hidden' name='overDue' value='" . htmlspecialchars($overDue) . "'>";
                 echo "<input type='hidden' name='membershipID' value='" . htmlspecialchars($_SESSION['user_id']) . "'>";
-                echo '<button class="btn btn-success btn-sm borrow-btn" type="submit">Return</button>';
+                echo '<button class="btn btn-dark btn-sm borrow-btn w-100" type="submit">Return</button>';
                 echo "</form>";
 
                 echo '</div> </div> </div>';
