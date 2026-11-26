@@ -68,7 +68,7 @@
                 <span class="description">Reports</span> <span class="right-align"> > </span>
             </button>
 
-            <p class="sidebar-section-category">Configuration</p>
+            <p class="sidebar-section-category"></p>
 
             <button class="nav-link nav-item-lms" data-section="notifications" onclick="showSection(this);">
                     <span class="icon"><i class="bi bi-bell"></i></i></span>
@@ -165,7 +165,7 @@
 
             <div class="sidebar-footer pb-4">
                 <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal"
-                    data-bs-dismiss="offcanvas">Logout
+                    data-bs-dismiss="offcanvas">Exit System
                     <i class="bi bi-box-arrow-left ms-1"></i>
                 </button>
             </div>

@@ -74,6 +74,7 @@
             <ul>
                 <h6>Select role <span class="req"> *</span></h6>
                 <li><input type="radio" name="user-access" id="student" class="radio me-2" value="student" checked><span">Student</span></li>
+                <li><input type="radio" name="user-access" id="student" class="radio me-2" value="student" ><span">Faculty</span></li>
                 <li><input type="radio" name="user-access" id="staff" class="radio me-2" value="staff"><span">Staff</span></li>
             </ul>
       

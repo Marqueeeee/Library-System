@@ -41,7 +41,7 @@
                                 </ul>
                             </div> -->
                         </div>
-                    </div>
+                </div>
 
                 <div class="table-responsive">
                     <table class="table lms-table table-striped" id="borrowedTable">

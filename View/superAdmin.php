@@ -98,9 +98,11 @@ if ($currentUserId === null || $currentAccount != "Admin") {
 
     <?php require_once __DIR__ . '/superAdminPartials/modals.php'; ?>
 
+    
+    <!-- //Date and Time Display -->
 
     <script>
-        //Date and Time Display
+        
 
         const timeElement = document.querySelector(".time");
         const dateElement = document.querySelector(".date");
@@ -118,44 +120,24 @@ if ($currentUserId === null || $currentAccount != "Admin") {
             return `${hours12.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${amPm}`;
             }
 
-            /**
-             *
-             * @param {Date} date
-             */
-            
-            function formatDate(date) {
-            const DAYS = [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-            ];
-            const MONTHS = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-            ];
+        /**
+         *
+         * @param {Date} date
+         */
+        
+        function formatDate(date) {
+        const DAYS = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+        const MONTHS = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",];
 
-            return `${DAYS[date.getDay()]}, ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-            }
-            setInterval(() => {
-            const now = new Date();
+        return `${DAYS[date.getDay()]}, ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+        }
+        setInterval(() => {
+        const now = new Date();
 
-            dateElement.textContent = formatDate(now);
-            timeElement.textContent = `| ${formatTime(now)}`;
-    }, 200);
+        dateElement.textContent = formatDate(now);
+        timeElement.textContent = `| ${formatTime(now)}`;
+        
+        }, 200);
 
 
     </script>

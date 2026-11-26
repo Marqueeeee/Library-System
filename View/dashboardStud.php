@@ -86,41 +86,44 @@
 
             <!-- System Abbreviation: LMS (Library Management System) -->
             <div class="card" id="brand">
-                <h3 class="card-title">LMS</h3>
+                    <img src="../View/SPIST_logo.jpg" alt="SPIST_logo">
             </div>
 
             <!-- User Information Section -->
             <div class="sidebar-user">
                 <div class="avatar"><i class="bi bi-person-fill"></i></div>
                 <div class="user-info">
-                    <div>
-                        <span class="status-dot"></span>
-                        <span class="label-active">active</span>
-                    </div>
+                    
                     <div class="label-name" id="currentName"></div>
                     <div class="stud-email" id="currentEmail"></div>
+                    <span class="label-active">Student</span>  
                 </div>
             </div>
 
+
             <!-- Sidebar navigation buttons -->
             <button class="nav-link nav-item-lms active" data-section="dashboard" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-house"></i></span>
+                <span class="icon"><i class="bi bi-grid"></i></span>
                 <span class="description">Dashboard</span> <span class="right-align"> > </span>
             </button>
+
+            <p class="sidebar-section-category">Book Activities</p>
 
             <button class="nav-link nav-item-lms" data-section="explore" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-search"></i></span>
                 <span class="description">Explore Books</span> <span class="right-align"> > </span>
             </button>
 
+            
+
             <button class="nav-link nav-item-lms" data-section="borrowing" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-bag"></i></span>
-                <span class="description">Borrow/Return</span> <span class="right-align"> > </span>
+                <span class="icon"><i class="bi bi-bag-plus"></i></span>
+                <span class="description">Borrowing </span> <span class="right-align"> > </span>
             </button>
 
-            <button class="nav-link nav-item-lms" data-section="readBooks" onclick="showSection(this);">
+            <button class="nav-link nav-item-lms" data-section="returned" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-book-half"></i></span>
-                <span class="description">Read Books</span> <span class="right-align"> > </span>
+                <span class="description">Returned</span> <span class="right-align"> > </span>
             </button>
 
             
@@ -129,22 +132,33 @@
                 <span class="description">History</span> <span class="right-align"> > </span>
             </button>
 
+            <p class="sidebar-section-category"></p>
+
+            <button class="nav-link nav-item-lms" data-section="notifications" onclick="showSection(this);">
+                <span class="icon"><i class="bi bi-bell"></i></i></span>
+                <span class="description">Notifications</span> <span class="right-align"> > </span>
+            </button>
+
             <button class="nav-link nav-item-lms" data-section="faqs" onclick="showSection(this);">
                 <span class="icon"><i class="bi bi-question-circle"></i></span>
                 <span class="description">FAQs</span> <span class="right-align"> > </span>
             </button>
-            <!-- <button class="nav-link nav-item-lms" data-section="database" onclick="showSection(this);">
-                <span class="icon"><i class="bi bi-database"></i></span>
-                <span class="description">Database Record</span>>
-            </button> -->
 
+            <button class="nav-link nav-item-lms" data-section="settings" onclick="showSection(this);">
+                <span class="icon"><i class="bi bi-gear"></i></i></span>
+                <span class="description">Settings</span> <span class="right-align"> > </span>
+            </button>
+
+            
         </nav>
 
+    
         <div class="sidebar-footer">
-            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal">Logout
-                <i class="bi bi-box-arrow-left ms-1"></i>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal-user"> 
+                <i class="bi bi-box-arrow-left me-2"></i>Sign out
             </button>
         </div>
+
     </div>
 
     <!-- MOBILE  SIDEBAR VIEW -->
@@ -192,7 +206,7 @@
                     <span class="description">Borrowing Books</span> <span class="right-align"> > </span>
                 </button>
 
-                <!-- <button class="nav-link nav-item-lms" data-section="readBooks"
+                <button class="nav-link nav-item-lms" data-section="returned"
                     onclick="showSection(this); closeOffcanvas();">
                     <span class="icon"><i class="bi bi-book-half"></i></span>
                     <span class="description">Read Books</span> <span class="right-align"> > </span>
@@ -212,7 +226,7 @@
             </nav>
 
             <div class="sidebar-footer pb-4">
-                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal"
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exitModal-user"
                     data-bs-dismiss="offcanvas">Logout
                     <i class="bi bi-box-arrow-left ms-1"></i>
                 </button>
@@ -223,47 +237,233 @@
 
     <!-- ========== MAIN CONTENT ========== -->
     <div class="main-content">
-        <div class="top-header d-flex justify-content-center align-items-center">
-            <button class="btn-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar"
-                aria-controls="mobileSidebar" aria-label="Toggle navigation">
-                <i class="bi bi-list"></i>
-            </button>
-            <span>Library Management System</span>
-        </div>
+        <div class="top-header d-flex justify-content-baseline align-items-center">
+                <button class="btn-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar"
+                    aria-controls="mobileSidebar" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="sys-sch">
+                    <div>Welcome, Student!</div>
+                    <p> Southern Philippines Institute of Science and Technology</p>
+                </div>
+
+                <div class="date-time">
+                    <div class="date">Monday, December 2, 2026</div>
+                    <div class="time">12:30 PM</div>
+                </div>
+            </div>
         <div class="page-body">
 
             <!-- ============== DASHBOARD SECTION ============== -->
             <div id="section-dashboard" class="section active">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="btn stat-card" data-section="explore" onclick="showSection(this);">
-                            <div>
-                                <?php countBooks($conn); ?>
-                                <div class="stat-label">Available Books</div>
-                            </div>
-                            <i class="bi bi-search stat-icon"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn stat-card" data-section="borrowing" onclick="showSection(this);">
-                            <div>
-                                <?php countBorrowedBooksStud($conn); ?>
-                                <div class="stat-label">Borrow/Return Books</div>
-                            </div>
-                            <i class="bi bi-bag stat-icon"></i>
-                        </div>
-                    </div>
-                  <div class="col-md-6">
-                        <div class="btn stat-card" data-section="readBooks" onclick="showSection(this);">
-                            <div>
 
-                                <?php countReturnedBooksStud($conn); ?>
-                                <div class="stat-label">Read Books</div>
+                <div class="row">
+                    <div class="col-sm-3 ">
+                            <div class="btn stat-card" data-section="books" onclick="showSection(this);" style="background-color: #045224;">
+                                <i class="bi bi-stack stat-icon"></i>
+                                <div>
+                                    <?php countBooks($conn); ?>
+                                    <div class="stat-label">Read Books</div>
+                                </div>
                             </div>
-                            <i class="bi bi-book-half stat-icon"></i>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="btn stat-card" data-section="borrowing" onclick="showSection(this);" style="background-color: #116434;">
+                                <i class="bi bi-book-half stat-icon"></i>
+                                <div>
+                                    <?php countBorrowedBooksStud($conn); ?>
+                                    <div class="stat-label">Borrowing</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-3">
+                            <div class="btn stat-card" data-section="returned" onclick="showSection(this);" style="background-color: #287936;">
+                                <i class="bi bi-subtract stat-icon"></i>
+                                <div>
+                                    <?php countReturnedBooksStud($conn); ?>
+                                    <div class="stat-label">Returned</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="btn stat-card" data-section="history" onclick="showSection(this);" style="background-color: #268d3c;">
+                                <i class="bi bi-pen-fill stat-icon"></i>
+                                <div>
+                                    <?php countBorrowedBooks($conn); ?>
+                                    <div class="stat-label">Penalty</div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="toolbar mt-3">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="member-search" id="member-search" class="form-control"
+                            placeholder="Search title, author, publisher, ..." oninput="filterTable('borrowingBooks', this.value)">
+                            
+                        </div>
+                </div>
+
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-3">
+                        <div class="card border-0 w-100 h-100">
+                                <div class="card-body p-2 most-borrowed-body">
+                                        <h2 class="h6 card-title">Borrowing Books</h2>
+                                        
+
+                                    <div class="card-body most-borrowed-book">
+                                        <img src="../View/wh.jpg" alt="book-img">
+
+                                        <div class="most-borrowed-title">
+                                            <p class="card-text author"> Emily Brontë</p>
+                                            <h6 class="card-title">Wuthering Heights</h6>
+                                        </div>
+
+                                        <div class="most-borrowed-details">
+                                            <p><span>Accession No:</span> 10 </p>
+                                            <p><span>Borrow date:</span> July 07, 2026</p>
+                                        </div>
+                                    </div>
+
+                                   
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card border-0 w-100 h-100">
+                                <div class="card-body p-2 most-borrowed-body">
+                                        <h2 class="h6 card-title">Read Books</h2>
+                                        <select id="range" class="form-select-sm most-borrowed-toolbar">
+                                            <option value="this-week" selected>This week</option>
+                                            <option value="this-month" >This month</option>
+                                            <option value="this-last-month" >Last month</option>
+                                            <option value="this-year">This year</option>
+                                        </select>
+
+                                    <div class="card-body most-borrowed-book">
+                                        <img src="../View/wh.jpg" alt="book-img">
+
+                                        <div class="most-borrowed-title">
+                                            <p class="card-text author"> Emily Brontë</p>
+                                            <h6 class="card-title">Wuthering Heights</h6>
+                                        </div>
+
+                                        <div class="most-borrowed-details">
+                                            <p><span>Accession No:</span> 10 </p>
+                                            <p><span>Borrowers:</span> July 07, 2026</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body most-borrowed-book">
+                                        <img src="../View/wh.jpg" alt="book-img">
+
+                                        <div class="most-borrowed-title">
+                                            <p class="card-text author"> Emily Brontë</p>
+                                            <h6 class="card-title">Wuthering Heights</h6>
+                                        </div>
+
+                                        <div class="most-borrowed-details2">
+                                            <p><span>Accession No:</span> 10 </p>
+                                            <p><span>Borrowers:</span> July 07, 2026</p>
+                                        </div>
+
+                                    </div>
+
+
+                                    
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card border-0 w-100 h-100">
+                                <div class="card-body p-2 most-borrowed-body">
+                                        <h2 class="h6 card-title">Most Borrowed</h2>
+                                        <select id="range" class="form-select-sm most-borrowed-toolbar">
+                                            <option value="this-week" selected>This week</option>
+                                            <option value="this-month" >This month</option>
+                                            <option value="this-last-month" >Last month</option>
+                                            <option value="this-year">This year</option>
+                                        </select>
+
+                                    <div class="card-body most-borrowed-book">
+                                        <img src="../View/wh.jpg" alt="book-img">
+
+                                        <div class="most-borrowed-title">
+                                            <p class="card-text author"> Emily Brontë</p>
+                                            <h6 class="card-title">Wuthering Heights</h6>
+                                        </div>
+
+                                        <div class="most-borrowed-details">
+                                            <p><span>Accession No:</span> 10 </p>
+                                            <p><span>Borrowers:</span> July 07, 2026</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body most-borrowed-book">
+                                        <img src="../View/wh.jpg" alt="book-img">
+
+                                        <div class="most-borrowed-title">
+                                            <p class="card-text author"> Emily Brontë</p>
+                                            <h6 class="card-title">Wuthering Heights</h6>
+                                        </div>
+
+                                        <div class="most-borrowed-details2">
+                                            <p><span>Accession No:</span> 10 </p>
+                                            <p><span>Borrowers:</span> July 07, 2026</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="card border-0 w-100 h-100">
+                                <div class="card-body p-2 most-borrowed-body">
+                                        <h2 class="h6 card-title">Preferred Genres</h2>
+                                        <select id="range" class="form-select-sm most-borrowed-toolbar">
+                                            <option value="this-week" selected>This week</option>
+                                            <option value="this-month" >This month</option>
+                                            <option value="this-last-month" >Last month</option>
+                                            <option value="this-year">This year</option>
+                                        </select>
+
+                                    <div class="card-body most-borrowed-book">
+                                        <img src="../View/wh.jpg" alt="book-img">
+
+                                        <div class="most-borrowed-title">
+                                            <p class="card-text author"> Emily Brontë</p>
+                                            <h6 class="card-title">Wuthering Heights</h6>
+                                        </div>
+
+                                        <div class="most-borrowed-details">
+                                            <p><span>Accession No:</span> 10 </p>
+                                            <p><span>Borrowers:</span> July 07, 2026</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body most-borrowed-book">
+                                        <img src="../View/wh.jpg" alt="book-img">
+
+                                        <div class="most-borrowed-title">
+                                            <p class="card-text author"> Emily Brontë</p>
+                                            <h6 class="card-title">Wuthering Heights</h6>
+                                        </div>
+
+                                        <div class="most-borrowed-details2">
+                                            <p><span>Accession No:</span> 10 </p>
+                                            <p><span>Borrowers:</span> July 07, 2026</p>
+                                        </div>
+
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
+
+
 
             </div>
 
@@ -792,35 +992,52 @@
             <!-- ============== BORROWING SECTION ============== -->
             <div id="section-borrowing" class="section">
                 <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-bag-plus"></i>
-                            <h5>Borrow/Return Section</h5>
-                        </div>
+                <div class="section-heading">
+                    <div class="icon-box">
+                        <i class="bi bi-bag-plus-fill"></i>
+                        <span>Borrowing Section</span>
                     </div>
-
-                    <button class="btn btn-danger btn-md opacity-0" data-bs-toggle="modal" data-bs-target="#delModal"
-                        disabled id="bookDelete"><i class="bi bi-trash3-fill" id="btnDelete"></i>
-                    </button>
-                    <button class="btn btn-primary btn-md opacity-0" onclick="toggleForm('updateBookForm')" disabled
-                        id="bookUpdate"><i class="bi bi-pencil-square" id="btnEdit"></i>
-                    </button>
+                </div>
 
                     <?php borrowingBooks($conn); ?>
-
 
                 </div>
             </div>
 
             <!-- ============== READ BOOKS SECTION ============== -->
-            <div id="section-readBooks" class="section">
+            <div id="section-returned" class="section">
                 <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-book-half"></i>
-                            <h5>Read Books</h5>
-                        </div>
+                <div class="section-heading">
+                    <div class="icon-box">
+                        <i class="bi bi-book-half"></i>
+                        <span>Returned Section</span>
                     </div>
+                </div>
+
+                <div class="toolbar">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="member-search" id="member-search" class="form-control"
+                            placeholder="Search borrower, date, status, ..." oninput="filterTable('borrowingBooks', this.value)">
+
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">x
+                                <label class="form-check-label" for="checkDefault">
+                                    Select All
+                                </label>
+                            </div> -->
+
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-filter"></i>Filter</button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Ascending</a></li>
+                                    <li><a class="dropdown-item" href="#">Descending</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                </div>
                     <!-- <div class="toolbar">
                         <input type="text" class="form-control" name="member-search" id="member-search"
                             class="form-control" placeholder="Quick Search"
@@ -907,17 +1124,24 @@
                 </div>
             </div>
 
-           
-
             <!-- ============== HISTORY SECTION ============== -->
             <div id="section-history" class="section">
                 <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-file-text"></i>
-                            <h5>Return History</h5>
-                        </div>
+                <div class="section-heading">
+                    <div class="icon-box">
+                        <i class="bi bi-file-text-fill"></i>
+                        <span>Borrow/Return History</span>
                     </div>
+                </div>
+
+                <div class="toolbar">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="member-search" id="member-search" class="form-control"
+                            placeholder="Search borrower, date, status, ..." oninput="filterTable('borrowingBooks', this.value)">
+                           
+                        </div>
+                </div>
 
 
                     <div class="table-responsive">
@@ -933,229 +1157,269 @@
             <!-- ============== FAQs SECTION ============== -->
             <div id="section-faqs" class="section">
                 <div class="panel">
-                    <div class="section-heading">
-                        <div class="icon-box">
-                            <i class="bi bi-question-circle"></i>
-                            <h5>Frequently Asked Questions</h5>
+
+                <div class="section-heading">
+                    <div class="icon-box">
+                        <i class="bi bi-question-circle-fill"></i>
+                        <span>Frequently Asked Questions</span>
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" name="member-search" id="member-search" class="form-control"
+                            placeholder="Search borrower, date, status, ..." oninput="filterTable('borrowingBooks', this.value)">
+                            
+                        </div>
+                </div>
+
+
+                <div class="row row-cols-1 row-cols-md-2 g-3 flex-wrap">
+
+
+                    <div class="accordion mb-4" id="accordionExample2">
+                        <h5 class="accordion-title ms-3 mb-3 fw-bold">Borrowing Details</h5>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="true"
+                                    aria-controls="collapseFour">
+                                    How to borrow a book?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <strong>Register first to have access to the library.</strong> Once you are registered, 
+                                    you can now borrow anybook available in the library by scanning the NFC tag attached to the book and your student ID.
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    How long can I borrow a book?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <strong>Can borrow for 3 days max.</strong> To borrow a book, you have to show
+                                    what you want to borrow and the librarian will check if the book is available.
+                                    If it is available, you can borrow it for 3 days -
+                                    starting the day you borrowed the book.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    What happens if I return a book late?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <strong>Penalty fee rule.</strong> If you return a book late, you will be
+                                    charged a penalty fee of 10.00 for each day that the book is overdue.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    How do I return a book?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <strong>In-person transaction.</strong> To return a book, you have to show the
+                                    book you want to return and the librarian will check if the book is borrowed by
+                                    you.
+                                    If it is borrowed by you, you can return it and the librarian will check if
+                                    there are any penalty fees that you need to pay.
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row row-cols-1 row-cols-md-2 g-3 flex-wrap">
-                        <div class="accordion mb-4" id="accordionExample">
-                            <h5 class="accordion-title ms-3 mb-3 opacity-75">About Library System</h5>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is the library management system?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Emulate Library Operations. </strong> Library Management System is a web
-                                        application designed to emulate library operations such as book borrowing, returning and tracking of borrowed books.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What does the library management system do?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Library management.</strong> Library Management System manages the
-                                        operations of a library, including book inventory, member management, and
-                                        transaction handling.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        How to register as a library member?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Via email account.</strong> To register as a member, just register your
-                                        email account to the system and you will be automatically registered as a member
-                                        of the library.
-                                    </div>
+                    <div class="accordion mb-4" id="accordionExample">
+                        <h5 class="accordion-title ms-3 mb-3 fw-bold">About Library System</h5>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    What is the library system?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Streamline Library Operations. </strong> Library Management System is a web
+                                    application designed to emulate library operations such as book borrowing, returning and tracking of borrowed books.
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion mb-4" id="accordionExample3">
-                            <h5 class="accordion-title ms-3 mb-3 opacity-75">Book Management</h5>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeven" aria-expanded="true"
-                                        aria-controls="collapseSeven">
-                                        What will happen after the book was returned?
-                                    </button>
-                                </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionExample3">
-                                    <div class="accordion-body">
-                                        <strong>System update.</strong> After the book was returned, the system will
-                                        update the book's availability status and notify the member that the book is now
-                                        available for borrowing.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEight" aria-expanded="false"
-                                        aria-controls="collapseEight">
-                                        How many books can I borrow at a time?
-                                    </button>
-                                </h2>
-                                <div id="collapseEight" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample3">
-                                    <div class="accordion-body">
-                                        <strong>Max of 3, 4 for necessary cases.</strong> You can borrow up to 4 books
-                                        at a time. If you want to borrow more than 4 books, you have to return the
-                                        borrowed books first before borrowing more books.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseNine" aria-expanded="false"
-                                        aria-controls="collapseNine">
-                                        How does the penalty fee work?
-                                    </button>
-                                </h2>
-                                <div id="collapseNine" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample3">
-                                    <div class="accordion-body">
-                                        <strong>Penalty fee structure.</strong> The penalty fee is charged for each day
-                                        the book is overdue. The fee is 10.00 per day.
-                                    </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What does the library management system do?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Library management.</strong> Library Management System manages the
+                                    operations of a library, including book inventory, member management, and
+                                    transaction handling.
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion mb-4" id="accordionExample2">
-                            <h5 class="accordion-title ms-3 mb-3 opacity-75">Borrowing Details</h5>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        How long can I borrow a book?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionExample2">
-                                    <div class="accordion-body">
-                                        <strong>Can borrow for 3 days max.</strong> To borrow a book, you have to show
-                                        what you want to borrow and the librarian will check if the book is available.
-                                        If it is available, you can borrow it for 3 days -
-                                        starting the day you borrowed the book.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false"
-                                        aria-controls="collapseFive">
-                                        What happens if I return a book late?
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample2">
-                                    <div class="accordion-body">
-                                        <strong>Penalty fee rule.</strong> If you return a book late, you will be
-                                        charged a penalty fee of 10.00 for each day that the book is overdue.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        How do I return a book?
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample2">
-                                    <div class="accordion-body">
-                                        <strong>In-person transaction.</strong> To return a book, you have to show the
-                                        book you want to return and the librarian will check if the book is borrowed by
-                                        you.
-                                        If it is borrowed by you, you can return it and the librarian will check if
-                                        there are any penalty fees that you need to pay.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion mb-4" id="accordionExample4">
-                            <h5 class="accordion-title ms-3 mb-3 opacity-75">Technical Support</h5>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
-                                        How will AI chatbot help me?
-                                    </button>
-                                </h2>
-                                <div id="collapseTen" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionExample4">
-                                    <div class="accordion-body">
-                                        <strong>AI assistance.</strong> The AI chatbot can help you find books - based
-                                        on your preferences.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEleven" aria-expanded="false"
-                                        aria-controls="collapseEleven">
-                                        Can I check the books available in the library wherever I am?
-                                    </button>
-                                </h2>
-                                <div id="collapseEleven" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample4">
-                                    <div class="accordion-body">
-                                        <strong>Availability.</strong> Absolutely! You can check the books available in
-                                        the library wherever you are - as long as you have an internet connection.
-                                        You can check the books available in the library through the system's website or
-                                        browse book recommendations through the AI chatbot.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwelve" aria-expanded="false"
-                                        aria-controls="collapseTwelve">
-                                        Contacts for damaged/lost books.
-                                    </button>
-                                </h2>
-                                <div id="collapseTwelve" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample4">
-                                    <div class="accordion-body">
-                                        <strong>Contact information.</strong> If you have any issues with damaged or
-                                        lost books, please contact the library staff at the provided contact
-                                        information.
-                                        <br>
-                                        <i>Contact Faculty: **** - **** - **** | Email: faculty@gmail.com </i>
-                                    </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    How to register as a library member?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Via email account.</strong> To register as a member, just register your
+                                    email account to the system and you will be automatically registered as a member
+                                    of the library.
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="accordion mb-4" id="accordionExample3">
+                        <h5 class="accordion-title ms-3 mb-3 fw-bold">Book Management</h5>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSeven" aria-expanded="false"
+                                    aria-controls="collapseSeven">
+                                    What will happen after the book was returned?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample3">
+                                <div class="accordion-body">
+                                    <strong>System update.</strong> After the book was returned, the system will
+                                    update the book's availability status and notify the member that the book is now
+                                    available for borrowing.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEight" aria-expanded="false"
+                                    aria-controls="collapseEight">
+                                    How many books can I borrow at a time?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample3">
+                                <div class="accordion-body">
+                                    <strong>Max of 3, 4 for necessary cases.</strong> You can borrow up to 4 books
+                                    at a time. If you want to borrow more than 4 books, you have to return the
+                                    borrowed books first before borrowing more books.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseNine" aria-expanded="false"
+                                    aria-controls="collapseNine">
+                                    How does the penalty fee work?
+                                </button>
+                            </h2>
+                            <div id="collapseNine" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample3">
+                                <div class="accordion-body">
+                                    <strong>Penalty fee structure.</strong> The penalty fee is charged for each day
+                                    the book is overdue. The fee is 10.00 per day.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion mb-4" id="accordionExample4">
+                        <h5 class="accordion-title ms-3 mb-3 fw-bold">Technical Support</h5>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                    How will AI chatbot help me?
+                                </button>
+                            </h2>
+                            <div id="collapseTen" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample4">
+                                <div class="accordion-body">
+                                    <strong>AI assistance.</strong> The AI chatbot can help you find books - based
+                                    on your preferences.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEleven" aria-expanded="false"
+                                    aria-controls="collapseEleven">
+                                    Can I check the books available in the library wherever I am?
+                                </button>
+                            </h2>
+                            <div id="collapseEleven" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample4">
+                                <div class="accordion-body">
+                                    <strong>Availability.</strong> Absolutely! You can check the books available in
+                                    the library wherever you are - as long as you have an internet connection.
+                                    You can check the books available in the library through the system's website or
+                                    browse book recommendations through the AI chatbot.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwelve" aria-expanded="false"
+                                    aria-controls="collapseTwelve">
+                                    Contacts for damaged/lost books.
+                                </button>
+                            </h2>
+                            <div id="collapseTwelve" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample4">
+                                <div class="accordion-body">
+                                    <strong>Contact information.</strong> If you have any issues with damaged or
+                                    lost books, please contact the library staff at the provided contact
+                                    information.
+                                    <br>
+                                    <i>Contact Faculty: **** - **** - **** | Email: faculty@gmail.com </i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 
@@ -1163,38 +1427,19 @@
             </div>
 
         </div>
-
-        <!-- ============== DATABASE SECTION ============== -->
-
-        <!-- <div id="section-database" class="section">
-            <div class="panel">
-                <div class="section-heading">
-                    <div class="icon-box">
-                        <i class="bi bi-database"></i>
-                        <h5>Export</h5>
-                    </div>
-                </div>
-
-                <h6>File Selection:</h6>
-
-                <input type="file" name="" id="fileInput" hidden>
-                <button type="button" class="btn btn-dark" id="importBtn">Import file</button>
-                <button type="button" class="btn btn-primary" id="exportBtn">Export file</button>
-
-            </div>
-        </div> -->
+    </div>
 
 
         <!-- ============== EXIT SYSTEM ============== -->
-        <div class="modal fade" id="exitModal" tabindex="-1">
+        <div class="modal fade" id="exitModal-user" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: rgba(226, 11, 11, 0.952);">
                         <i class="bi bi-exclamation-diamond-fill  bi-exclamation-diamond-lg me-2"></i>
-                        <h3 style="color: white;">Exit System</h3>
+                        <h3 style="color: white; font-weight: 600;">Sign Out</h3>
                         <button class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body">Do you really want to exit the system?</div>
+                    <div class="modal-body">Do you really want to leave?</div>
                     <form>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
@@ -1231,10 +1476,52 @@
 
         <script src="script.js"></script>
 
-    </div>
+
 
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/07/20/14/20260720142656-SUXDOZ17.js" defer></script>
+
+    <script>
+        
+        //Date and Time Display
+
+        const timeElement = document.querySelector(".time");
+        const dateElement = document.querySelector(".date");
+
+        /**
+         *
+         * @param {Date} date
+         */
+
+        function formatTime(date) {
+            const hours12 = date.getHours() % 12 || 12;
+            const minutes = date.getMinutes();
+            const amPm = date.getHours() >= 12 ? "PM" : "AM";
+
+            return `${hours12.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${amPm}`;
+            }
+
+        /**
+         *
+         * @param {Date} date
+         */
+        
+        function formatDate(date) {
+        const DAYS = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+        const MONTHS = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",];
+
+        return `${DAYS[date.getDay()]}, ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+        }
+        setInterval(() => {
+        const now = new Date();
+
+        dateElement.textContent = formatDate(now);
+        timeElement.textContent = `| ${formatTime(now)}`;
+        
+        }, 200);
+
+
+    </script>
 
 </body>
 
